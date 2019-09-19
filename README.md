@@ -46,19 +46,13 @@
 | 1 | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png) | [https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.01/Algorithms] | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png) | [https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.01/Algorithms.Tests]| Реализован метод пузырьковой сортировки. TODO: быстрая сортировка и сортировка слиянием, вариант тестирования массивов большой размерности.
 
 ---
+### Day 1. 17.09.2019
 
----
+#### Task Status
 
-## Day ## ##
-
----
-
-## Day ## ##
-
----
-
-## Day ## ##
-
----
-
-...
+| Task | Solution Status | Solution Link | MS Test Status | MS Test Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
+| -------- | -------- | --------| --------|  -------- |  -------- | -------- | -------- |    
+| 1 | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png) | [*Link to .cs-file here*](#) | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png) | [*Link to MS Tests - cs-file here*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#) |
+| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.02/Array/ArrayExtension.cs] |  |  | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.02/ArrayExtensionTests/ArrayExtensionTests.cs] |
+| 3 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to .cs-file here*](#) |  |  | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#) |
+| 4 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to .cs-file here*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to MS Tests - cs-file here*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Link to NUnit Tests - cs-file here*](#) |
