@@ -43,7 +43,7 @@
 
 | Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
 | -------- | -------- | --------| --------|  -------- |  -------- |   
-| 1 | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png) | [*Link to .cs-file here*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.01/Algorithms) | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png) | [*Link to NUnit Tests - cs-file here*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.01/Algorithms.Tests)| Реализован метод пузырьковой сортировки. TODO: быстрая сортировка и сортировка слиянием, вариант тестирования массивов большой размерности.
+| 1 | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png) | [*Link to .cs-file here*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.01/Algorithms) | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png) | [*Link to NUnit Tests - cs-file here*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.01/Algorithms.Tests)| Реализован метод пузырьковой сортировки. TODO: быстрая сортировка и сортировка слиянием.
 
 ---
 ### Day 2. 17.09.2019
