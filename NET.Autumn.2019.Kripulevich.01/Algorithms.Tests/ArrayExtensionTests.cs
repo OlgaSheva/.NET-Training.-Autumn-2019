@@ -79,5 +79,54 @@ namespace Algorithms.Tests
 
             Assert.AreEqual(expected, array);
         }
+
+        [Test]
+        public void SortTheArray_RandomArray_SortedArray()
+        {
+            var expected = GenerateRandomSortedArray(1000000, int.MaxValue);
+            var actual = (int[])expected.Clone();
+            Shuffle(actual);
+
+            ArrayExtension.SortTheArray(actual);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Generate random sorted array.
+        /// </summary>
+        /// <param name="min">Lower end of range.</param>
+        /// <param name="max">Upper range limit.</param>
+        /// <returns>Random array.</returns>
+        private static int[] GenerateRandomSortedArray(int min, int max)
+        {
+            Random random = new Random();
+            int[] randomArray = new int[random.Next(0, 3000)];
+
+            for (int i = 0; i < randomArray.Length; i++)
+            {
+                randomArray[i] = random.Next(min, max);
+            }
+
+            Array.Sort(randomArray);
+            return randomArray;
+        }
+
+        /// <summary>
+        /// Array mixer.
+        /// </summary>
+        /// <param name="array">Array.</param>
+        private static void Shuffle(int[] array)
+        {
+            Random random = new Random();
+
+            for (int i = array.Length - 1; i >= 1; i--)
+            {
+                int j = random.Next(i + 1);
+                int tmp = array[j];
+                array[j] = array[i];
+                array[i] = tmp;
+            }
+        }
     }
 }
