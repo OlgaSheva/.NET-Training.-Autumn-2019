@@ -1,4 +1,5 @@
 ### Day 2. 17.09.2019	
+
 #### Читать
 - Ian Griffiths. Programming C# 5.0.  Chapter 2,  Numeric Types.
 - Joseph Albahari, Ben Albahari C# 5.0 (6.0) in a Nutshell. Chapter 6. Framework Fundamentals - Working with Numbers
