@@ -1,27 +1,5 @@
 ### Day 2. 17.09.2019	
 
-#### Читать
-- Ian Griffiths. Programming C# 5.0.  Chapter 2,  Numeric Types.
-- Joseph Albahari, Ben Albahari C# 5.0 (6.0) in a Nutshell. Chapter 6. Framework Fundamentals - Working with Numbers
-- The Art of Unit Testing. ROY OSHEROVE. PART 1 GETTING STARTED.
-- [Что нужно знать про арифметику с плавающей запятой](https://habrahabr.ru/post/112953/)
-- [Get started with unit testing](https://docs.microsoft.com/en-us/visualstudio/test/getting-started-with-unit-testing) или [Приступая к работе с модульным тестированием](https://docs.microsoft.com/ru-ru/visualstudio/test/getting-started-with-unit-testing)
-- [Архитектура компьютера. Э. Таненбаум. Приложение А, Приложение B](https://drive.google.com/file/d/1fCJqlORKzXciCTzi5LG0daANM6Syrta7/view?usp=sharing)
-
-#### Полезные ссылки
-
-- [IEEE-754 Floating Point Converter](https://www.h-schmidt.net/FloatConverter/IEEE754.html)
-- [Наглядное объяснение чисел с плавающей запятой](https://habr.com/ru/post/337260/)
-- [Взгляд со стороны: Стандарт IEEE754](https://habr.com/ru/post/262245/)
-- [Представление вещественных чисел](https://neerc.ifmo.ru/wiki/index.php?title=%D0%9F%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%87%D0%B8%D1%81%D0%B5%D0%BB#.D0.94.D0.B5.D0.BD.D0.BE.D1.80.D0.BC.D0.B0.D0.BB.D0.B8.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D1.87.D0.B8.D1.81.D0.BB.D0.B0)
-- [Что внутри числа с плавающей точкой и как оно работает](https://javarush.ru/groups/posts/2255-chto-vnutri-chisla-s-plavajujshey-tochkoy-i-kak-ono-rabotaet)
-- [IEEE 754 - стандарт двоичной арифметики с плавающей точкой](http://www.softelectro.ru/ieee754.html)
-
- *Дополнительно:*
-- [Basic Coding in C#](https://github.com/EPM-RD-NETLAB/.NET-Framework-modules/tree/master/M2.%20Basic%20Coding%20in%20C%23)
-- [C# Unit Testing](https://github.com/EPM-RD-NETLAB/.NET-Framework-modules/tree/master/M5.%20C%23%20Unit%20Testing)
-
-#### Задачи
 1. **(deadline - 20.09.2019, 24.00)** Даны два целых знаковых четырехбайтовых числа и две позиции битов i и j (i<=j). Реализовать алгоритм вставки первых (j - i + 1) битов второго числа в первое так, чтобы биты второго числа занимали позиции с бита i по бит j (биты нумеруются справа налево). Решение оформить  в виде статического метода **InsertNumberIntoAnother** статического класса **NumbersExtension**. Разработать модульные тесты (NUnit и MS Unit Test - ([DDT](https://msdn.microsoft.com/en-us/library/ms182527.aspx)))) для тестирования метода. (Ниже схема-пояснение к алгоритму). Примерные тест-кейсы
 
         [TestCase(2728, 655, 3, 8, ExpectedResult = 2680)]
