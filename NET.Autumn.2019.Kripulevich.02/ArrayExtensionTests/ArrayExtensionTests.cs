@@ -1,8 +1,8 @@
 using NUnit.Framework;
-using ArrayEx;
+using Logic;
 using System;
 
-namespace ArrayExtensionTests
+namespace LogicTests
 {
     public class ArrayExtensionTests
     {

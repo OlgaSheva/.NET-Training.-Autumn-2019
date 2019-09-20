@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ArrayEx
+namespace Logic
 {
     /// <summary>
     /// Array extension.
