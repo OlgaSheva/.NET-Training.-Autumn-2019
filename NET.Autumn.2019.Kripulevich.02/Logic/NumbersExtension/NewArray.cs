@@ -3,7 +3,7 @@
 namespace Logic
 {
     /// <summary>
-    /// 
+    /// Creater of a new binary array.
     /// </summary>
     static class NewArray
     {

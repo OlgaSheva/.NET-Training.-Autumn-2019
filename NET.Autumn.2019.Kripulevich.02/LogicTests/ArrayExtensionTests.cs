@@ -63,6 +63,33 @@ namespace LogicTests
         }
         #endregion
 
+        #region FilterArrayByKeyTests
+        [TestCase(new[] { 2212332, 1405644, -1236674 }, 0, ExpectedResult = new[] { 1405644 })]
+        [TestCase(new[] { 53, 71, -24, 1001, 32, 1005 }, 2, ExpectedResult = new[] { -24, 32 })]
+        [TestCase(new[] { -27, 173, 371132, 7556, 7243, 10017 }, 7, ExpectedResult = new[] { -27, 173, 371132, 7556, 7243, 10017 })]
+        [TestCase(new[] { 7, 2, 5, 5, -1, -1, 2 }, 9, ExpectedResult = new int[0])]
+        public int[] FilterArrayByKey_ArrayAndDigit_NewArray(int[] array, int digit)
+            => ArrayExtension.FilterArrayByKey(array, digit);
+
+        [Test]
+        public void FilterArrayByKey_EmptyArray_ArgumentException()
+        {
+            Assert.Throws<ArgumentException>(() => ArrayExtension.FilterArrayByKey(new int[0], 0));
+        }
+
+        [Test]
+        public void FilterArrayByKey_NullArray_ArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() => ArrayExtension.FilterArrayByKey(null, 0));
+        }
+
+        [Test]
+        public void FilterArrayByKey_NegativKey_ArgumentOutOfRangeException()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => ArrayExtension.FilterArrayByKey(new int[] { 1, 2 }, -1));
+        }
+        #endregion
+
         #region Private metods
         /// <summary>
         /// Generate random sorted array.

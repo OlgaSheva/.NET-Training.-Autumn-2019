@@ -75,5 +75,38 @@ namespace Logic
             return indexInArrayForWhichTheSumOfLeftAndRightElementsIsEqual;
         }
         #endregion
+
+        #region FilterArrayByKey
+        /// <summary>
+        /// Filters the array by key.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <param name="digit">The digit.</param>
+        /// <returns>New array with elements that include the digit.</returns>
+        /// <exception cref="System.ArgumentNullException">Throw if array is null.</exception>
+        /// <exception cref="System.ArgumentException">Throw if array is empty.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">Throw if digit is less than 0.</exception>
+        public static int[] FilterArrayByKey(int[] array, int digit)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException($"{nameof(array)} can't be null.");
+            }
+
+            if (array.Length == 0)
+            {
+                throw new ArgumentException($"{nameof(array)} can't be empty.");
+            }
+
+            if (digit < 0)
+            {
+                throw new ArgumentOutOfRangeException($"{nameof(digit)} can't be less than zero.");
+            }
+
+            var result = GeneraterOfArrayWithRequiredNumbers.GenerateArray(array, digit);
+
+            return result;
+        }
+        #endregion
     }
 }
