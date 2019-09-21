@@ -3,7 +3,7 @@
     /// <summary>
     /// Finder of the index in the array for which the sums of left and right elements are equals.
     /// </summary>
-    internal static class FinderOfIndexInArrayForWhichTheSumOfLeftAndRightElementsAreEquals
+    internal static class FinderOfIndexInArrayForWhichTheSumsOfLeftAndRightElementsAreEquals
     {
         /// <summary>
         /// Finds the index.
@@ -14,7 +14,7 @@
         {
             int sumLeft;
             int sumRight;
-            int? indexInArrayForWhichTheSumOfLeftAndRightElementsIsEqual = null;
+            int? indexInArrayForWhichTheSumsOfLeftAndRightElementsAreEquals = null;
 
             for (int j = 1; j < array.Length - 1; j++)
             {
@@ -35,12 +35,12 @@
 
                 if (sumLeft - sumRight == 0)
                 {
-                    indexInArrayForWhichTheSumOfLeftAndRightElementsIsEqual = j;
+                    indexInArrayForWhichTheSumsOfLeftAndRightElementsAreEquals = j;
                     break;
                 }
             }
 
-            return indexInArrayForWhichTheSumOfLeftAndRightElementsIsEqual;
+            return indexInArrayForWhichTheSumsOfLeftAndRightElementsAreEquals;
         }
     }
 }

@@ -70,7 +70,7 @@ namespace Logic
             }
 
             int? indexInArrayForWhichTheSumOfLeftAndRightElementsIsEqual =
-                FinderOfIndexInArrayForWhichTheSumOfLeftAndRightElementsAreEquals.FindIndex(array);
+                FinderOfIndexInArrayForWhichTheSumsOfLeftAndRightElementsAreEquals.FindIndex(array);
 
             return indexInArrayForWhichTheSumOfLeftAndRightElementsIsEqual;
         }
