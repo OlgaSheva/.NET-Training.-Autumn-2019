@@ -1,11 +1,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Logic;
+using System.Data;
 
 namespace LogicMSTests
 {
     [TestClass]
-    public class UnitTest1
+    public class NumbersExtensionTests
     {
         [DataTestMethod]
         [DataRow(15, 15, 0, 0, 15)]

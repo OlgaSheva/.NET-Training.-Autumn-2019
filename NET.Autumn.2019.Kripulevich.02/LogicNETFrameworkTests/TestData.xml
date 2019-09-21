@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestCases>
+  <TestCase>
+    <numberSource>2728</numberSource>
+    <numberIn>655</numberIn>
+    <i>3</i>
+    <j>8</j>
+    <expectedNumber>2680</expectedNumber>
+  </TestCase>
+  <TestCase>
+    <numberSource>554216104</numberSource>
+    <numberIn>15</numberIn>
+    <i>0</i>
+    <j>31</j>
+    <expectedNumber>15</expectedNumber>
+  </TestCase>
+  <TestCase>
+    <numberSource>-55465467</numberSource>
+    <numberIn>345346</numberIn>
+    <i>0</i>
+    <j>31</j>
+    <expectedNumber>345346</expectedNumber>
+  </TestCase>  
+</TestCases>
