@@ -2,7 +2,7 @@ using NUnit.Framework;
 using Logic;
 using System;
 
-namespace LogicTests
+namespace LogicNUnitTests
 {
     public class ArrayExtensionTests
     {

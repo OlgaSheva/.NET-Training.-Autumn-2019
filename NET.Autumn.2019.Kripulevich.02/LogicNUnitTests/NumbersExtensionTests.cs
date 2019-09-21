@@ -2,7 +2,7 @@
 using Logic;
 using System;
 
-namespace LogicTests
+namespace LogicNUnitTests
 {
     class NumbersExtensionTests
     {
