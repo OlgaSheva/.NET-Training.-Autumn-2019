@@ -6,6 +6,7 @@ namespace LogicTests
 {
     public class ArrayExtensionTests
     {
+        #region FindMaximumItemTests
         [TestCase(new[] { 0, 1, 4, 6, -3, 10, 256, 0 }, ExpectedResult = 256)]
         [TestCase(new[] { int.MaxValue, 1, 4, 6, int.MinValue, 10, 256, 0 }, ExpectedResult = int.MaxValue)]
         [TestCase(new[] { -18880, -17695841, -34, -6, -3, -10, -256, 0 }, ExpectedResult = 0)]
@@ -38,7 +39,31 @@ namespace LogicTests
 
             Assert.AreEqual(expected, actual);
         }
+        #endregion
 
+        #region FindBalanceIndexTests
+        [TestCase(new int[] { 0, 1, 0, 1, 0, 1, 0 }, ExpectedResult = 3)]
+        [TestCase(new int[] { 10, 1, 0, 1, 8, 1, 0 }, ExpectedResult = 1)]
+        [TestCase(new int[] { -10, -1, 0, -1, -8, -1, 0 }, ExpectedResult = 1)]
+        [TestCase(new int[] { 100, 1, 0, 1, 0, 1, 0 }, ExpectedResult = null)]
+        [TestCase(new int[] { 100, int.MaxValue, 0, 1, 0, int.MinValue, 0 }, ExpectedResult = null)]
+        public int? FindBalanceIndex_Array_IndexInArrayForWhichTheSumOfLeftAndRightElementsIsEqual(int[] array)
+            => ArrayExtension.FindBalanceIndex(array);
+
+        [Test]
+        public void FindBalanceIndex_NullArray_ArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() => ArrayExtension.FindBalanceIndex(null));
+        }
+
+        [Test]
+        public void FindBalanceIndex_EmptyArray_ArgumentNullException()
+        {
+            Assert.Throws<ArgumentException>(() => ArrayExtension.FindBalanceIndex(new int[] { }));
+        }
+        #endregion
+
+        #region Private metods
         /// <summary>
         /// Generate random sorted array.
         /// </summary>
@@ -75,5 +100,6 @@ namespace LogicTests
                 array[i] = tmp;
             }
         }
+        #endregion
     }
 }

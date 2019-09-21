@@ -16,11 +16,17 @@ namespace Logic
         /// <param name="i">The i bit.</param>
         /// <param name="j">The j bit.</param>
         /// <returns>Returns combined number.</returns>
-        /// <exception cref="ArgumentException">Trows if</exception>
+        /// <exception cref="ArgumentException">
+        /// Throw if numberSource or numberIn don't included in the possible range of values
+        /// or if index j lager than index i.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// Throw if index i or j don't included in the possible range of values (from 0 to 31).
+        /// </exception>
         public static int InsertNumberIntoAnother(int numberSource, int numberIn, int i, int j)
         {
-            if  (  (numberSource > int.MaxValue || numberIn > int.MaxValue) 
-                || (numberSource < int.MinValue || numberIn < int.MinValue) )
+            if  ((numberSource > int.MaxValue || numberIn > int.MaxValue)
+                || (numberSource < int.MinValue || numberIn < int.MinValue))
             {
                 throw new ArgumentException(
                     $"{nameof(numberIn)} and {nameof(numberSource)} must be a must be at range from {int.MinValue} to {int.MinValue}.");
@@ -42,7 +48,7 @@ namespace Logic
 
             var resultList = NewArray.CreateNewBinaryArray(binaryCharNumberSource, binaryCharNumberIn, i, j);
             
-            int result = Convert.ToInt32(new String(resultList), 2);
+            int result = Convert.ToInt32(new string(resultList), 2);
 
             return result;
         }
