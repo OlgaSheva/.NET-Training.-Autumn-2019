@@ -5,11 +5,11 @@ VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "Logic\Logic.csproj", "{83F11E94-A2EA-4705-A020-07ECD6C8A4BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicNUnitTests", "LogicTests\LogicNUnitTests.csproj", "{E1601590-9B13-4D50-89B3-D838588CEE09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicNUnitTests", "LogicNUnitTests\LogicNUnitTests.csproj", "{E1601590-9B13-4D50-89B3-D838588CEE09}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicMSTests", "LogicMSTests\LogicMSTests.csproj", "{9816D2A5-9676-40D9-A54C-90C21390EA18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicNETFrameworkTests", "LogicTests\LogicNETFrameworkTests.csproj", "{E3C97ADC-DB92-4D53-8420-D70B6D99D9DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicNETFrameworkTests", "LogicNETFrameworkTests\LogicNETFrameworkTests.csproj", "{E3C97ADC-DB92-4D53-8420-D70B6D99D9DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicNETFramework", "LogicNETFramework\LogicNETFramework.csproj", "{F00D3303-F739-46CE-8FFC-A95C0A28C874}"
 EndProject
