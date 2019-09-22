@@ -29,7 +29,7 @@ namespace LogicNUnitTests
         [Test]
         public void FindMaximumItem_RandomArray_MaxItem()
         {
-            var array = GenerateRandomSortedArray(1000000, int.MaxValue);
+            var array = GenerateRandomSortedArray(100000, int.MaxValue);
             int expected = array[array.Length - 1];
 
             var shuffleArray = (int[])array.Clone();
@@ -100,7 +100,7 @@ namespace LogicNUnitTests
         private static int[] GenerateRandomSortedArray(int min, int max)
         {
             Random random = new Random();
-            int[] randomArray = new int[random.Next(0, 3000)];
+            int[] randomArray = new int[random.Next(1000000, 100000000)];
 
             for (int i = 0; i < randomArray.Length; i++)
             {
