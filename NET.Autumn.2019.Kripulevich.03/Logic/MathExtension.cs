@@ -5,6 +5,7 @@
     /// </summary>
     public static class MathExtension
     {
+        #region FindNthRoot
         /// <summary>
         /// Finds the NTH root.
         /// </summary>
@@ -40,5 +41,110 @@
         {
             return FindNthRoot(number, rootDegree, 0.00001, new NewtonsMethod());
         }
+        #endregion
+
+        #region FindGcd        
+        /// <summary>
+        /// Finds the GCD by Euclidean.
+        /// </summary>
+        /// <param name="val1">The val1.</param>
+        /// <param name="val2">The val2.</param>
+        /// <returns>Returns GCD of several numbers.</returns>
+        public static long FindGcdByEuclidean(long val1, long val2)
+        {
+            return FindGcd(new EuclideanAlgorithm(), val1, val2);
+        }
+
+        /// <summary>
+        /// Finds the GCD by Euclidean.
+        /// </summary>
+        /// <param name="val1">The val1.</param>
+        /// <param name="val2">The val2.</param>
+        /// <param name="val3">The val3.</param>
+        /// <returns>Returns GCD of three numbers.</returns>
+        public static long FindGcdByEuclidean(long val1, long val2, long val3)
+        {
+            return FindGcd(new EuclideanAlgorithm(), val1, val2, val3);
+        }
+
+        /// <summary>
+        /// Finds the GCD by Euclidean.
+        /// </summary>
+        /// <param name="numbers">The numbers.</param>
+        /// <returns>Returns GCD of several numbers.</returns>
+        public static long FindGcdByEuclidean(params long[] numbers)
+        {
+            return FindGcd(new EuclideanAlgorithm(), numbers);
+        }
+
+        /// <summary>
+        /// Finds the GCD by Stein.
+        /// </summary>
+        /// <param name="val1">The val1.</param>
+        /// <param name="val2">The val2.</param>
+        /// <returns>Returns GCD of two numbers.</returns>
+        public static long FindGcdByStein(long val1, long val2)
+        {
+            return FindGcd(new SteinsAlgorithm(), val1, val2);
+        }
+
+        /// <summary>
+        /// Finds the GCD by Stein.
+        /// </summary>
+        /// <param name="val1">The val1.</param>
+        /// <param name="val2">The val2.</param>
+        /// <param name="val3">The val3.</param>
+        /// <returns>Returns GCD of three numbers.</returns>
+        public static long FindGcdByStein(long val1, long val2, long val3)
+        {
+            return FindGcd(new SteinsAlgorithm(), val1, val2, val3);
+        }
+
+        /// <summary>
+        /// Finds the GCD by Stein.
+        /// </summary>
+        /// <param name="numbers">The numbers.</param>
+        /// <returns>Returns GCD of several numbers.</returns>
+        public static long FindGcdByStein(params long[] numbers)
+        {
+            return FindGcd(new SteinsAlgorithm(), numbers);
+        }
+
+        /// <summary>
+        /// Finds the GCD.
+        /// </summary>
+        /// <param name="val1">The val1.</param>
+        /// <param name="val2">The val2.</param>
+        /// <param name="algorithm">The algorithm.</param>
+        /// <returns>Returns GCD of several numbers.</returns>
+        private static long FindGcd(Algorithm algorithm, long val1, long val2)
+        {
+            return algorithm.GCD(val1, val2);
+        }
+
+        /// <summary>
+        /// Finds the GCD.
+        /// </summary>
+        /// <param name="val1">The val1.</param>
+        /// <param name="val2">The val2.</param>
+        /// <param name="val3">The val3.</param>
+        /// <param name="algorithm">The algorithm.</param>
+        /// <returns>Returns GCD of several numbers.</returns>
+        private static long FindGcd(Algorithm algorithm, long val1, long val2, long val3)
+        {
+            return algorithm.GCD(val1, val2, val3);
+        }
+
+        /// <summary>
+        /// Finds the GCD.
+        /// </summary>
+        /// <param name="algorithm">The algorithm.</param>
+        /// <param name="numbers">The numbers.</param>
+        /// <returns>Returns GCD of several numbers.</returns>
+        private static long FindGcd(Algorithm algorithm, params long[] numbers)
+        {
+            return algorithm.GCD(numbers);
+        }        
+        #endregion
     }
 }

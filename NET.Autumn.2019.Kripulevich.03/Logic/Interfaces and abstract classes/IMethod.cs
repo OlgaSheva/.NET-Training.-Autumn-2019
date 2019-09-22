@@ -1,7 +1,7 @@
 ﻿namespace Logic
 {
     /// <summary>
-    /// Method of calculation of the Nth root of a number.
+    /// Interface to method of calculation of the Nth root of a number.
     /// </summary>
     public interface IMethod
     {
