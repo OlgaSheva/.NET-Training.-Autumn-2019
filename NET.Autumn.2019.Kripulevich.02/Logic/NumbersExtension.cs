@@ -43,14 +43,30 @@ namespace Logic
                     $"{nameof(i)} and {nameof(j)} can't be less than 0 or larger than 31.");
             }
 
-            char[] binaryCharNumberSource = CreateBinaryArrayFromTheNumber.CreateArray(numberSource);
-            char[] binaryCharNumberIn = CreateBinaryArrayFromTheNumber.CreateArray(numberIn);
+            uint bitMaskNumberSource = ~CreateBitMask(i, j - i + 1);
+            uint bitMaskNumberIn = CreateBitMask(0, j - i + 1);
 
-            var resultList = NewArray.CreateNewBinaryArray(binaryCharNumberSource, binaryCharNumberIn, i, j);
-            
-            int result = Convert.ToInt32(new string(resultList), 2);
+            var numberSourceAfterMask = numberSource & bitMaskNumberSource;
+            var numberInAfterMask = numberIn & bitMaskNumberIn;
+            numberInAfterMask <<= i;
 
-            return result;
+            var result = numberInAfterMask ^ numberSourceAfterMask;
+
+            return (int)result;
+        }
+
+        /// <summary>
+        /// Creates the bit mask.
+        /// </summary>
+        /// <param name="start">The start.</param>
+        /// <param name="length">The length.</param>
+        /// <returns>Returns the bit mask.</returns>
+        private static uint CreateBitMask(int start, int length)
+        {
+            uint mask = 0xffffffff;
+            mask >>= 32 - length;
+            mask <<= start;
+            return mask;
         }
     }
 }
