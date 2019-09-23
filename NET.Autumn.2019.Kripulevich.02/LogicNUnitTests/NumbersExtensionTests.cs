@@ -6,6 +6,7 @@ namespace LogicNUnitTests
 {
     class NumbersExtensionTests
     {
+        #region InsertNumberIntoAnother
         [TestCase(15, 15, 0, 0, ExpectedResult = 15)]
         [TestCase(8, 15, 0, 0, ExpectedResult = 9)]
         [TestCase(8, 15, 3, 8, ExpectedResult = 120)]
@@ -17,7 +18,7 @@ namespace LogicNUnitTests
         [TestCase(-2147483648, 2147483647, 0, 30, ExpectedResult = -1)]
         [TestCase(-2223, 5440, 18, 23, ExpectedResult = -16517295)]
         [TestCase(2147481425, 5440, 18, 23, ExpectedResult = 2130966353)]
-        public int InsertNumberIntoAnotherTest(int numberSource, int numberIn, int i, int j)
+        public int InsertNumberIntoAnotherTests(int numberSource, int numberIn, int i, int j)
         {
             return NumbersExtension.InsertNumberIntoAnother(numberSource, numberIn, i, j);
         }
@@ -35,5 +36,23 @@ namespace LogicNUnitTests
             Assert.Throws<ArgumentOutOfRangeException>(() => NumbersExtension.InsertNumberIntoAnother(8, 15, 32, 32));
             Assert.Throws<ArgumentOutOfRangeException>(() => NumbersExtension.InsertNumberIntoAnother(8, 15, 0, 32));
         }
+        #endregion
+
+        #region FindPreviousLessThan
+        [TestCase(21, ExpectedResult = 12)]
+        [TestCase(531, ExpectedResult = 513)]
+        [TestCase(2071, ExpectedResult = 2017)]
+        [TestCase(441, ExpectedResult = 414)]
+        [TestCase(3456123, ExpectedResult = 3453621)]
+        [TestCase(123, ExpectedResult = null)]
+        [TestCase(9, ExpectedResult = null)]
+        public int? FindPreviousLessThanTests(int number) => NumbersExtension.FindPreviousLessThan(number);
+
+        [Test]
+        public void FindPreviousLessThan_NumberLessThan0_ArgumentException()
+        {
+            Assert.Throws<ArgumentException>(() => NumbersExtension.FindPreviousLessThan(-100));
+        }
+        #endregion
     }
 }

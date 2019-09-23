@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Logic
 {
@@ -74,24 +75,26 @@ namespace Logic
                 throw new ArgumentException($"{nameof(array)} can't be empty.");
             }
 
-            int? indexInArrayForWhichTheSumOfLeftAndRightElementsIsEqual =
-                FinderOfIndexInArrayForWhichTheSumsOfLeftAndRightElementsAreEquals.FindIndex(array);
+            if (array.Length == 2)
+            {
+                return null;
+            }
+
+            int? indexInArrayForWhichTheSumOfLeftAndRightElementsIsEqual = FindIndex(array);
 
             return indexInArrayForWhichTheSumOfLeftAndRightElementsIsEqual;
         }
         #endregion
 
-        #region FilterArrayByKey
+        #region FilterArray
         /// <summary>
         /// Filters the array by key.
         /// </summary>
         /// <param name="array">The array.</param>
-        /// <param name="key">The key.</param>
         /// <returns>New array with elements that include the digit.</returns>
         /// <exception cref="System.ArgumentNullException">Throw if array is null.</exception>
         /// <exception cref="System.ArgumentException">Throw if array is empty.</exception>
-        /// <exception cref="System.ArgumentOutOfRangeException">Throw if digit is less than 0.</exception>
-        public static int[] FilterArrayByKey(this int[] array, int key, IPredicate condition)
+        public static int[] FilterArray(this int[] array, IPredicate predicate)
         {
             if (array == null)
             {
@@ -103,31 +106,71 @@ namespace Logic
                 throw new ArgumentException($"{nameof(array)} can't be empty.");
             }
 
-            if (key < 0)
-            {
-                throw new ArgumentOutOfRangeException($"{nameof(key)} can't be less than zero.");
-            }
-
-            var result = GenerateNewArray.GenerateArray(array, key, condition);
+            var result = GenerateArray(array, predicate);
 
             return result;
         }
+        #endregion
 
-        public static int[] FilterArray(this int[] array, IPredicate condition)
+        #region Private methods
+        /// <summary>
+        /// Finds the index in the array for which the sums of left and right elements are equals.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <returns>
+        /// Returns the index in the array for which the sums of left and right elements are equals.
+        /// </returns>
+        private static int? FindIndex(int[] array)
         {
-            if (array == null)
+            int sumLeft;
+            int sumRight;
+            int? indexInArrayForWhichTheSumsOfLeftAndRightElementsAreEquals = null;
+
+            for (int j = 1; j < array.Length - 1; j++)
             {
-                throw new ArgumentNullException($"{nameof(array)} can't be null.");
+                sumLeft = 0;
+                sumRight = 0;
+
+                for (int i = 0; i < array.Length; i++)
+                {
+                    if (i < j)
+                    {
+                        sumLeft += array[i];
+                    }
+                    else if (i > j)
+                    {
+                        sumRight += array[i];
+                    }
+                }
+
+                if (sumLeft - sumRight == 0)
+                {
+                    indexInArrayForWhichTheSumsOfLeftAndRightElementsAreEquals = j;
+                    break;
+                }
             }
 
-            if (array.Length == 0)
+            return indexInArrayForWhichTheSumsOfLeftAndRightElementsAreEquals;
+        }
+
+        /// <summary>
+        /// Generates the array.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <returns>Returns a new array only with required numbers.</returns>
+        private static int[] GenerateArray(int[] array, IPredicate predicate)
+        {
+            var resultList = new List<int>();
+
+            for (int i = 0; i < array.Length; i++)
             {
-                throw new ArgumentException($"{nameof(array)} can't be empty.");
+                if (predicate.IsMatch(array[i]))
+                {
+                    resultList.Add(array[i]);
+                }
             }
 
-            var result = GenerateNewArray.GenerateArray(array, condition);
-
-            return result;
+            return resultList.ToArray();
         }
         #endregion
     }

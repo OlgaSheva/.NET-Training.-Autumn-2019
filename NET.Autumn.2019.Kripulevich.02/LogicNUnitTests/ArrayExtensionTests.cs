@@ -63,30 +63,44 @@ namespace LogicNUnitTests
         }
         #endregion
 
-        #region FilterArrayByKeyTests
-        [TestCase(new[] { 2212332, 1405644, -1236674 }, 0, ExpectedResult = new[] { 1405644 })]
-        [TestCase(new[] { 53, 71, -24, 1001, 32, 1005 }, 2, ExpectedResult = new[] { -24, 32 })]
-        [TestCase(new[] { -27, 173, 371132, 7556, 7243, 10017 }, 7, ExpectedResult = new[] { -27, 173, 371132, 7556, 7243, 10017 })]
-        [TestCase(new[] { 7, 2, 5, 5, -1, -1, 2 }, 9, ExpectedResult = new int[0])]
-        public int[] FilterArrayByKey_ArrayAndDigit_NewArray(int[] array, int digit)
-            => ArrayExtension.FilterArrayByKey(array, digit);
+        #region FilterArray
+        [TestCase(new[] { 2212332, 1405644, -1236674 }, ExpectedResult = new[] { 1405644 })]
+        [TestCase(new[] { 53, 71, -24, 1001, 32, 1005 }, ExpectedResult = new[] { 1001, 1005 })]
+        [TestCase(new[] { 7, 2, 5, 5, -1, -1, 2 }, ExpectedResult = new int[0])]
+        public int[] FilterArray_Array_TheDigitInTheNumberPredicate_NewArray(int[] array)
+            => ArrayExtension.FilterArray(array, new TheDigitInTheNumberPredicate(0));
+
+        [TestCase(new[] { 2212332, 1405644, -1236674 }, ExpectedResult = new[] { 2212332, 1405644, -1236674 })]
+        [TestCase(new[] { 53, 71, -24, 1001, 32, 1005 }, ExpectedResult = new[] { -24, 32 })]
+        [TestCase(new[] { 7, 2, 5, 5, -1, -1, 2 }, ExpectedResult = new int[] { 2, 2 })]
+        public int[] FilterArray_Array_EvenPredicate_NewArray(int[] array)
+            => ArrayExtension.FilterArray(array, new EvenPredicate());
+
+        [TestCase(new[] { int.MinValue, 123321, -1236674 }, ExpectedResult = new[] { 123321 })]
+        [TestCase(new[] { 53, 71, -24, 1001, 32, 1005 }, ExpectedResult = new int[] { 1001 })]
+        [TestCase(new[] { 4321234, 2, 5, int.MaxValue, -1, 11, 2 }, ExpectedResult = new int[] { 4321234, 11 })]
+        public int[] FilterArray_Array_PalindromePredicate_NewArray(int[] array)
+            => ArrayExtension.FilterArray(array, new PalindromePredicate());
 
         [Test]
-        public void FilterArrayByKey_EmptyArray_ArgumentException()
+        public void FilterArray_EmptyArray_ArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => ArrayExtension.FilterArrayByKey(new int[0], 0));
+            Assert.Throws<ArgumentException>(() 
+                => ArrayExtension.FilterArray(new int[0], new TheDigitInTheNumberPredicate(0)));
         }
 
         [Test]
-        public void FilterArrayByKey_NullArray_ArgumentNullException()
+        public void FilterArray_NullArray_ArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() => ArrayExtension.FilterArrayByKey(null, 0));
+            Assert.Throws<ArgumentNullException>(() 
+                => ArrayExtension.FilterArray(null, new EvenPredicate()));
         }
 
         [Test]
-        public void FilterArrayByKey_NegativKey_ArgumentOutOfRangeException()
+        public void FilterArray_NegativKey_ArgumentOutOfRangeException()
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => ArrayExtension.FilterArrayByKey(new int[] { 1, 2 }, -1));
+            Assert.Throws<ArgumentOutOfRangeException>(() 
+                => ArrayExtension.FilterArray(new int[] { 1, 2 }, new TheDigitInTheNumberPredicate(-1)));
         }
         #endregion
 
@@ -100,7 +114,7 @@ namespace LogicNUnitTests
         private static int[] GenerateRandomSortedArray(int min, int max)
         {
             Random random = new Random();
-            int[] randomArray = new int[random.Next(1000000, 100000000)];
+            int[] randomArray = new int[random.Next(0, 10000)];
 
             for (int i = 0; i < randomArray.Length; i++)
             {

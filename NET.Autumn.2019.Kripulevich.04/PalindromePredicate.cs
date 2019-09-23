@@ -1,20 +1,40 @@
 ﻿namespace Logic
 {
-    public class PalindromeNumber : IPredicate
+    /// <summary>
+    /// Predicate of polindrom.
+    /// </summary>
+    /// <seealso cref="Logic.IPredicate" />
+    public class PalindromePredicate : IPredicate
     {
+        /// <summary>
+        /// Determines whether the specified number is polindrom.
+        /// </summary>
+        /// <param name="number">The number.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified number is polindrom; otherwise, <c>false</c>.
+        /// </returns>
         public bool IsMatch(int number)
         {
             var digits = IntToArray(number);
             return DoesThisArrayAPalindrome(digits, 0, digits.Length - 1);
         }
 
+        /// <summary>
+        /// Doeses the this array a palindrome.
+        /// </summary>
+        /// <param name="digits">The digits.</param>
+        /// <param name="first">The first.</param>
+        /// <param name="last">The last.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified array is polindrom; otherwise, <c>false</c>.
+        /// </returns>
         public bool DoesThisArrayAPalindrome(int[] digits, int first, int last)
         {
             if (first < digits.Length / 2)
             {
                 if (digits[first] == digits[last])
                 {
-                    DoesThisArrayAPalindrome(digits, first++, last--);
+                    DoesThisArrayAPalindrome(digits, ++first, --last);
                     return true;
                 }
             }
