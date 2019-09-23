@@ -8,13 +8,6 @@ namespace Logic
     internal class NewtonsMethod : IMethod
     {
         /// <summary>
-        /// Default constructor.
-        /// </summary>
-        public NewtonsMethod()
-        {
-        }
-
-        /// <summary>
         /// Method for calculating the root of the Nth power of a number.
         /// </summary>
         /// <param name="number">The number.</param>
