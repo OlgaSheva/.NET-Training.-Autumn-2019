@@ -55,20 +55,6 @@ namespace Logic
 
             return (int)result;
         }
-
-        /// <summary>
-        /// Creates the bit mask.
-        /// </summary>
-        /// <param name="start">The start.</param>
-        /// <param name="length">The length.</param>
-        /// <returns>Returns the bit mask.</returns>
-        private static uint CreateBitMask(int start, int length)
-        {
-            uint mask = 0xffffffff;
-            mask >>= 32 - length;
-            mask <<= start;
-            return mask;
-        }
         #endregion
 
         #region FindPreviousLessThan        
@@ -134,6 +120,22 @@ namespace Logic
 
                 return newNumber;
             }
+        }        
+        #endregion
+
+        #region Private methods
+        /// <summary>
+        /// Creates the bit mask.
+        /// </summary>
+        /// <param name="start">The start.</param>
+        /// <param name="length">The length.</param>
+        /// <returns>Returns the bit mask.</returns>
+        private static uint CreateBitMask(int start, int length)
+        {
+            uint mask = 0xffffffff;
+            mask >>= 32 - length;
+            mask <<= start;
+            return mask;
         }
 
         /// <summary>
@@ -142,7 +144,7 @@ namespace Logic
         /// <param name="number">The number.</param>
         /// <returns>Returns int[].</returns>
         private static int[] IntToArray(int number)
-        {            
+        {
             int length = number.ToString().Length;
             int[] digits = new int[length];
 
