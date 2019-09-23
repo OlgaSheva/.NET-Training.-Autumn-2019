@@ -3,8 +3,15 @@
     /// <summary>
     /// Finder the digit in the number.
     /// </summary>
-    internal static class FinderTheDigitInTheNumber
+    public class TheDigitInTheNumber : IPredicate
     {
+        int Key { get; }
+
+        public TheDigitInTheNumber(int key)
+        {
+            Key = key;
+        }
+
         /// <summary>
         /// Determines whether [is there the digit in this number] [the specified number].
         /// </summary>
@@ -14,7 +21,7 @@
         ///   <c>true</c> if [is there the digit in this number] [the specified number];
         ///   otherwise, <c>false</c>.
         /// </returns>
-        internal static bool IsThereTheDigitInThisNumber(int number, int digit)
+        public bool DoesThisNumberMeetTheCondition(int number, int digit)
         {
             int absNumber = (number > 0) ? number : - number;
 
@@ -34,6 +41,11 @@
             }
 
             return false;
+        }
+
+        public bool IsMatch(int number)
+        {
+            return DoesThisNumberMeetTheCondition(number, Key);
         }
     }
 }

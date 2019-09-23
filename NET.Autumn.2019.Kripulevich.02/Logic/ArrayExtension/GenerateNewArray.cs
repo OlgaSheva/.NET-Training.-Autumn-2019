@@ -3,9 +3,9 @@
 namespace Logic
 {
     /// <summary>
-    /// Generater or a array with required numbers. 
+    /// Generater new array. 
     /// </summary>
-    internal static class GeneraterOfArrayWithRequiredNumbers
+    internal static class GenerateNewArray
     {
         /// <summary>
         /// Generates the array.
@@ -13,13 +13,28 @@ namespace Logic
         /// <param name="array">The array.</param>
         /// <param name="digit">The digit.</param>
         /// <returns>Returns a new array only with required numbers.</returns>
-        internal static int[] GenerateArray(int[] array, int digit)
+        internal static int[] GenerateArray(int[] array, int digit, IPredicate condition)
         {
             var resultList = new List<int>();
 
             for (int i = 0; i < array.Length; i++)
             {
-                if (FinderTheDigitInTheNumber.IsThereTheDigitInThisNumber(array[i], digit))
+                if (condition.IsMatch(array[i]))
+                {
+                    resultList.Add(array[i]);
+                }
+            }
+
+            return resultList.ToArray();
+        }
+
+        internal static int[] GenerateArray(int[] array, IPredicate condition)
+        {
+            var resultList = new List<int>();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (condition.IsMatch(array[i]))
                 {
                     resultList.Add(array[i]);
                 }

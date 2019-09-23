@@ -37,12 +37,17 @@ namespace Logic
 
             if (recursiIndex < array.Length)
             {
-                return Math.Max(array[recursiIndex], FindMaximumItem(array, ++recursiIndex));
+                return Max(array[recursiIndex], FindMaximumItem(array, ++recursiIndex));
             }
             else
             {
                 return array[0];
             }
+        }
+
+        static int Max(int a, int b)
+        {
+            return a > b ? a : b;
         }
         #endregion
 
@@ -81,12 +86,12 @@ namespace Logic
         /// Filters the array by key.
         /// </summary>
         /// <param name="array">The array.</param>
-        /// <param name="digit">The digit.</param>
+        /// <param name="key">The key.</param>
         /// <returns>New array with elements that include the digit.</returns>
         /// <exception cref="System.ArgumentNullException">Throw if array is null.</exception>
         /// <exception cref="System.ArgumentException">Throw if array is empty.</exception>
         /// <exception cref="System.ArgumentOutOfRangeException">Throw if digit is less than 0.</exception>
-        public static int[] FilterArrayByKey(int[] array, int digit)
+        public static int[] FilterArrayByKey(this int[] array, int key, IPredicate condition)
         {
             if (array == null)
             {
@@ -98,12 +103,29 @@ namespace Logic
                 throw new ArgumentException($"{nameof(array)} can't be empty.");
             }
 
-            if (digit < 0)
+            if (key < 0)
             {
-                throw new ArgumentOutOfRangeException($"{nameof(digit)} can't be less than zero.");
+                throw new ArgumentOutOfRangeException($"{nameof(key)} can't be less than zero.");
             }
 
-            var result = GeneraterOfArrayWithRequiredNumbers.GenerateArray(array, digit);
+            var result = GenerateNewArray.GenerateArray(array, key, condition);
+
+            return result;
+        }
+
+        public static int[] FilterArray(this int[] array, IPredicate condition)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException($"{nameof(array)} can't be null.");
+            }
+
+            if (array.Length == 0)
+            {
+                throw new ArgumentException($"{nameof(array)} can't be empty.");
+            }
+
+            var result = GenerateNewArray.GenerateArray(array, condition);
 
             return result;
         }
