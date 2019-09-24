@@ -114,7 +114,7 @@ namespace LogicNUnitTests
         private static int[] GenerateRandomSortedArray(int min, int max)
         {
             Random random = new Random();
-            int[] randomArray = new int[random.Next(0, 10000)];
+            int[] randomArray = new int[random.Next(0, 100000000)];
 
             for (int i = 0; i < randomArray.Length; i++)
             {

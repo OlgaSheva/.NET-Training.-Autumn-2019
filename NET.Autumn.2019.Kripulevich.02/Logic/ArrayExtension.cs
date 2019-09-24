@@ -10,21 +10,18 @@ namespace Logic
     {
         #region FindMaximumItem
         /// <summary>
-        /// Finds the maximum item.
+        /// Index of the max item in the array.
         /// </summary>
-        /// <param name="array">The array.</param>
-        /// <returns>Maximum item.</returns>
-        public static int FindMaximumItem(int[] array) => FindMaximumItem(array, 0);
+        private static int indexOfMaxItem = 0;
 
         /// <summary>
         /// Finds the maximum item.
         /// </summary>
         /// <param name="array">The array.</param>
-        /// <param name="recursiIndex">The index of recursion.</param>
         /// <returns>Maximum item.</returns>
         /// <exception cref="ArgumentNullException">Thrown when array is null.</exception>
         /// <exception cref="ArgumentException">Thrown when array is empty.</exception>
-        public static int FindMaximumItem(int[] array, int recursiIndex)
+        public static int FindMaximumItem(int[] array)
         {
             if (array == null)
             {
@@ -36,20 +33,8 @@ namespace Logic
                 throw new ArgumentException($"{nameof(array)} can't be empty.");
             }
 
-            if (recursiIndex < array.Length)
-            {
-                return Max(array[recursiIndex], FindMaximumItem(array, ++recursiIndex));
-            }
-            else
-            {
-                return array[0];
-            }
-        }
-
-        static int Max(int a, int b)
-        {
-            return a > b ? a : b;
-        }
+            return array[FindIndexOfMaximumItem(array)];
+        } 
         #endregion
 
         #region FindBalanceIndex        
@@ -91,6 +76,7 @@ namespace Logic
         /// Filters the array by key.
         /// </summary>
         /// <param name="array">The array.</param>
+        /// <param name="predicate">The predicate.</param>
         /// <returns>New array with elements that include the digit.</returns>
         /// <exception cref="System.ArgumentNullException">Throw if array is null.</exception>
         /// <exception cref="System.ArgumentException">Throw if array is empty.</exception>
@@ -112,7 +98,41 @@ namespace Logic
         }
         #endregion
 
-        #region Private methods
+        #region Private methods        
+        /// <summary>
+        /// Find index of maximum item in the array.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <param name="lowIndex">The low index.</param>
+        /// <param name="highIndex">The high index.</param>
+        /// <returns>Return an index of maximum item in the array.</returns>
+        private static int FindIndexOfMaximumItem(int[] array, int lowIndex, int highIndex)
+        {
+            if (lowIndex < highIndex)
+            {
+                int middleIndex = (lowIndex + highIndex) / 2;
+                FindIndexOfMaximumItem(array, lowIndex, middleIndex);
+                FindIndexOfMaximumItem(array, middleIndex + 1, highIndex);
+            }
+
+            if (array[lowIndex] > array[indexOfMaxItem] || array[highIndex] > array[indexOfMaxItem])
+            {
+                indexOfMaxItem = (array[lowIndex] > array[highIndex]) ? lowIndex : highIndex;
+            }
+
+            return indexOfMaxItem;
+        }
+
+        /// <summary>
+        /// Find index of maximum item in the array.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <returns>Return an index of maximum item in the array.</returns>
+        private static int FindIndexOfMaximumItem(int[] array)
+        {
+            return FindIndexOfMaximumItem(array, 0, array.Length - 1);
+        }
+
         /// <summary>
         /// Finds the index in the array for which the sums of left and right elements are equals.
         /// </summary>
@@ -157,6 +177,7 @@ namespace Logic
         /// Generates the array.
         /// </summary>
         /// <param name="array">The array.</param>
+        /// <param name="predicate">The predicate.</param>
         /// <returns>Returns a new array only with required numbers.</returns>
         private static int[] GenerateArray(int[] array, IPredicate predicate)
         {
