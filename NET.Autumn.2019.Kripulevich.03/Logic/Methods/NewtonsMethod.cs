@@ -37,48 +37,11 @@ namespace Logic
             do
             {
                 x1 = x0;
-                x0 = (1 / n) * (((n - 1) * x1) + (number / Pow(x1, n - 1)));
+                x0 = (1 / n) * (((n - 1) * x1) + (number / Math.Pow(x1, n - 1)));
             }
             while (Math.Abs(x0 - x1) > accuracy);            
-
-            x0 = Math.Round(x0, RoundIndex(accuracy));
             
             return x0;
-        }
-
-        /// <summary>
-        /// Calculation of a rounding index based on a given accuracy.
-        /// </summary>
-        /// <param name="accuracy">The precision.</param>
-        /// <returns>Returns round index.</returns>
-        private static int RoundIndex(double accuracy)
-        {
-            int round = 1;
-
-            for (int i = (int)(1 / accuracy); i > 10; i /= 10)
-            {
-                round++;
-            }
-
-            return round;
-        }
-
-        /// <summary>
-        /// The exponentiation.
-        /// </summary>
-        /// <param name="number">The number.</param>
-        /// <param name="degree">The degree.</param>
-        /// <returns>The result of exponentiation.</returns>
-        private static double Pow(double number, double degree)
-        {
-            double result = 1;
-
-            for (int i = 0; i < degree; i++)
-            {
-                result *= number;
-            }
-
-            return result;
         }
     }
 }
