@@ -104,17 +104,9 @@ namespace Logic
 
                 Swap(ref digits[index - 1], ref digits[indexOfLargestDigitFromRightSize]);
 
-                // Sort the digits after (index) in order.
-                for (int k = index; k < digits.Length; k++)
-                {
-                    for (int j = index; j < digits.Length; j++)
-                    {
-                        if (digits[j] < digits[k])
-                        {
-                            Swap(ref digits[k], ref digits[j]);
-                        }
-                    }
-                }
+                // Sort the digits after (index - 1) in order.
+                Array.Sort(digits, index, digits.Length - index);
+                Array.Reverse(digits, index, digits.Length - index);
 
                 int newNumber = ArrayToInt(digits);
 
