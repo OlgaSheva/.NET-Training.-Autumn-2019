@@ -43,12 +43,12 @@ namespace Tests
         [TestCase(-5, 10, ExpectedResult = 5)]
         [TestCase(-5, -10, ExpectedResult = 5)]
         public static long FindGcdByEuclidean_TwoNumbers_GCD(long val1, long val2) 
-            => MathExtension.FindGcdByEuclidean(val1, val2);
+            => MathExtension.FindGcd(new EuclideanAlgorithm(),val1, val2);
 
         [TestCase(0, 1, 5, 10, ExpectedResult = 1)]
         [TestCase(null, 0, -10, 5, 10, 15, 20, ExpectedResult = 5)]
         public static long FindGcdByEuclidean_Params_GCD(params long[] numbers)
-            => MathExtension.FindGcdByEuclidean(numbers);
+            => MathExtension.FindGcd(new EuclideanAlgorithm(), numbers);
 
         [TestCase(322328, 122120, ExpectedResult = 344)]
         [TestCase(1, 10, ExpectedResult = 1)]
@@ -61,12 +61,12 @@ namespace Tests
         [TestCase(-5, 10, ExpectedResult = 5)]
         [TestCase(-5, -10, ExpectedResult = 5)]
         public static long FindGcdByStein_TwoNumbers_GCD(long val1, long val2)
-            => MathExtension.FindGcdByStein(val1, val2);
+            => MathExtension.FindGcd(new SteinsAlgorithm(), val1, val2);
 
         [TestCase(0, 1, 5, 10, ExpectedResult = 1)]
         [TestCase(null, 0, -10, 5, 10, 15, 20, ExpectedResult = 5)]
         public static long FindGcdByStein_Params_GCD(params long[] numbers)
-            => MathExtension.FindGcdByStein(numbers);
+            => MathExtension.FindGcd(new SteinsAlgorithm(), numbers);
         #endregion
     }
 }
