@@ -45,6 +45,15 @@ namespace Tests
         public static long FindGcdByEuclidean_TwoNumbers_GCD(long val1, long val2) 
             => MathExtension.FindGcd(new EuclideanAlgorithm(),val1, val2);
 
+        
+        [TestCase(-5, -10, ExpectedResult = 5)]
+        public static long FindGcdByEuclideanWithTimer_TwoNumbers_GCD(long val1, long val2)
+            => MathExtension.FindGcd(new EuclideanAlgorithm(), out double time, val1, val2);
+
+        [TestCase(-5, -10, ExpectedResult = 5)]
+        public static long FindGcdBySteinsWithTimer_TwoNumbers_GCD(long val1, long val2)
+            => MathExtension.FindGcd(new SteinsAlgorithm(), out double time, val1, val2);
+
         [TestCase(0, 1, 5, 10, ExpectedResult = 1)]
         [TestCase(null, 0, -10, 5, 10, 15, 20, ExpectedResult = 5)]
         public static long FindGcdByEuclidean_Params_GCD(params long[] numbers)
