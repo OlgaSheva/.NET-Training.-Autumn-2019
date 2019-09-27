@@ -142,35 +142,28 @@ namespace Logic
         /// </returns>
         private static int? FindIndex(int[] array)
         {
-            int sumLeft;
-            int sumRight;
-            int? indexInArrayForWhichTheSumsOfLeftAndRightElementsAreEquals = null;
+            int sum = 0;
 
-            for (int j = 1; j < array.Length - 1; j++)
+            for (int i = 0; i < array.Length; i++)
             {
-                sumLeft = 0;
-                sumRight = 0;
-
-                for (int i = 0; i < array.Length; i++)
-                {
-                    if (i < j)
-                    {
-                        sumLeft += array[i];
-                    }
-                    else if (i > j)
-                    {
-                        sumRight += array[i];
-                    }
-                }
-
-                if (sumLeft - sumRight == 0)
-                {
-                    indexInArrayForWhichTheSumsOfLeftAndRightElementsAreEquals = j;
-                    break;
-                }
+                sum += array[i];
             }
 
-            return indexInArrayForWhichTheSumsOfLeftAndRightElementsAreEquals;
+            int sumLeft = array[0];
+            int sumRight = sum - array[0] - array[1];
+
+            for (int i = 1; i < array.Length - 1; i++)
+            {
+                if (sumLeft == sumRight)
+                {
+                    return i;
+                }
+
+                sumLeft += array[i];
+                sumRight -= array[i + 1];
+            }
+
+            return null;
         }
 
         /// <summary>
