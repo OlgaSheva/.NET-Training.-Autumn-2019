@@ -1,4 +1,6 @@
-﻿namespace Logic
+﻿using System;
+
+namespace Logic
 {
     /// <summary>
     /// Stein's algorithm of calculation of the GCD of several numbers.
@@ -16,8 +18,8 @@
         /// </returns>
         public override long GCD(long val1, long val2)
         {
-            var v1 = (val1 > 0) ? val1 : -val1;
-            var v2 = (val2 > 0) ? val2 : -val2;
+            var v1 = Math.Abs(val1);
+            var v2 = Math.Abs(val2);
             
             if (v1 == 0)
             {
@@ -34,17 +36,19 @@
                 return 1;
             }         
             
+            // If v2 is even.
             if ((v1 & 1) == 0)
-            {                      // Если а — чётное, то…
+            {                      
                 return ((v2 & 1) == 0)
-                    ? this.GCD(v1 >> 1, v2 >> 1) << 1       // …если b — чётное, то НОД(a, b) = 2 * НОД(a / 2, b / 2)
-                    : this.GCD(v1 >> 1, v2);                // …если b — нечётное, то НОД(a, b) = НОД(a / 2, b)
+                    ? this.GCD(v1 >> 1, v2 >> 1) << 1       // If v2 is even GCD(v1, v2) = 2 * GCD(v1 / 2, v2 / 2)
+                    : this.GCD(v1 >> 1, v2);                // If v2 isn't even GCD(v1, v2) = GCD(v1 / 2, v2)
             }
+            // If v2 isn't even.
             else
-            {                                  // Если a — нечётное, то…
+            { 
                 return ((v2 & 1) == 0)
-                    ? this.GCD(v1, v2 >> 1)                 // …если b — чётное, то НОД(a, b) = НОД(a, b / 2)
-                    : this.GCD(v2, v1 > v2 ? v1 - v2 : v2 - v1); // …если b — нечётное, то НОД(a, b) = НОД(b, |a - b|)
+                    ? this.GCD(v1, v2 >> 1)                 // If v2 is even GCD(v1, v2) = 2 * GCD(v1, v2 / 2)
+                    : this.GCD(v2, Math.Abs(v1 - v2));      // If v2 isn't even GCD(v1, v2) = GCD(v2, |v1 - v2|)
             }
         }
     }
