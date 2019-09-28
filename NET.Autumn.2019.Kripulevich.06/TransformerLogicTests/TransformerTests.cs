@@ -1,7 +1,6 @@
-using NUnit.Framework;
-using Logic;
+﻿using NUnit.Framework;
 
-namespace LogicTests
+namespace TransformerLogicTests
 {
     public class TransformerTests
     {
@@ -17,9 +16,23 @@ namespace LogicTests
         [TestCase(double.Epsilon, ExpectedResult = "four point nine four zero six five six four five eight four one two four seven E minus three two four")]
         [TestCase(double.MaxValue, ExpectedResult = "one point seven nine seven six nine three one three four eight six two three two E plus three zero eight")]
         [TestCase(double.MinValue, ExpectedResult = "minus one point seven nine seven six nine three one three four eight six two three two E plus three zero eight")]
-        public string TransformToWords_DoubleNumber_StringRepresentation(double number)
+        public string TransformToWords_EnglishDictionary_StringRepresentation(double number)
         {
-            var transformer = new Transformer();
+            var dictionary = new EnglishDictionary().Create();
+            var transformer = new DoubleToWordTransformer(dictionary);
+            return transformer.TransformToWords(number);
+        }
+
+        [TestCase(double.NaN, ExpectedResult = "No un número")]
+        [TestCase(double.NegativeInfinity, ExpectedResult = "Infinito negativo")]
+        [TestCase(double.PositiveInfinity, ExpectedResult = "Infinito positivo")]
+        [TestCase(0.0d, ExpectedResult = "cero")]
+        [TestCase(-0.0d, ExpectedResult = "cero")]
+        [TestCase(0.1d, ExpectedResult = "cero punto uno")]
+        public string TransformToWords_SpanishDictionary_StringRepresentation(double number)
+        {
+            var dictionary = new SpanishDictionary().Create();
+            var transformer = new DoubleToWordTransformer(dictionary);
             return transformer.TransformToWords(number);
         }
     }
