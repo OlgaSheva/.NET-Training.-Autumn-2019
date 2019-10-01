@@ -6,7 +6,7 @@ namespace Logic
     /// Stein's algorithm of calculation of the GCD of several numbers.
     /// </summary>
     /// <seealso cref="Logic.Algorithm" />
-    public class SteinsAlgorithm : Algorithm
+    internal class SteinsAlgorithm : Algorithm
     {
         /// <summary>
         /// Calculate the GCD of several numbers.
@@ -16,7 +16,7 @@ namespace Logic
         /// <returns>
         /// Returns GCD of two numbers.
         /// </returns>
-        public override long GCD(long val1, long val2)
+        internal override long GCD(long val1, long val2)
         {
             var v1 = Math.Abs(val1);
             var v2 = Math.Abs(val2);

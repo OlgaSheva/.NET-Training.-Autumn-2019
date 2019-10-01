@@ -4,7 +4,7 @@
     /// Euclidean algorithm of calculation of the GCD of several numbers.
     /// </summary>
     /// <seealso cref="Logic.Algorithm" />
-    public class EuclideanAlgorithm : Algorithm
+    internal class EuclideanAlgorithm : Algorithm
     {
         /// <summary>
         /// Calculate the GCD of several numbers.
@@ -14,7 +14,7 @@
         /// <returns>
         /// Returns GCD of two numbers.
         /// </returns>
-        public override long GCD(long val1, long val2)
+        internal override long GCD(long val1, long val2)
         {
             var v1 = (val1 > 0) ? val1 : -val1;
             var v2 = (val2 > 0) ? val2 : -val2;

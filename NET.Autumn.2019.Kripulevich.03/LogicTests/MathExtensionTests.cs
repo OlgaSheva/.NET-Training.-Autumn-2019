@@ -25,6 +25,8 @@ namespace Tests
         [TestCase(-0.01, 2, 0.0001)]
         [TestCase(0.01, -2, 0.0001)]
         [TestCase(0.01, 2, -1)]
+        [TestCase(double.PositiveInfinity, 2, -1)]
+        [TestCase(double.NegativeInfinity, 2, -1)]
         public void FindNthRoot_NegativeParameters_ArgumentException(double number, int rootDegree, double accuracy)
         {
             Assert.Throws<ArgumentException>(() => MathExtension.FindNthRoot(number, rootDegree, accuracy));
@@ -32,6 +34,7 @@ namespace Tests
         #endregion
 
         #region FindGcd
+
         [TestCase(322328, 122120, ExpectedResult = 344)]
         [TestCase(1, 10, ExpectedResult = 1)]
         [TestCase(5, 10, ExpectedResult = 5)]
@@ -42,22 +45,24 @@ namespace Tests
         [TestCase(5, 0, ExpectedResult = 5)]
         [TestCase(-5, 10, ExpectedResult = 5)]
         [TestCase(-5, -10, ExpectedResult = 5)]
+        [TestCase(int.MaxValue, int.MaxValue, ExpectedResult = int.MaxValue)]
+        [TestCase(int.MaxValue, int.MinValue, ExpectedResult = 1)]
         public static long FindGcdByEuclidean_TwoNumbers_GCD(long val1, long val2) 
-            => MathExtension.FindGcd(new EuclideanAlgorithm(),val1, val2);
+            => MathExtension.FindGcdByEuclid(val1, val2);
 
         
         [TestCase(-5, -10, ExpectedResult = 5)]
         public static long FindGcdByEuclideanWithTimer_TwoNumbers_GCD(long val1, long val2)
-            => MathExtension.FindGcd(new EuclideanAlgorithm(), out double time, val1, val2);
+            => MathExtension.FindGcdByEuclid(out double time, val1, val2);
 
         [TestCase(-5, -10, ExpectedResult = 5)]
         public static long FindGcdBySteinsWithTimer_TwoNumbers_GCD(long val1, long val2)
-            => MathExtension.FindGcd(new SteinsAlgorithm(), out double time, val1, val2);
+            => MathExtension.FindGcdByStein(out double time, val1, val2);
 
         [TestCase(0, 1, 5, 10, ExpectedResult = 1)]
         [TestCase(null, 0, -10, 5, 10, 15, 20, ExpectedResult = 5)]
         public static long FindGcdByEuclidean_Params_GCD(params long[] numbers)
-            => MathExtension.FindGcd(new EuclideanAlgorithm(), numbers);
+            => MathExtension.FindGcdByEuclid(numbers);
 
         [TestCase(322328, 122120, ExpectedResult = 344)]
         [TestCase(1, 10, ExpectedResult = 1)]
@@ -70,12 +75,17 @@ namespace Tests
         [TestCase(-5, 10, ExpectedResult = 5)]
         [TestCase(-5, -10, ExpectedResult = 5)]
         public static long FindGcdByStein_TwoNumbers_GCD(long val1, long val2)
-            => MathExtension.FindGcd(new SteinsAlgorithm(), val1, val2);
+            => MathExtension.FindGcdByStein(val1, val2);
 
         [TestCase(0, 1, 5, 10, ExpectedResult = 1)]
         [TestCase(null, 0, -10, 5, 10, 15, 20, ExpectedResult = 5)]
         public static long FindGcdByStein_Params_GCD(params long[] numbers)
-            => MathExtension.FindGcd(new SteinsAlgorithm(), numbers);
+            => MathExtension.FindGcdByStein(numbers);
+
+        public static void FindGcdByStein_ZeroParams_GCD(params long[] numbers)
+        {
+            Assert.Throws<ArgumentException>(() => MathExtension.FindGcdByStein(0, 0, 0, 0, 0, 0, 0));
+        }
         #endregion
     }
 }
