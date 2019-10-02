@@ -1,4 +1,6 @@
-﻿namespace Logic
+﻿using System;
+
+namespace Logic
 {
     /// <summary>
     /// Euclidean algorithm of calculation of the GCD of several numbers.
@@ -16,8 +18,13 @@
         /// </returns>
         internal override long GCD(long val1, long val2)
         {
-            var v1 = (val1 > 0) ? val1 : -val1;
-            var v2 = (val2 > 0) ? val2 : -val2;
+            if (val1 == long.MinValue || val2 == long.MinValue)
+            {
+                throw new ArgumentException("Numbers can't be less than -9223372036854775807");
+            }
+
+            var v1 = Math.Abs(val1);
+            var v2 = Math.Abs(val2);
 
             if (v1 == 0)
             {

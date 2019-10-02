@@ -45,8 +45,10 @@ namespace Tests
         [TestCase(5, 0, ExpectedResult = 5)]
         [TestCase(-5, 10, ExpectedResult = 5)]
         [TestCase(-5, -10, ExpectedResult = 5)]
-        [TestCase(int.MaxValue, int.MaxValue, ExpectedResult = int.MaxValue)]
+        [TestCase(int.MaxValue, int.MaxValue, ExpectedResult = int.MaxValue)]        
         [TestCase(int.MaxValue, int.MinValue, ExpectedResult = 1)]
+        [TestCase(long.MaxValue, long.MaxValue, ExpectedResult = long.MaxValue)]
+        [TestCase(long.MaxValue, long.MinValue + 1, ExpectedResult = long.MaxValue)]
         public static long FindGcdByEuclidean_TwoNumbers_GCD(long val1, long val2) 
             => MathExtension.FindGcdByEuclid(val1, val2);
 
@@ -82,10 +84,17 @@ namespace Tests
         public static long FindGcdByStein_Params_GCD(params long[] numbers)
             => MathExtension.FindGcdByStein(numbers);
 
-        public static void FindGcdByStein_ZeroParams_GCD(params long[] numbers)
+        public static void FindGcdByStein_ZeroParams_ArgumentExeption(params long[] numbers)
         {
             Assert.Throws<ArgumentException>(() => MathExtension.FindGcdByStein(0, 0, 0, 0, 0, 0, 0));
         }
+
+        public static void FindGcdByStein_LongMinValue_ArgumentExeption(params long[] numbers)
+        {
+            Assert.Throws<ArgumentException>(() 
+                => MathExtension.FindGcdByStein(long.MinValue, long.MaxValue));
+        }
+
         #endregion
     }
 }
