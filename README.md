@@ -81,8 +81,6 @@
 | 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Algorithms.V3*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V3) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V3.Tests/GCDAlgorithmsTests.cs)
 | 4 | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png) | [*Algorithms.V4*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V4) |  |  | [*Console Client Code*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V4.ConsoleUI/Program.cs)
 
-### Additional Task
-
 ### Day 8. 01.10.2019
 
 #### Task Status
@@ -92,6 +90,8 @@
 | 1 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#) 
 | 2 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#) 
 | 3 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#)
+
+### Additional Task
 
 #### Task Status
 
