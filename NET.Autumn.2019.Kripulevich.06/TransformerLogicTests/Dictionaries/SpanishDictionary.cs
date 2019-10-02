@@ -1,13 +1,11 @@
-﻿using TransformerLogic.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace TransformerLogicTests
 {
     /// <summary>
     /// Spanish dictionary.
     /// </summary>
-    /// <seealso cref="Logic.Interfaces.IDictionaryFactory" />
-    class SpanishDictionary : IDictionaryFactory
+    class SpanishDictionary
     {
         /// <summary>
         /// Creates the spanish dictionary.
