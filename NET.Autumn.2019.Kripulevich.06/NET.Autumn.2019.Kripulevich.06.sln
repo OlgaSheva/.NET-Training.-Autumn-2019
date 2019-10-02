@@ -7,9 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransformerLogic", "Transfo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransformerLogicTests", "TransformerLogicTests\TransformerLogicTests.csproj", "{1FC90E1E-83C6-4B4B-988C-6F5B7D2ABBD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDoubleExtension", "SysyemDoubleExtension\SystemDoubleExtension.csproj", "{BDA369E9-B8AF-420D-9DAE-ADEAE3342CE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemDoubleExtension", "SysyemDoubleExtension\SystemDoubleExtension.csproj", "{BDA369E9-B8AF-420D-9DAE-ADEAE3342CE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDoubleExtensionTests", "SysyemDoubleExtensionTests\SystemDoubleExtensionTests.csproj", "{4C1F55EC-B738-4F20-A83D-D0E6543007E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemDoubleExtensionTests", "SysyemDoubleExtensionTests\SystemDoubleExtensionTests.csproj", "{4C1F55EC-B738-4F20-A83D-D0E6543007E2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImmutablePolynomial", "ImmutablePolynomial\ImmutablePolynomial.csproj", "{DE766393-C6FB-45A3-872E-17B2367AB155}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImmutablePolynomialTests", "ImmutablePolynomialTests\ImmutablePolynomialTests.csproj", "{64C5F7E1-9B16-45AD-88CC-198178BFD0FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{4C1F55EC-B738-4F20-A83D-D0E6543007E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C1F55EC-B738-4F20-A83D-D0E6543007E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C1F55EC-B738-4F20-A83D-D0E6543007E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE766393-C6FB-45A3-872E-17B2367AB155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE766393-C6FB-45A3-872E-17B2367AB155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE766393-C6FB-45A3-872E-17B2367AB155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE766393-C6FB-45A3-872E-17B2367AB155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64C5F7E1-9B16-45AD-88CC-198178BFD0FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64C5F7E1-9B16-45AD-88CC-198178BFD0FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64C5F7E1-9B16-45AD-88CC-198178BFD0FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64C5F7E1-9B16-45AD-88CC-198178BFD0FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
