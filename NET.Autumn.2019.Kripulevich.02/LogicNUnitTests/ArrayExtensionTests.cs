@@ -42,6 +42,7 @@ namespace LogicNUnitTests
         #endregion
 
         #region FindBalanceIndexTests
+
         [TestCase(new int[] { 0, 1, 0, 1, 0, 1, 0 }, ExpectedResult = 3)]
         [TestCase(new int[] { 10, 1, 0, 1, 8, 1, 0 }, ExpectedResult = 1)]
         [TestCase(new int[] { -10, -1, 0, -1, -8, -1, 0 }, ExpectedResult = 1)]
@@ -65,6 +66,7 @@ namespace LogicNUnitTests
         #endregion
 
         #region FilterArray
+
         [TestCase(new[] { 2212332, 1405644, -1236674 }, ExpectedResult = new[] { 1405644 })]
         [TestCase(new[] { 53, 71, -24, 1001, 32, 1005 }, ExpectedResult = new[] { 1001, 1005 })]
         [TestCase(new[] { 7, 2, 5, 5, -1, -1, 2 }, ExpectedResult = new int[0])]

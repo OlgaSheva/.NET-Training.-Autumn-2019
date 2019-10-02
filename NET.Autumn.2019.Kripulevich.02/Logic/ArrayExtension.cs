@@ -37,7 +37,8 @@ namespace Logic
         } 
         #endregion
 
-        #region FindBalanceIndex        
+        #region FindBalanceIndex
+
         /// <summary>
         /// Finds the index of the balance.
         /// </summary>
@@ -98,7 +99,8 @@ namespace Logic
         }
         #endregion
 
-        #region Private methods        
+        #region Private methods 
+        
         /// <summary>
         /// Find index of maximum item in the array.
         /// </summary>
