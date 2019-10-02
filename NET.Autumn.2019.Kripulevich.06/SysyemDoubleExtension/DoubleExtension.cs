@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace SystemDoubleExtension
 {
@@ -16,83 +14,31 @@ namespace SystemDoubleExtension
         /// <returns></returns>
         public static string IEEE754Format(this double number)
         {
-            var dl = new DoublingLongExplorer();
+            var dl = new DoubleToLongExplorer();
             dl.D = number;
 
-            long bits = dl.L;
+            long longNumber = dl.L;
 
-            bool negative = (bits < 0);
-            int exponent = (int)((bits >> 52) & 0x7ffL);
-            long mantissa = bits & 0xfffffffffffffL;
+            int bitsCount = sizeof(double) * 8;
+            char[] result = new char[bitsCount];
+            result[0] = (longNumber < 0) ? '1' : '0';
 
-            string s = ((negative) ? 1 : 0).ToString();
-            s += GetExponent(exponent);
-            s += GetMantissa(mantissa);
+            for (int i = bitsCount - 2, j = 1; i >= 0; i--, j++)
+            {
+                result[j] = (longNumber & (1L << i)) != 0 ? '1' : '0'; 
+            }
 
-            return s;
+            return new string(result);
         }
 
         /// <summary>
         /// Number with floating point to long (System.Int64) converter.
         /// </summary>
         [StructLayout(LayoutKind.Explicit)]
-        private struct DoublingLongExplorer
+        private struct DoubleToLongExplorer
         {
-            [FieldOffset(0)] public Double D;
+            [FieldOffset(0)] public double D;
             [FieldOffset(0)] public long L;
-        } 
-        
-        private static string GetExponent(long number)
-        {
-            LinkedList<long> list = GetBits(number);
-
-            while (list.Count < 11)
-            {
-                list.AddFirst(0);
-            }
-            
-            string s = null;
-            foreach (var item in list)
-            {
-                s += item.ToString();
-            }
-
-            return s;
-        }
-
-        private static string GetMantissa(long number)
-        {
-            LinkedList<long> list = GetBits(number);
-
-            while (list.Count < 52)
-            {
-                list.AddFirst(0);
-            }
-
-            string s = null;
-            foreach (var item in list)
-            {
-                s += item.ToString();
-            }
-
-            return s;
-        }
-
-        private static LinkedList<long> GetBits(long number)
-        {
-            var list = new LinkedList<long>();
-            number = Math.Abs(number);
-            while (number > 1)
-            {
-                list.AddFirst(number % 2);
-                number /= 2;
-            }
-            if (number == 1)
-            {
-                list.AddFirst(number);
-            }
-
-            return list;
-        }
+        }   
     }
 }
