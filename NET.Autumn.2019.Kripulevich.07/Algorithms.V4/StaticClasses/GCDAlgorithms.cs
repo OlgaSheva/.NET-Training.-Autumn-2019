@@ -15,7 +15,7 @@ namespace Algorithms.V4.StaticClasses
         /// The decorator.
         /// </summary>
         public static TimeDecorator timeDecorator = new TimeDecorator(new EuclideanAlgorithm(), new StopWatcher());
-        //static LoggerDecorator loggerDecorator = new LoggerDecorator(new EuclideanAlgorithm(), new Logger());
+        //static LoggerDecorator loggerDecorator = new LoggerDecorator(new EuclideanAlgorithm(), new NLogger());
 
         /// <summary>
         /// Finds the GCD by euclidean.
