@@ -47,8 +47,6 @@ namespace LogicNUnitTests
         [TestCase(new int[] { 10, 1, 0, 1, 8, 1, 0 }, ExpectedResult = 1)]
         [TestCase(new int[] { -10, -1, 0, -1, -8, -1, 0 }, ExpectedResult = 1)]
         [TestCase(new int[] { 100, 1, 0, 1, 0, 1, 0 }, ExpectedResult = null)]
-        [TestCase(new int[] { 100, int.MaxValue, 0, 1, 0, int.MinValue, 0 }, ExpectedResult = null)]
-        [TestCase(new int[] { int.MaxValue, int.MinValue, int.MaxValue, 0, 1, 0, int.MaxValue, int.MinValue, int.MaxValue }, ExpectedResult = 4)]
         public int? FindBalanceIndex_Array_IndexInArrayForWhichTheSumOfLeftAndRightElementsIsEqual(int[] array)
             => ArrayExtension.FindBalanceIndex(array);
 
@@ -63,6 +61,7 @@ namespace LogicNUnitTests
         {
             Assert.Throws<ArgumentException>(() => ArrayExtension.FindBalanceIndex(new int[] { }));
         }
+
         #endregion
 
         #region FilterArray

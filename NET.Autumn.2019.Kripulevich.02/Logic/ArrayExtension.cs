@@ -142,13 +142,17 @@ namespace Logic
         /// <returns>
         /// Returns the index in the array for which the sums of left and right elements are equals.
         /// </returns>
+        /// <exception cref="OverflowException"></exception>
         private static int? FindIndex(int[] array)
         {
             int sum = 0;
 
             for (int i = 0; i < array.Length; i++)
             {
-                sum += array[i];
+                checked
+                {
+                    sum += array[i];
+                }
             }
 
             int sumLeft = array[0];
