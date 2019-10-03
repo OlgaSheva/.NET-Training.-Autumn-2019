@@ -11,6 +11,31 @@ namespace Extensions
     {
         private static int indexOfMaxItem = 0;
 
+        /// <summary>
+        /// Converts elements in the array to string representation.
+        /// </summary>
+        /// <typeparam name="TSource">The TSourse.</typeparam>
+        /// <typeparam name="TResult">The TResult.</typeparam>
+        /// <param name="array">The array.</param>
+        /// <param name="convertor">The convertor.</param>
+        /// <returns>The array with string items.</returns>
+        public static TResult[] Transform<TSource, TResult>(this TSource[] array, IConvertor<TSource, TResult> convertor)
+        {
+            TResult[] result = new TResult[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = convertor.Convert(array[i]);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Filter array by the same type.
+        /// </summary>
+        /// <typeparam name="T">The T.</typeparam>
+        /// <param name="array">The array.</param>
+        /// <returns>Filtered array.</returns>
         public static T[] FilterByType<T>(this object[] array)
         {
             if (array == null)

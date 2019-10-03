@@ -2,11 +2,36 @@ using NUnit.Framework;
 using Extensions;
 using ExtensionsTests.Predicates;
 using System;
+using ExtensionsTests.Dictionaries;
+using Extensions.Decorators;
 
 namespace ExtensionsTests
 {
     public class ArrayExtensionTests
     {
+        #region Transform
+
+        [TestCase(new double[] { double.NaN }, ExpectedResult = new string[] { "Not a number" })]
+        [TestCase(new double[] { double.NegativeInfinity, double.PositiveInfinity }, ExpectedResult = new string[] { "Negative infinity", "Positive infinity" })]
+        [TestCase(new double[] { 0.0d, -0.0d, 0.1d }, ExpectedResult = new string[] { "zero", "zero", "zero point one" })]
+        [TestCase(new double[] { double.MaxValue, double.MinValue }, ExpectedResult = new string[] { "one point seven nine seven six nine three one three four eight six two three two E plus three zero eight", "minus one point seven nine seven six nine three one three four eight six two three two E plus three zero eight" })]
+        public string[] Transform_EnglishDictionary_StringRepresentation(double[] numbers)
+        {
+            var dictionary = new EnglishDictionary().Create();
+            var words = new Words(dictionary);
+            return numbers.Transform(new WordsDecorator<double, string>(words, dictionary));
+        }
+
+        [TestCase(new double[] { -255.255 }, ExpectedResult = new string[] { "1100000001101111111010000010100011110101110000101000111101011100" })]
+        [TestCase(new double[] { double.NegativeInfinity, double.PositiveInfinity }, ExpectedResult = new string[] { "1111111111110000000000000000000000000000000000000000000000000000", "0111111111110000000000000000000000000000000000000000000000000000" })]
+        [TestCase(new double[] { 0.0d, -0.0d }, ExpectedResult = new string[] { "0000000000000000000000000000000000000000000000000000000000000000", "1000000000000000000000000000000000000000000000000000000000000000" })]
+        public string[] Transform_IEEE754_StringRepresentation(double[] numbers)
+        {
+            return numbers.Transform(new IEEE754Decorator<double, string>());
+        }
+
+        #endregion
+
         #region FilterByType
 
         [TestCase(new object[] { 7, '3', "cat", 5, 1.926396, -1, 2 }, ExpectedResult = new int[] { 7, 5, -1, 2 })]
