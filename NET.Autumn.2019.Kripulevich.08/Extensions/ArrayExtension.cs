@@ -3,12 +3,46 @@ using System;
 using System.Collections.Generic;
 
 namespace Extensions
-{        
+{     
+    /// <summary>
+    /// Class with array extinsion methods.
+    /// </summary>
     public static class ArrayExtension
     {
         private static int indexOfMaxItem = 0;
 
-        public static int[] Filter(this int[] array, IPredicate predicate)
+        public static T[] FilterByType<T>(this object[] array)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException($"An {nameof(array)} can't be null.");
+            }
+
+            if (array.Length == 0)
+            {
+                throw new ArgumentException($"An {nameof(array)} must contain at least one element.");
+            }
+
+            var result = new List<T>();
+            foreach (var item in array)
+            {
+                if (item is T)
+                {
+                    result.Add((T)item);
+                    //yield return (T)item;
+                }
+            }
+            return result.ToArray();
+        }
+
+        /// <summary>
+        /// Filter array by pridicate.
+        /// </summary>
+        /// <typeparam name="T">The T.</typeparam>
+        /// <param name="array">The array.</param>
+        /// <param name="predicate">The predicate.</param>
+        /// <returns>Filtered array.</returns>
+        public static T[] Filter<T>(this T[] array, IPredicate<T> predicate)
         {
             if (array == null)
             {
@@ -30,7 +64,13 @@ namespace Extensions
             return result;
         }
 
-        public static int Max(this int[] array)
+        /// <summary>
+        /// Finds the largest element in the array.
+        /// </summary>
+        /// <typeparam name="T">The T where T : IComparable<T>.</typeparam>
+        /// <param name="array">The array.</param>
+        /// <returns>The largest element.</returns>
+        public static T Max<T>(this T[] array) where T : IComparable<T>
         {
             if (array == null)
             {
@@ -47,12 +87,12 @@ namespace Extensions
 
         #region Private methods
 
-        private static int FindIndexOfMaximumItem(int[] array)
+        private static int FindIndexOfMaximumItem<T>(T[] array) where T : IComparable<T>
         {
-            return FindIndexOfMaximumItem(array, 0, array.Length - 1);
+            return FindIndexOfMaximumItem<T>(array, 0, array.Length - 1);
         }
 
-        private static int FindIndexOfMaximumItem(int[] array, int lowIndex, int highIndex)
+        private static int FindIndexOfMaximumItem<T>(T[] array, int lowIndex, int highIndex) where T: IComparable<T>
         {
             if (lowIndex < highIndex)
             {
@@ -61,23 +101,24 @@ namespace Extensions
                 FindIndexOfMaximumItem(array, middleIndex + 1, highIndex);
             }
 
-            if (array[lowIndex] > array[indexOfMaxItem] || array[highIndex] > array[indexOfMaxItem])
+            if (array[lowIndex].CompareTo(array[indexOfMaxItem]) > 0 
+                || array[highIndex].CompareTo(array[indexOfMaxItem]) > 0)
             {
-                indexOfMaxItem = (array[lowIndex] > array[highIndex]) ? lowIndex : highIndex;
+                indexOfMaxItem = (array[lowIndex].CompareTo(array[highIndex]) > 0) ? lowIndex : highIndex;
             }
 
             return indexOfMaxItem;
         }
 
-        private static int[] GenerateArray(int[] array, IPredicate predicate)
+        private static T[] GenerateArray<T>(T[] array, IPredicate<T> predicate)
         {
-            var resultList = new List<int>();
+            var resultList = new List<T>();
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (predicate.IsMatch(array[i]))
+            foreach (var item in array)
+            { 
+                if (predicate.IsMatch(item))
                 {
-                    resultList.Add(array[i]);
+                    resultList.Add(item);
                 }
             }
 

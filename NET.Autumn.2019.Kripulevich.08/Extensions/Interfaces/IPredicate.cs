@@ -1,7 +1,7 @@
 ﻿namespace Extensions.Interfaces
 {
-    public interface IPredicate
+    public interface IPredicate<T>
     {
-        bool IsMatch(int number);
+        bool IsMatch(T value);
     }
 }

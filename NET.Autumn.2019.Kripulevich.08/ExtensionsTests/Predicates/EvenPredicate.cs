@@ -6,18 +6,23 @@ namespace ExtensionsTests.Predicates
     /// Predicate of even.
     /// </summary>
     /// <seealso cref="Logic.IPredicate" />
-    public class EvenPredicate : IPredicate
+    public class EvenPredicate<T> : IPredicate<T>
     {
         /// <summary>
         /// Determines whether the specified number is even.
         /// </summary>
-        /// <param name="number">The number.</param>
+        /// <param name="value">The number.</param>
         /// <returns>
         ///   <c>true</c> if the specified number is even; otherwise, <c>false</c>.
         /// </returns>
-        public bool IsMatch(int number)
+        public bool IsMatch(T value)
         {
-            return number % 2 == 0;
+            if (value is int)
+            {
+                return (dynamic)value % 2 == 0;
+            }
+
+            return false;
         }
     }
 }
