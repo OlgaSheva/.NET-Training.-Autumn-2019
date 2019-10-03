@@ -16,4 +16,8 @@
     <ProjectReference Include="..\TransformerLogic\TransformerLogic.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Transformers\" />
+  </ItemGroup>
+
 </Project>

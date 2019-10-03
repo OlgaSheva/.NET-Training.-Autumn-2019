@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Text;
-using TransformerLogic;
 
-namespace TransformerLogicTests
+namespace TransformerLogic
 {
     /// <summary>
     /// Transformer of double number to words.
     /// </summary>
     /// <seealso cref="Logic.Transformer" />
-    internal class DoubleToWordTransformer : Transformer
+    public class DoubleToWordTransformer : Transformer
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DoubleToWordTransformer"/> class.
