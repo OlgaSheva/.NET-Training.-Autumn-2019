@@ -15,7 +15,7 @@ namespace Algorithms.V4.StaticClasses
         /// The decorator.
         /// </summary>
         public static TimeDecorator timeDecorator = new TimeDecorator(new EuclideanAlgorithm(), new StopWatcher());
-        //static LoggerDecorator loggerDecorator = new LoggerDecorator(new EuclideanAlgorithm(), new NLogger());
+        static LoggerDecorator loggerDecorator = new LoggerDecorator(timeDecorator, new NLogger());
 
         /// <summary>
         /// Finds the GCD by euclidean.
@@ -24,7 +24,7 @@ namespace Algorithms.V4.StaticClasses
         /// <param name="second">The second number.</param>
         /// <returns>Returns GCD of two numbers.</returns>
         public static int FindGcdByEuclidean(int first, int second) 
-            => timeDecorator.Calculate(first, second);
+            => loggerDecorator.Calculate(first, second);
         
         ///// <summary>
         ///// Finds the GCD by euclidean.
