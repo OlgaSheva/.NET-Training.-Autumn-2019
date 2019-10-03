@@ -5,7 +5,7 @@ namespace TransformerLogic
     /// <summary>
     /// Transformer of double number to string representation.
     /// </summary>
-    public abstract class Transformer
+    public class Transformer
     {
         /// <summary>
         /// The dictionary.
