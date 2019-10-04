@@ -12,6 +12,34 @@ namespace Extensions
         private static int indexOfMaxItem = 0;
 
         /// <summary>
+        /// Ordering the array of strings according to same rule.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <param name="comparisonRule">The </param>
+        /// <returns>Ordering array.</returns>
+        public static string[] OrderAccordingTo(this string[] array, ISorter<string> comparisonRule)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException($"{nameof(array)} can't be null.");
+            }
+
+            if (comparisonRule == null)
+            {
+                throw new ArgumentNullException($"{nameof(comparisonRule)} can't be null.");
+            }
+
+            if (array.Length == 0)
+            {
+                throw new ArgumentException($"{nameof(array)} can't be empty.");
+            }
+
+            string[] result = comparisonRule.Sort(array);
+
+            return result;
+        }
+
+        /// <summary>
         /// Converts elements in the array to string representation.
         /// </summary>
         /// <typeparam name="TSource">The TSourse.</typeparam>

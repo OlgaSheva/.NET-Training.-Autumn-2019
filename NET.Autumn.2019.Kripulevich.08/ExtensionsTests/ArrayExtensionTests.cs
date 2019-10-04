@@ -4,11 +4,21 @@ using ExtensionsTests.Predicates;
 using System;
 using ExtensionsTests.Dictionaries;
 using Extensions.Decorators;
+using ExtensionsTests.Sorters;
 
 namespace ExtensionsTests
 {
     public class ArrayExtensionTests
     {
+        #region OrderAccordingTo
+
+        [TestCase(new[] { "a", "z", "d", "c" }, new[] { "a", "c", "d", "z" })]
+        [TestCase(new[] { "one", "two", "three" }, new[] { "one", "three", "two" })]
+        public void OrderAccordingTo_ArraySorter_SortedArray(string[] array, string[] expected)
+            => Assert.AreEqual(array.OrderAccordingTo(new ArraySorter<string>()), expected);
+
+        #endregion
+
         #region Transform
 
         [TestCase(new double[] { double.NaN }, ExpectedResult = new string[] { "Not a number" })]
@@ -18,6 +28,16 @@ namespace ExtensionsTests
         public string[] Transform_EnglishDictionary_StringRepresentation(double[] numbers)
         {
             var dictionary = new EnglishDictionary().Create();
+            var words = new Words(dictionary);
+            return numbers.Transform(new WordsDecorator<double, string>(words, dictionary));
+        }
+
+        [TestCase(new double[] { double.NaN }, ExpectedResult = new string[] { "Не число" })]
+        [TestCase(new double[] { double.NegativeInfinity, double.PositiveInfinity }, ExpectedResult = new string[] { "Минус бесконечность", "Плюс бесконечность" })]
+        [TestCase(new double[] { 0.0d, -0.0d, 0.1d }, ExpectedResult = new string[] { "ноль", "ноль", "ноль точка один" })]
+        public string[] Transform_RussianDictionary_StringRepresentation(double[] numbers)
+        {
+            var dictionary = new RussianDictionary().Create();
             var words = new Words(dictionary);
             return numbers.Transform(new WordsDecorator<double, string>(words, dictionary));
         }
@@ -84,7 +104,14 @@ namespace ExtensionsTests
         [TestCase(new[] { 0, 1, 4, 6, -3, 10, 256, 0 }, ExpectedResult = 256)]
         [TestCase(new[] { int.MaxValue, 1, 4, 6, int.MinValue, 10, 256, 0 }, ExpectedResult = int.MaxValue)]
         [TestCase(new[] { -18880, -17695841, -34, -6, -3, -10, -256, 0 }, ExpectedResult = 0)]
-        public int Max_Array_MaxItem(int[] array) => array.Max<int>();
+        public int Max_IntArray_MaxItem(int[] array) => array.Max();
+        
+        [Test]
+        public void Max_StringArray_MaxElement()
+        {
+            var array = new[] { "a", "z", "d", "c" };
+            Assert.AreEqual(array.Max(), "z");
+        }
 
         [Test]
         public void Max_EmptyArray_ArgumentException()
