@@ -92,3 +92,68 @@
 | 9 | Импорт из CSV и XML | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
 | 10 | Удаление записей | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |  |    
 
+### Day 9. 03.10.2019
+
+| Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
+| -------- | -------- | --------| --------|  -------- |  -------- |   
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/Extensions) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/ExtensionsTests) 
+| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.08/Extensions/ArrayExtension.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/ExtensionsTests) 
+| 3 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#)
+| 4 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#)
+| 5 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) |  |  | 
+
+
+| Collection | Indexed lookup | Keyed lookup | Value lookup | Addition |  Removal |  Memory |      
+| -------- | -------- | --------| --------|  -------- |  -------- |  -------- |    
+| **Списки** | | | | | | |   
+| `T[]` | O(1) | -  | O(n) | O(n) | O(n) | Elements + additional info (like array's length) |   
+| `List<T>` | | | | | | |   
+|`LinkedList<T>`  |  |  |  |  |  |  |  
+|`Collection<T>`  |  |  |  |  |  |  |  
+|`BindingList<T>`  |  |  |  |  |  |  |  
+|`ObservableCollection<T>`  |  |  |  |  |  |  |
+|`KeyCollection<TKey, TItem>`  |  |  |  |  |  |  |
+|`ReadOnlyCollection<T>`  |  |  |  |  |  |  |
+|`ReadOnlyObservableCollection<T>` |  |  |  |  |  |  |
+**Словари** | | | | | | |  
+|`Dictionary<TKey, TValue>`   |  |  |  |  |  |  |
+|`SortedList<TKey, TValue>`   |  |  |  |  |  |  |
+|`SortedDictionary<TKey, TValue>`  |  |  |  |  |  |  |
+|`SortedDictionary<TKey,TValue>`.   |  |  |  |  |  |  |  
+`ReadOnlyDictionary<TKey, TValue> `   |  |  |  |  |  |  |
+**Множества** | | | | | | | 
+|`HashSet<T>`  |  |  |  |  |  |  |
+|`SortedSet<T>`   |  |  |  |  |  |  |
+| **Очередь, стек** | | | | | | | 
+|`Queue<T>`  |  |  |  |  |  |  |
+|`Stack<T>`  |  |  |  |  |  |  |
+* `*` If ... .
+* `**`If ... .
+
+
+|Collection | Underlying structure | Lookup strategy | Ordering | Contiguous storage | Data access | Exposes Key & Value collection | 
+| -------- | -------- | --------| --------|  -------- |  -------- |  -------- | 
+**Списки** | | | | | | |  
+|`T[]` | `System.Array` | - | No | Yes | Index | No |   
+|`List<T>` | |  | | | | |   
+|`LinkedList<T>` | |  | | | | |   
+|`Collection<T>` | |  | | | | |   
+|`BindingList<T>` | |  | | | | |   
+|`ObservableCollection<T>`  | |  | | | | |   
+|`KeyCollection<TKey, TItem>`  | |  | | | | |   
+|`ReadOnlyCollection<T>` | |  | | | | |   
+|`ReadOnlyObservableCollection<T>`  | |  | | | | | 
+|**Словари** | | | | | | | 
+|`Dictionary<TKey, TValue>` | |  | | | | |    
+|`SortedList<TKey, TValue>`  | |  | | | | |   
+|`SortedDictionary<TKey, TValue>`  | |  | | | | |   
+|`ReadOnlyDictionary<TKey, TValue>`  | |  | | | | |   
+|**Множества** | | | | | | | 
+|`HashSet<T>` | |  | | | | |   
+|`SortedSet<T>`  | |  | | | | |   
+|**Очередь, стек** | | | | | | | 
+|`Queue<T>` | |  | | | | |   
+|`Stack<T>` | |  | | | | |   
+
+* `*` ... .
+* `**` ... .
