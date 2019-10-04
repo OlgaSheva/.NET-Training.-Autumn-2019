@@ -3,8 +3,17 @@ using System.Collections.Generic;
 
 namespace FibonacciGenerator
 {
+    /// <summary>
+    /// Class generator fibonacci numbers.
+    /// </summary>
     public static class Fibonacci
     {
+        /// <summary>
+        /// Generates the fibonacci numbers.
+        /// </summary>
+        /// <param name="numbers">The numbers.</param>
+        /// <returns>The fibonacci numbers.</returns>
+        /// <exception cref="ArgumentException">Throws when number is zero.</exception>
         public static IEnumerable<int> Generate(int numbers)
         {
             if (numbers == 0)
