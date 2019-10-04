@@ -17,7 +17,7 @@ namespace Extensions
         /// <param name="array">The array.</param>
         /// <param name="comparisonRule">The </param>
         /// <returns>Ordering array.</returns>
-        public static string[] OrderAccordingTo(this string[] array, ISorter<string> comparisonRule)
+        public static T[] OrderAccordingTo<T>(this T[] array, ISorter<T> comparisonRule)
         {
             if (array == null)
             {
@@ -34,7 +34,7 @@ namespace Extensions
                 throw new ArgumentException($"{nameof(array)} can't be empty.");
             }
 
-            string[] result = comparisonRule.Sort(array);
+            T[] result = comparisonRule.Sort(array);
 
             return result;
         }

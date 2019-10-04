@@ -17,6 +17,22 @@ namespace ExtensionsTests
         public void OrderAccordingTo_ArraySorter_SortedArray(string[] array, string[] expected)
             => Assert.AreEqual(array.OrderAccordingTo(new ArraySorter<string>()), expected);
 
+        [Test]
+        public void OrderAccordingTo_EmptyArray_ArgumentException()
+        {
+            var array = new string[0];
+            Assert.Throws<ArgumentException>(()
+                => array.OrderAccordingTo(new ArraySorter<string>()));
+        }
+
+        [Test]
+        public void OrderAccordingTo_NullArray_ArgumentNullException()
+        {
+            string[] array = null;
+            Assert.Throws<ArgumentNullException>(()
+                => array.OrderAccordingTo(new ArraySorter<string>()));
+        }
+
         #endregion
 
         #region Transform
