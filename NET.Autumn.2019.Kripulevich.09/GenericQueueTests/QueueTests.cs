@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using GenericQueue;
+using System;
 
 namespace GenericQueueTests
 {
@@ -74,6 +75,18 @@ namespace GenericQueueTests
             var actual = queue.ToArray();
 
             Assert.AreEqual(actual, new int[0]);
+        }
+
+        [Test]
+        public void Queue_DequeueEmptyQueue_InvalidOperationException()
+        {
+            var queue = new Queue<int>(3);
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Dequeue();
+            queue.Dequeue();
+
+            Assert.Throws<InvalidOperationException>(() => queue.Dequeue());
         }
     }
 }
