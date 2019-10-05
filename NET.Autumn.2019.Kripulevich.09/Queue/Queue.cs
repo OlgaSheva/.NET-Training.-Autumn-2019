@@ -4,6 +4,11 @@ using System.Collections.Generic;
 
 namespace GenericQueue
 {
+    /// <summary>
+    /// Generic Queue.
+    /// </summary>
+    /// <typeparam name="T">The type.</typeparam>
+    /// <seealso cref="System.Collections.Generic.IEnumerable{T}" />
     public class Queue<T> : IEnumerable<T>
     {
         private T[] _array;
