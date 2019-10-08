@@ -8,7 +8,7 @@ namespace Algorithms.V3
     /// Class decorator of interface IAlgorithm.
     /// </summary>
     /// <seealso cref="Algorithms.V3.Interfaces.IAlgorithm" />
-    internal class Decorator : IAlgorithm
+    public class Decorator : IAlgorithm
     {
         /// <summary>
         /// The algorithm.
@@ -28,7 +28,7 @@ namespace Algorithms.V3
         /// </summary>
         /// <param name="algorithm">The algorithm.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
-        internal Decorator(IAlgorithm algorithm)
+        public Decorator(IAlgorithm algorithm)
         {
             if (algorithm == null)
             {
@@ -65,17 +65,18 @@ namespace Algorithms.V3
         /// <param name="second">The second number.</param>
         /// <param name="third">The third number.</param>
         /// <returns>Returns the GCD of three numbers.</returns>
-        internal int Calculate(int first, int second, int third)
+        public int Calculate(int first, int second, int third)
         {
             Stopwatch watch = Stopwatch.StartNew();
+            watch.Start();
 
             int preResult = algorithm.Calculate(first, second);
-            long ms = Milliseconds;
             int result = algorithm.Calculate(preResult, third);
-            Milliseconds += ms;
 
             watch.Stop();
             watch.Reset();
+
+            Milliseconds = watch.ElapsedMilliseconds;
 
             return result;
         }
@@ -85,23 +86,20 @@ namespace Algorithms.V3
         /// </summary>
         /// <param name="numbers">The numbers.</param>
         /// <returns>Returns the GCD of several numbers.</returns>
-        internal int Calculate(params int[] numbers)
+        public int Calculate(params int[] numbers)
         {
             Stopwatch watch = Stopwatch.StartNew();
-
+            watch.Start();
             int gcd = 0;
-            long ms = 0;
-
             for (int i = 0; i < numbers.Length; i++)
             {
                 gcd = algorithm.Calculate(numbers[i], gcd);
-                ms += Milliseconds;
             }
 
             watch.Stop();
             watch.Reset();
 
-            Milliseconds = ms;
+            Milliseconds = watch.ElapsedMilliseconds;
 
             return gcd;
         }

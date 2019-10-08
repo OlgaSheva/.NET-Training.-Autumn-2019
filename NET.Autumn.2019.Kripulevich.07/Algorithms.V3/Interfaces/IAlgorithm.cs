@@ -3,7 +3,7 @@
     /// <summary>
     /// Algorithm interface.
     /// </summary>
-    internal interface IAlgorithm
+    public interface IAlgorithm
     {
         /// <summary>
         /// GCD calculation method.
