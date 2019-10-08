@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Extensions
 {
@@ -18,7 +19,8 @@ namespace Extensions
         /// <param name="dictionary">The dictionary.</param>
         public Transformer(IDictionary<char, string> dictionary)
         {
-            Dictionary = dictionary;
+            Dictionary = dictionary 
+                ?? throw new ArgumentNullException($"{nameof(dictionary)} can't be null.");
         }
 
         /// <summary>

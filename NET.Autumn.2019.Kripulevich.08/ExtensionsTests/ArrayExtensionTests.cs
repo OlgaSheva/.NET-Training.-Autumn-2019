@@ -121,7 +121,7 @@ namespace ExtensionsTests
         [TestCase(new[] { int.MaxValue, 1, 4, 6, int.MinValue, 10, 256, 0 }, ExpectedResult = int.MaxValue)]
         [TestCase(new[] { -18880, -17695841, -34, -6, -3, -10, -256, 0 }, ExpectedResult = 0)]
         public int Max_IntArray_MaxItem(int[] array) => array.Max();
-        
+
         [Test]
         public void Max_StringArray_MaxElement()
         {

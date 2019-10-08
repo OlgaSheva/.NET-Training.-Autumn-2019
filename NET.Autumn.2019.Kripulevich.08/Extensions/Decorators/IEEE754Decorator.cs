@@ -5,10 +5,6 @@ namespace Extensions.Decorators
 {
     public class IEEE754Decorator<TSource, TResult> : IConvertor<TSource, TResult>
     {
-        public IEEE754Decorator()
-        {
-        }
-
         public TResult Convert(TSource source)
         {
             if (source == null)

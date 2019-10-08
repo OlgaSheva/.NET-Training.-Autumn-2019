@@ -32,6 +32,7 @@ namespace ExtensionsTests.Dictionaries
             dictionary.Add('-', "минус");
             dictionary.Add('+', "плюс");
             dictionary.Add('.', "точка");
+            dictionary.Add(',', "точка");
             dictionary.Add('E', "E");
             dictionary.Add('n', "Минус бесконечность");
             dictionary.Add('p', "Плюс бесконечность");

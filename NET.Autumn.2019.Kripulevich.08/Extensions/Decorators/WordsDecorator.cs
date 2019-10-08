@@ -10,12 +10,7 @@ namespace Extensions.Decorators
 
         public WordsDecorator(Words words, IDictionary<char, string> dictionary) : base(dictionary)
         {
-            if (words == null)
-            {
-                throw new ArgumentNullException($"{nameof(words)} can't be null.");
-            }
-
-            this.words = words;
+            this.words = words ?? throw new ArgumentNullException($"{nameof(words)} can't be null.");
         }
 
         public TResult Convert(TSource source)
