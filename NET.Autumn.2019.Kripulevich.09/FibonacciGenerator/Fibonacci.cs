@@ -21,12 +21,7 @@ namespace FibonacciGenerator
             {
                 throw new ArgumentException($"{nameof(count)} can't be less than zero.");
             }
-
-            if (count == 0)
-            {
-                return new BigInteger[0];
-            }
-
+            
             return GenerateFibonacci(count);            
         }
 
