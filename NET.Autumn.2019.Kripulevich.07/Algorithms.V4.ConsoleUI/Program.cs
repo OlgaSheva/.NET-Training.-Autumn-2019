@@ -1,5 +1,9 @@
 ﻿using System;
-using Algorithms.V4.StaticClasses;
+using Algorithms.V4.GcdImplementations;
+using Algorithms.V4.Interfaces;
+using Algorithms.V4.StopWatcherImplementations;
+using Algorithms.V4.LoggerImplementations;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Algorithms.V4.ConsoleUI
 {
@@ -7,25 +11,34 @@ namespace Algorithms.V4.ConsoleUI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the integers with a space for calculating GCD:");
+            IServiceProvider serviceProvider = CreateServiceProvider();
+            IAlgorithm algorithm = serviceProvider.GetService<IAlgorithm>();
 
-            string sNumbers = Console.ReadLine();
-            string[] str = sNumbers.Split(' ');
-            int[] numbers = new int[str.Length];
-            int i = 0;
+            int a = -12, b = 120, c = 40, d = -40;
+            Console.WriteLine($"GCD({a}, {b}) = {algorithm.Calculate(a, b).ToString()}.");
 
-            foreach (string s in str)
-            {
-                numbers[i++] = int.Parse(s);
-            }
+            AlgorithmDecorator gcdAlgorithm = serviceProvider.GetService<AlgorithmDecorator>();
+            
+            int gcd = gcdAlgorithm.Calculate(a, b);
+            Console.WriteLine($"GCD({a}, {b}) = {gcd}. Algorithms time: {((GCD)gcdAlgorithm).Milliseconds.ToString()} ms.");
 
-            int result = GCDAlgorithms.FindGcdByEuclidean(numbers[0], numbers[1]);
+            gcd = gcdAlgorithm.Calculate(a, b, c);
+            Console.WriteLine($"GCD({a}, {b}, {c}) = {gcd}. Algorithms time: {((GCD)gcdAlgorithm).Milliseconds.ToString()} ms.");
 
-            Console.WriteLine($"GCD: {result}.");
-            Console.WriteLine($"Algorithms time: " +
-                $"{GCDAlgorithms.timeDecorator.TimeInMilliseconds} milliseconds");
+            gcd = gcdAlgorithm.Calculate(a, b, c, d);
+            Console.WriteLine($"GCD({a}, {b}, {c}, {d}) = {gcd}. Algorithms time: {((GCD)gcdAlgorithm).Milliseconds.ToString()} ms.");
 
             Console.ReadKey();
+        }
+
+        private static IServiceProvider CreateServiceProvider()
+        {
+            return new ServiceCollection()
+                .AddSingleton<ILogger, Logger>()
+                .AddTransient<IStopWatcher, StopWatcher>()
+                .AddTransient<IAlgorithm, EuclideanAlgorithm>()
+                .AddTransient<AlgorithmDecorator, GCD>()
+                .BuildServiceProvider();
         }
     }
 }

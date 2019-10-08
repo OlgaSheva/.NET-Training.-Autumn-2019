@@ -1,15 +1,19 @@
-﻿using NLog;
-using ILogger = Algorithms.V4.Interfaces.ILogger;
+﻿using ILogger = Algorithms.V4.Interfaces.ILogger;
+using NLog;
 
 namespace Algorithms.V4.LoggerImplementations
 {
-    class NLogger : ILogger
+    /// <summary>
+    /// NLog Logger.
+    /// </summary>
+    /// <seealso cref="Algorithms.V4.Interfaces.ILogger" />
+    public class Logger : ILogger
     {
-        private readonly Logger logger;
+        private readonly NLog.Logger logger;
 
-        public NLogger()
+        public Logger()
         {
-            //logger = new Logger();
+            logger = LogManager.GetCurrentClassLogger();
         }
 
         public void Debug(string message)

@@ -2,10 +2,14 @@
 
 namespace Algorithms.V4.LoggerImplementations
 {
-    class LoggerDecorator : IAlgorithm
+    /// <summary>
+    /// Logger decorator.
+    /// </summary>
+    /// <seealso cref="Algorithms.V4.Interfaces.IAlgorithm" />
+    public class LoggerDecorator : IAlgorithm
     {
         protected IAlgorithm algorithm;
-        private ILogger logger;
+        private readonly ILogger logger;
 
         public LoggerDecorator(IAlgorithm algorithm, ILogger logger)
         {
