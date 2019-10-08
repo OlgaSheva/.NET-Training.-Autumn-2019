@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace FibonacciGenerator
 {
@@ -11,34 +12,35 @@ namespace FibonacciGenerator
         /// <summary>
         /// Generates the fibonacci numbers.
         /// </summary>
-        /// <param name="numbers">The numbers.</param>
+        /// <param name="count">The count of numbers.</param>
         /// <returns>The fibonacci numbers.</returns>
         /// <exception cref="ArgumentException">Throws when number is zero.</exception>
-        public static IEnumerable<int> Generate(int numbers)
+        public static IEnumerable<BigInteger> Generate(int count)
         {
-            if (numbers == 0)
+            if (count < 0)
             {
-                throw new ArgumentException($"{nameof(numbers)} must be larger than zero.");
+                throw new ArgumentException($"{nameof(count)} can't be less than zero.");
             }
 
-            if (numbers == 1)
+            if (count == 0)
             {
-                yield return 0;
-                yield break;
+                return new BigInteger[0];
             }
 
-            yield return 0;
-            yield return 1;
+            return GenerateFibonacci(count);            
+        }
 
-            int last = 0;
-            int current = 1;
+        private static IEnumerable<BigInteger> GenerateFibonacci(int c)
+        {
+            BigInteger last = 0,
+                       current = 1;
 
-            while (numbers-- > 2)
+            for (int i = 0; i < c; i++)
             {
-                int next = last + current;
-                yield return next;
-                last = current;
-                current = next;
+                yield return last;
+                var temp = current;
+                current = last + current;
+                last = temp;
             }
         }
     }
