@@ -30,6 +30,7 @@ namespace TransformerLogicTests
             dictionary.Add('-', "menos");
             dictionary.Add('+', "más");
             dictionary.Add('.', "punto");
+            dictionary.Add(',', "punto");
             dictionary.Add('E', "E");
             dictionary.Add('n', "Infinito negativo");
             dictionary.Add('p', "Infinito positivo");

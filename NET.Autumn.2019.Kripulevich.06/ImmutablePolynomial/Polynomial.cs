@@ -117,21 +117,7 @@ namespace ImmutablePolynomial
         /// <returns>Hash code of the polynomial.</returns>
         public override int GetHashCode()
         {
-            if (coefficients == null)
-            {
-                return 0;
-            }
-
-            unchecked 
-            { 
-                int hash = 27;
-                foreach (var item in coefficients)
-                {
-                    hash = (13 * hash) + item.GetHashCode();
-                }
-
-                return hash;
-            }
+            return degree.GetHashCode();
         }
 
         /// <summary>
@@ -163,17 +149,7 @@ namespace ImmutablePolynomial
         /// <returns>True if polynomials aren't equals, false if they are equels.</returns>
         public static bool operator !=(Polynomial lhs, Polynomial rhs)
         {
-            if (ReferenceEquals(lhs, rhs))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(lhs, null))
-            {
-                return true;
-            }
-
-            return !lhs.Equals(rhs);
+            return !(lhs == rhs);
         }
 
         /// <summary>
@@ -184,6 +160,11 @@ namespace ImmutablePolynomial
         /// <returns>The sum of two Polynomial.</returns>
         public static Polynomial operator +(Polynomial lhs, Polynomial rhs)
         {
+            if (lhs == null || rhs == null)
+            {
+                throw new ArgumentNullException($"{nameof(lhs)} or {nameof(rhs)} can't be null.");
+            }
+
             Polynomial larger = (lhs.coefficients.Length > rhs.coefficients.Length) ? lhs.Clone() : rhs.Clone();
             Polynomial smoller = (lhs.coefficients.Length < rhs.coefficients.Length) ? lhs : rhs;
 
@@ -196,6 +177,56 @@ namespace ImmutablePolynomial
         }
 
         /// <summary>
+        /// Implements the operator *.
+        /// </summary>
+        /// <param name="polynomial">The polynomial.</param>
+        /// <param name="number">The number.</param>
+        /// <returns>
+        /// The result of multiply.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">Throws if polynomial is null.</exception>
+        public static Polynomial operator *(Polynomial polynomial, double number)
+        {
+            if (polynomial == null)
+            {
+                throw new ArgumentNullException($"{nameof(polynomial)} can't be null.");
+            }
+
+            Polynomial p = polynomial.Clone();
+            for (int i = 0; i < p.coefficients.Length; i++)
+            {
+                p.coefficients[i] = p.coefficients[i] * number;
+            }
+
+            return p;
+        }
+
+        /// <summary>
+        /// Implements the operator *.
+        /// </summary>
+        /// <param name="number">The number.</param>
+        /// <param name="polynomial">The polynomial.</param>
+        /// <returns>
+        /// The result of multiply.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">Throws if polynomial is null.</exception>
+        public static Polynomial operator *(double number, Polynomial polynomial)
+        {
+            if (polynomial == null)
+            {
+                throw new ArgumentNullException($"{nameof(polynomial)} can't be null.");
+            }
+
+            Polynomial p = polynomial.Clone();
+            for (int i = 0; i < p.coefficients.Length; i++)
+            {
+                p.coefficients[i] = p.coefficients[i] * number;
+            }
+
+            return p;
+        }
+
+        /// <summary>
         /// The difference of two Polynomial.
         /// </summary>
         /// <param name="lhs">The polynomial.</param>
@@ -203,19 +234,24 @@ namespace ImmutablePolynomial
         /// <returns>The difference of two Polynomial.</returns>
         public static Polynomial operator -(Polynomial lhs, Polynomial rhs)
         {
-            for (int i = 0; i < rhs.coefficients.Length; i++)
-            {
-                rhs.coefficients[i] = -rhs.coefficients[i];
-            }
-
-            return lhs + rhs;
+            return lhs + rhs * (-1);
         }
 
+        /// <summary>
+        /// Gets the <see cref="System.Double"/> at the specified index.
+        /// </summary>
+        /// <value>
+        /// The <see cref="System.Double"/>.
+        /// </value>
+        /// <param name="index">The index.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// </exception>
         public double this[int index]
         {
             get
             {
-                if (index > coefficients.Length)
+                if (index < 0 || index > coefficients.Length)
                 {
                     throw new ArgumentOutOfRangeException($"{nameof(index)} is out of the allowed range.");
                 }
