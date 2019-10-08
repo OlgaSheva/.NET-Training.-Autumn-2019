@@ -1,28 +1,28 @@
 # .NET-Training.-Autumn-2019
 
 ### Self-study stage (05.08.2019 - 15.09.2019)
- 
+
 | Task | Task Status | Additional/Comments |
 | -------- | -------- | --------|  
 | [Lections Day 1](https://drive.google.com/drive/folders/0B7WmjuqYed3AWXFzc1Mtcnk3d1k) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
-| [Lections Day 2](https://drive.google.com/drive/folders/1_B9ncAWoJtoDvG6vQkxyAvMuXDdqXRAw) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)| 
+| [Lections Day 2](https://drive.google.com/drive/folders/1_B9ncAWoJtoDvG6vQkxyAvMuXDdqXRAw) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
 | [Lections Day 3](https://drive.google.com/drive/folders/1j17L1jUOa9wB1OibGtCuYdsV28kvstr-) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
-| [Lections Day 4](https://drive.google.com/drive/folders/1G_Nlntl2BTH0ugKjMVdflPtyQUcUL4Gx) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)| 
-| [Lections Day 5](https://drive.google.com/drive/folders/1Eq-C6_EtSlrAgadR-HOyrxUAvqDiw_gM) | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png)| 
+| [Lections Day 4](https://drive.google.com/drive/folders/1G_Nlntl2BTH0ugKjMVdflPtyQUcUL4Gx) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
+| [Lections Day 5](https://drive.google.com/drive/folders/1Eq-C6_EtSlrAgadR-HOyrxUAvqDiw_gM) | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png)|
 | [Lections Day 6](https://drive.google.com/drive/folders/1prlfmRLsVIDR8IERCOyENtsyLt4rO8hW) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png)|
-| [Lections Day 7](https://drive.google.com/drive/folders/17ZHkDv5HTidn4uEmh_kTCCuuB5pf6cI7) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)| 
+| [Lections Day 7](https://drive.google.com/drive/folders/17ZHkDv5HTidn4uEmh_kTCCuuB5pf6cI7) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
 | [Lections Day 8](https://drive.google.com/drive/folders/1jpw3yZPMepPCP1LYpsi_2FXcQ7m8whpT) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
 | [Lections Day 9](https://drive.google.com/drive/folders/1z9dWTY0spT6MI4SAnlUxPIEqraqMlJRG) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
 | [Lections Day 10](https://drive.google.com/drive/folders/1cwOLIdvQKFoEC0MMZrcye7gOXvYPY_w1) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
 | [Проектирование СУБД. Технострим. Модуль 1](https://www.youtube.com/watch?v=R21v8SoIsiY&list=PLrCZzMib1e9pq_sbw7ZEcEU3Yyz1AvE--&index=2&t=929s) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
 | [Проектирование СУБД. Технострим. Модуль 2](https://www.youtube.com/watch?v=7t9hLFtN77U&list=PLrCZzMib1e9pq_sbw7ZEcEU3Yyz1AvE--&index=2) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
 | [Проектирование СУБД. Технострим. Модуль 3](https://www.youtube.com/watch?v=fcNhZDWUGDM&list=PLrCZzMib1e9pq_sbw7ZEcEU3Yyz1AvE--&index=3) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png)|
-  
+
 ---
 
 ##  [Stage 2. (16.09.2019 - 30.11.2019)](https://drive.google.com/drive/folders/1zwjMfJoOfPslOcK9_noqN32aL66u7hQ6)
 
-### Day 1. 16.09.2019	
+### Day 1. 16.09.2019
 
 | Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
 | -------- | -------- | --------| --------|  -------- |  -------- |   
@@ -64,8 +64,8 @@
 
 | Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
 | -------- | -------- | --------| --------|  -------- |  -------- |   
-| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Algorithms.V1*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V1) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V1.Tests/GCDAlgorithmsTests.cs) 
-| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Algorithms.V2*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V2) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V2.Tests/GCDAlgorithmsTests.cs) 
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Algorithms.V1*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V1) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V1.Tests/GCDAlgorithmsTests.cs)
+| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Algorithms.V2*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V2) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V2.Tests/GCDAlgorithmsTests.cs)
 | 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Algorithms.V3*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V3) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V3.Tests/GCDAlgorithmsTests.cs)
 | 4 | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png) | [*Algorithms.V4*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V4) |  |  | [*Console Client Code*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V4.ConsoleUI/Program.cs)
 
@@ -73,8 +73,8 @@
 
 | Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
 | -------- | -------- | --------| --------|  -------- |  -------- |   
-| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/Extensions) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.08/ExtensionsTests/ArrayExtensionTests.cs) 
-| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/Extensions) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.08/ExtensionsTests/ArrayExtensionTests.cs) 
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/Extensions) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.08/ExtensionsTests/ArrayExtensionTests.cs)
+| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/Extensions) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.08/ExtensionsTests/ArrayExtensionTests.cs)
 | 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/Extensions) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.08/ExtensionsTests/ArrayExtensionTests.cs)
 
 ### Additional Task
@@ -96,16 +96,16 @@
 
 | Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
 | -------- | -------- | --------| --------|  -------- |  -------- |   
-| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/Extensions) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/ExtensionsTests) 
-| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.08/Extensions/ArrayExtension.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/ExtensionsTests) 
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/Extensions) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/ExtensionsTests)
+| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.08/Extensions/ArrayExtension.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/tree/master/NET.Autumn.2019.Kripulevich.08/ExtensionsTests)
 | 3 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.09/FibonacciGenerator/Fibonacci.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.09/FibonacciGeneratorTests/FibonacciTests.cs)
 | 4 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.09/Queue/Queue.cs) | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.09/GenericQueueTests/QueueTests.cs)
-| 5 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) |  |  | 
+| 5 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) |  |  |
 
 
 | Collection | Indexed lookup | Keyed lookup | Value lookup | Addition |  Removal |  Memory |      
 | -------- | -------- | --------| --------|  -------- |  -------- |  -------- |    
-| **Списки** | | | | | | |   
+**Списки** | | | | | | |   
 | `T[]` | O(1) | -  | O(n) | O(n) | O(n) | Elements + additional info (like array's length) |   
 | `List<T>` | | | | | | |   
 |`LinkedList<T>`  |  |  |  |  |  |  |  
@@ -121,18 +121,18 @@
 |`SortedDictionary<TKey, TValue>`  |  |  |  |  |  |  |
 |`SortedDictionary<TKey,TValue>`.   |  |  |  |  |  |  |  
 `ReadOnlyDictionary<TKey, TValue> `   |  |  |  |  |  |  |
-**Множества** | | | | | | | 
+**Множества** | | | | | | |
 |`HashSet<T>`  |  |  |  |  |  |  |
 |`SortedSet<T>`   |  |  |  |  |  |  |
-| **Очередь, стек** | | | | | | | 
-|`Queue<T>`  |  |  |  |  |  |  |
-|`Stack<T>`  |  |  |  |  |  |  |
+| **Очередь, стек** | | | | | | |
+|`Queue<T>`  |  O(1) | - |  |  |  | Elements + additional info |
+|`Stack<T>`  |  O(1) | - |  |  |  | Elements + additional info |
 * `*` If ... .
 * `**`If ... .
 
 
-|Collection | Underlying structure | Lookup strategy | Ordering | Contiguous storage | Data access | Exposes Key & Value collection | 
-| -------- | -------- | --------| --------|  -------- |  -------- |  -------- | 
+|Collection | Underlying structure | Lookup strategy | Ordering | Contiguous storage | Data access | Exposes Key & Value collection |
+| -------- | -------- | --------| --------|  -------- |  -------- |  -------- |
 **Списки** | | | | | | |  
 |`T[]` | `System.Array` | - | No | Yes | Index | No |   
 |`List<T>` | |  | | | | |   
@@ -142,18 +142,18 @@
 |`ObservableCollection<T>`  | |  | | | | |   
 |`KeyCollection<TKey, TItem>`  | |  | | | | |   
 |`ReadOnlyCollection<T>` | |  | | | | |   
-|`ReadOnlyObservableCollection<T>`  | |  | | | | | 
-|**Словари** | | | | | | | 
+|`ReadOnlyObservableCollection<T>`  | |  | | | | |
+|**Словари** | | | | | | |
 |`Dictionary<TKey, TValue>` | |  | | | | |    
 |`SortedList<TKey, TValue>`  | |  | | | | |   
 |`SortedDictionary<TKey, TValue>`  | |  | | | | |   
 |`ReadOnlyDictionary<TKey, TValue>`  | |  | | | | |   
-|**Множества** | | | | | | | 
+|**Множества** | | | | | | |
 |`HashSet<T>` | |  | | | | |   
 |`SortedSet<T>`  | |  | | | | |   
-|**Очередь, стек** | | | | | | | 
-|`Queue<T>` | |  | | | | |   
-|`Stack<T>` | |  | | | | |   
+|**Очередь, стек** | | | | | | |
+|`Queue<T>` | `System.Array` | - | No | | | No |   
+|`Stack<T>` | `System.Array` | - | No | | | No |   
 
 * `*` ... .
 * `**` ... .
