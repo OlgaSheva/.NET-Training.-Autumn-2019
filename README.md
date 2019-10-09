@@ -102,6 +102,16 @@
 | 4 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.09/Queue/Queue.cs) | ![In progress](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-inprogress.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.09/GenericQueueTests/QueueTests.cs)
 | 5 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) |  |  |
 
+### Day 10. 07.10.2019
+
+| Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
+| -------- | -------- | --------| --------|  -------- |  -------- |   
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.10/PrimeNumbers/Eratosfen.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.10/PrimeNumbersTests/EratosfenTests.cs)
+| 2 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#)
+| 3 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#)
+| 4 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#)
+
+
 
 |      Collection                  | Indexed lookup | Keyed lookup | Value lookup | Addition   | Removal  |  Memory                                          |  
 | -------------------------------- | -------------- | ------------ | ------------ | ---------- |  ------- |  ----------------                                |    
