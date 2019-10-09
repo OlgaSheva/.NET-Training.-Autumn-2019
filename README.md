@@ -103,10 +103,9 @@
 | 5 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) |  |  |
 
 
-|      Collection                  | Indexed lookup | Keyed lookup | Value lookup | Addition   | Removal  |  Memory                                          |   
-|                                  | Индексир. поиск| Ключ поиска  |Поиск значения| прибавление| Удаление |
+|      Collection                  | Indexed lookup | Keyed lookup | Value lookup | Addition   | Removal  |  Memory                                          |  
 | -------------------------------- | -------------- | ------------ | ------------ | ---------- |  ------- |  ----------------                                |    
-|**Списки**                        |                |              |              |            |          |                                                  |   
+**Списки**                         |                |              |              |            |          |                                                  |   
 | `T[]`                            | O(1)           | -            | O(n)         | O(n)       | O(n)     | Elements + additional info (like array's length) |   
 | `List<T>`                        | O(1)           | -            | O(n)         | O(1)       | O(n)     | additional info + array reference + array        |   
 |`LinkedList<T>`                   | -              | -            | O(n)         | O(1)       | O(1)     | additional info + LinkedListNodes                |  
@@ -116,16 +115,16 @@
 |`KeyCollection<TKey, TItem>`      | O(1)           | TKey         | O(n)         | O(1)       | O(1)     |                                                  |
 |`ReadOnlyCollection<T>`           | O(1)           | -            | O(n)         | O(1)       | O(n)     | additional info + array reference + array        |
 |`ReadOnlyObservableCollection<T>` | O(1)           | -            | O(n)         | O(1)       | O(n)     | additional info + array reference + array        |
-|**Словари**                       |                |              |              |            |          |                                                  |  
+**Словари**                        |                |              |              |            |          |                                                  |  
 |`Dictionary<TKey, TValue>`        |  |  |  |  |  |  |
 |`SortedList<TKey, TValue>`        |  |  |  |  |  |  |
 |`SortedDictionary<TKey, TValue>`  |  |  |  |  |  |  |
 |`SortedDictionary<TKey,TValue>`   |  |  |  |  |  |  |  
 |`ReadOnlyDictionary<TKey, TValue>`|  |  |  |  |  |  |
-|**Множества** | | | | | | |
-|`HashSet<T>`  |  |  |  |  |  |  |
+**Множества**                      | | | | | | |
+|`HashSet<T>`                      |  |  |  |  |  |  |
 |`SortedSet<T>`   |  |  |  |  |  |  |
-| **Очередь, стек** | | | | | | |
+**Очередь, стек** | | | | | | |
 |`Queue<T>`                      |  O(1)            | -           | O(n)          |   |  | Elements + additional info |
 |`Stack<T>`                      |  O(1)            | -           | O(n)          |  |  | Elements + additional info |
 * `*` If ... .
@@ -133,9 +132,8 @@
 
 
 |      Collection                  | Underlying structure | Lookup strategy | Ordering | Contiguous storage | Data access | Exposes Key & Value collection |
-| -------------------------------- | Базовая структура    | Стратегия поискa|          | Непрер. хранение   |Доступ к дан.| Предоставляет коллекцию K & V  |
 | -------------------------------- | -------------------- | --------------- | -------- | ------------------ |  ---------- | ------------------------------ |
-|**Списки**                        |                      |                 |          |                    |             |                                |  
+**Списки**                         |                      |                 |          |                    |             |                                |  
 |`T[]`                             | `System.Array`       | -               | No       | Yes                | Index       | No                             |   
 |`List<T>`                         | `System.Array`| Contains, BinarySearch, Find, FindLast | No  | Yes     | Index       | No                             |   
 |`LinkedList<T>`                   | LinkedListNode<T>| Constains, Find, FindLast| No  | Yes                | Foreach     | No                             |   
@@ -145,15 +143,15 @@
 |`KeyCollection<TKey, TItem>`      | List<TKey,TItem>,Dictionary<TKey,TItem>| Contains | No | Yes           | Index, Key  | No                             |   
 |`ReadOnlyCollection<T>`           | List<T>              | Contains        | No       | Yes                | Index       | No                             |   
 |`ReadOnlyObservableCollection<T>`  | |  | | | | |
-|**Словари** | | | | | | |
+**Словари** | | | | | | |
 |`Dictionary<TKey, TValue>` | |  | | | | |    
 |`SortedList<TKey, TValue>`  | |  | | | | |   
 |`SortedDictionary<TKey, TValue>`  | |  | | | | |   
 |`ReadOnlyDictionary<TKey, TValue>`  | |  | | | | |   
-|**Множества** | | | | | | |
+**Множества** | | | | | | |
 |`HashSet<T>` | |  | | | | |   
 |`SortedSet<T>`  | |  | | | | |   
-|**Очередь, стек** | | | | | | |
+**Очередь, стек** | | | | | | |
 |`Queue<T>` | `System.Array` | - | No | | | No |   
 |`Stack<T>` | `System.Array` | - | No | | | No |   
 
