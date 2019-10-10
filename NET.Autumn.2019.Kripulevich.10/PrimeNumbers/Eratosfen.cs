@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PrimeNumbers
 {
-    public static class Eratosfen
+    public static class PrimeNumberGenerator
     {
         public static List<int> GetPrimeNumbers(int MaxNumber)
         {
