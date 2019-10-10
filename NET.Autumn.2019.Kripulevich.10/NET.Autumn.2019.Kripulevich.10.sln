@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbers", "PrimeNumber
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbersTests", "PrimeNumbersTests\PrimeNumbersTests.csproj", "{173480D1-2EAD-4906-8BE1-18EC19E60D81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorrectParentheses", "CorrectParentheses\CorrectParentheses.csproj", "{D692B2FA-8704-40AD-A87A-0F745EBA253D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorrectParenthesesTests", "CorrectParenthesesTests\CorrectParenthesesTests.csproj", "{F3FB1A56-E59E-4D77-8F59-F54315567DB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{173480D1-2EAD-4906-8BE1-18EC19E60D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{173480D1-2EAD-4906-8BE1-18EC19E60D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{173480D1-2EAD-4906-8BE1-18EC19E60D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D692B2FA-8704-40AD-A87A-0F745EBA253D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D692B2FA-8704-40AD-A87A-0F745EBA253D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D692B2FA-8704-40AD-A87A-0F745EBA253D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D692B2FA-8704-40AD-A87A-0F745EBA253D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3FB1A56-E59E-4D77-8F59-F54315567DB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3FB1A56-E59E-4D77-8F59-F54315567DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3FB1A56-E59E-4D77-8F59-F54315567DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3FB1A56-E59E-4D77-8F59-F54315567DB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
