@@ -5,6 +5,9 @@ namespace CorrectParentheses
 {
     public static class Parentheses
     {
+        private static readonly string openingBrackets = "({[<";
+        private static readonly string closingBrackets = ")}]>";
+
         public static bool Correct(string @string)
         {
             if (@string == null)
@@ -12,40 +15,39 @@ namespace CorrectParentheses
                 throw new ArgumentNullException($"The {nameof(@string)} can't be null.");
             }
 
-            var list = new LinkedList<char>();
-
-            foreach (var symbol in @string)
+            if (@string.Length == 0)
             {
-                if(symbol == '(' || symbol == ')' || symbol == '[' || symbol == ']' || symbol == '{' || symbol == '}')
+                return true;
+            }
+
+            var stack = new Stack<char>();
+
+            foreach (var item in @string)
+            {
+                if (openingBrackets.Contains(item) || closingBrackets.Contains(item))
                 {
-                    switch (symbol)
+                    for (int i = 0; i < openingBrackets.Length; i++)
                     {
-                        case ')':
-                            if (list.Last.Value == '(')
+                        if (item == closingBrackets[i])
+                        {
+                            if (stack.Peek() == openingBrackets[i])
                             {
-                                list.RemoveLast();
+                                stack.Pop();
                             }
-                            break;
-                        case ']':
-                            if (list.Last.Value == '[')
+                            else
                             {
-                                list.RemoveLast();
+                                stack.Push(item);
                             }
-                            break;
-                        case '}':
-                            if (list.Last.Value == '{')
-                            {
-                                list.RemoveLast();
-                            }
-                            break;
-                        default:
-                            list.AddLast(symbol);
-                            break;
+                        }
+                        else if (item == openingBrackets[i])
+                        {
+                            stack.Push(item);
+                        }
                     }
                 }
             }
 
-            return list.Count == 0;
+            return stack.Count == 0;
         }
     }
 }
