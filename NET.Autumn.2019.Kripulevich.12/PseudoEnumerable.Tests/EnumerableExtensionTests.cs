@@ -1,0 +1,71 @@
+﻿using System;
+using System.Collections.Generic;
+using NUnit.Framework;
+using PseudoEnumerable.Interfaces;
+using PseudoEnumerable.Tests.Comparers;
+
+namespace PseudoEnumerable.Tests
+{
+    public class EnumerableExtensionTests
+    {
+        #region Filter
+
+        private IPredicate<int> evenPredicate =  new EvenPredicate<int>();
+        private IPredicate<string> lengthPredicate = new LengthPredicate<string>();
+        private Predicate<int> evenPredicateDelegate = new EvenPredicate<int>().IsMatching;
+        private Predicate<string> lengthPredicateDelegate = new LengthPredicate<string>().IsMatching;
+
+        [TestCase(new[] { 2212332, 1405644, -1236674 }, ExpectedResult = new[] { 2212332, 1405644, -1236674 })]
+        [TestCase(new[] { 53, 71, -24, 1001, 32, 1005 }, ExpectedResult = new[] { -24, 32 })]
+        [TestCase(new[] { 7, 2, 5, 5, -1, -1, 2 }, ExpectedResult = new int[] { 2, 2 })]
+        public IEnumerable<int> Filter_EvenPredicate_NewArray(IEnumerable<int> array)
+            => EnumerableExtension.Filter(array, evenPredicate);
+
+        [TestCase(new[] { "as", "aaaaaaa", "qe23214wrtw" }, new[] { "aaaaaaa", "qe23214wrtw" })]
+        [TestCase(new[] { "111111111111111", "", null }, new[] { "111111111111111" })]
+        public void Filter_LengthPredicate_NewArray(IEnumerable<string> array, IEnumerable<string> expected)
+            => Assert.AreEqual(EnumerableExtension.Filter(array, lengthPredicate), expected);
+
+        [TestCase(new[] { 2212332, 1405644, -1236674 }, ExpectedResult = new[] { 2212332, 1405644, -1236674 })]
+        [TestCase(new[] { 53, 71, -24, 1001, 32, 1005 }, ExpectedResult = new[] { -24, 32 })]
+        [TestCase(new[] { 7, 2, 5, 5, -1, -1, 2 }, ExpectedResult = new int[] { 2, 2 })]
+        public IEnumerable<int> FilterDelegate_EvenPredicate_NewArray(IEnumerable<int> array)
+            => EnumerableExtension.Filter(array, evenPredicateDelegate);
+
+        [TestCase(new[] { "as", "aaaaaaa", "qe23214wrtw" }, new[] { "aaaaaaa", "qe23214wrtw" })]
+        [TestCase(new[] { "111111111111111", "", null }, new[] { "111111111111111" })]
+        public void FilterDelegate_LengthPredicate_NewArray(IEnumerable<string> array, IEnumerable<string> expected)
+            => Assert.AreEqual(EnumerableExtension.Filter(array, lengthPredicateDelegate), expected);
+
+        #endregion
+
+        #region Transform
+
+        private Converter<string, int> intParseDelegate = IntParseTransformer.Transform;
+
+        [TestCase(new[] { "1" }, new[] { 1 })]
+        [TestCase(new[] { "1", "2", "3" }, new[] { 1, 2, 3 })]
+        [TestCase(new[] { "11111", "0" }, new[] { 11111, 0 })]
+        public void TransformDelegate_IntParse_NewArray(IEnumerable<string> array, IEnumerable<int> expected)
+            => Assert.AreEqual(EnumerableExtension.Transform(array, intParseDelegate), expected);
+
+        #endregion
+
+        #region Order
+
+        private IComparer<string> lengthComparer = new LengthComparer<string>();
+        private Comparison<string> lengthComparerDelegate = new LengthComparer<string>().Compare;
+
+        [TestCase(new[] { "as", "aaaaaaa", "qe23214wrtw" }, new[] { "as", "aaaaaaa", "qe23214wrtw" })]
+        [TestCase(new[] { "111111111111111", "" }, new[] { "", "111111111111111" })]
+        public void Order_LengthComparer_NewArray(IEnumerable<string> array, IEnumerable<string> expected)
+            => Assert.AreEqual(EnumerableExtension.OrderAccordingTo(array, lengthComparer), expected);
+
+        [TestCase(new[] { "as", "aaaaaaa", "qe23214wrtw" }, new[] { "as", "aaaaaaa", "qe23214wrtw" })]
+        [TestCase(new[] { "111111111111111", "" }, new[] { "", "111111111111111" })]
+        public void OrderDelegate_LengthComparer_NewArray(IEnumerable<string> array, IEnumerable<string> expected)
+            => Assert.AreEqual(EnumerableExtension.OrderAccordingTo(array, lengthComparerDelegate), expected);
+
+        #endregion
+    }
+}
