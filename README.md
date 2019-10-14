@@ -126,44 +126,43 @@
 |`ReadOnlyCollection<T>`           | O(1)           | -            | O(n)         | O(1)       | O(n)     | additional info + array reference + array        |
 |`ReadOnlyObservableCollection<T>` | O(1)           | -            | O(n)         | O(1)       | O(n)     | additional info + array reference + array        |
 **Словари**                        |                |              |              |            |          |                                                  |  
-|`Dictionary<TKey, TValue>`        |  |  |  |  |  |  |
-|`SortedList<TKey, TValue>`        |  |  |  |  |  |  |
-|`SortedDictionary<TKey, TValue>`  |  |  |  |  |  |  |
-|`SortedDictionary<TKey,TValue>`   |  |  |  |  |  |  |  
-|`ReadOnlyDictionary<TKey, TValue>`|  |  |  |  |  |  |
+|`Dictionary<TKey, TValue>`        | O(1)           | TKey         | O(n)         | O(1)       | O(1)     |  |
+|`SortedList<TKey, TValue>`        | O(1)           | TKey         | O(log N)     | O(1)-O(n)  | O(n)     | two arrays |
+|`SortedDictionary<TKey, TValue>`  | -              | TKey         | O(log N)     | O(log N)   | O(log N) |  |
+|`ReadOnlyDictionary<TKey, TValue>`| O(1)           | TKey         | O(n)         | O(1)       | O(1)     |  |
 **Множества**                      | | | | | | |
-|`HashSet<T>`                      |  |  |  |  |  |  |
-|`SortedSet<T>`   |  |  |  |  |  |  |
+|`HashSet<T>`                      | O(1)           | -            | O(n)         | O(1)       | O(1)     |  |
+|`SortedSet<T>`                    | -              | -            | O(log N)     | O(log N)   | O(log N) |  |
 **Очередь, стек** | | | | | | |
-|`Queue<T>`                      |  O(1)            | -           | O(n)          |   |  | Elements + additional info |
-|`Stack<T>`                      |  O(1)            | -           | O(n)          |  |  | Elements + additional info |
+|`Queue<T>`                       |  O(1)            | -           | O(n)         | O(1)       | O(1)     | Elements + additional info |
+|`Stack<T>`                       |  O(1)            | -           | O(n)         | O(1)       | O(1)     | Elements + additional info |
 * `*` If ... .
 * `**`If ... .
 
 
 |      Collection                  | Underlying structure | Lookup strategy | Ordering | Contiguous storage | Data access | Exposes Key & Value collection |
-| -------------------------------- | -------------------- | --------------- | -------- | ------------------ |  ---------- | ------------------------------ |
+| -------------------------------- | -------------------- | --------------- | -------- | ---------- |  ---------- | ------------ |
 **Списки**                         |                      |                 |          |                    |             |                                |  
 |`T[]`                             | `System.Array`       | -               | No       | Yes                | Index       | No                             |   
-|`List<T>`                         | `System.Array`| Contains, BinarySearch, Find, FindLast | No  | Yes     | Index       | No                             |   
-|`LinkedList<T>`                   | LinkedListNode<T>| Constains, Find, FindLast| No  | Yes                | Foreach     | No                             |   
-|`Collection<T>`                   | List<T>              | Contains        | No       | Yes                | Index       | No                             |   
-|`BindingList<T>`                  | List<T>              | Contains        | No       | Yes                | Index       | No                             |   
-|`ObservableCollection<T>`         | List<T>              | Contains        | No       | Yes                | Index       | No                             |   
-|`KeyCollection<TKey, TItem>`      | List<TKey,TItem>,Dictionary<TKey,TItem>| Contains | No | Yes           | Index, Key  | No                             |   
-|`ReadOnlyCollection<T>`           | List<T>              | Contains        | No       | Yes                | Index       | No                             |   
-|`ReadOnlyObservableCollection<T>`  | |  | | | | |
+|`List<T>`                         | `System.Array`       | BinarySearch    | No       | Yes                | Index       | No                             |   
+|`LinkedList<T>`                   | LinkedListNode<T>    | -               | No       | Yes                | Foreach     | No                             |   
+|`Collection<T>`                   | List<T>              | -               | No       | Yes                | Index       | No                             |   
+|`BindingList<T>`                  | List<T>              | -               | No       | Yes                | Index       | No                             |   
+|`ObservableCollection<T>`         | List<T>              | -               | No       | Yes                | Index       | No                             |   
+|`KeyCollection<TKey, TItem>`      | Dictionary<TKey,TItem>| -              | No       | Yes                | Index, Key  | No                             |   
+|`ReadOnlyCollection<T>`           | IList<T>             | -               | No       | Yes                | Index       | No                             |   
+|`ReadOnlyObservableCollection<T>` | List<T>              | -               | No       | Yes                | Index       | No                             |
 **Словари** | | | | | | |
-|`Dictionary<TKey, TValue>` | |  | | | | |    
-|`SortedList<TKey, TValue>`  | |  | | | | |   
-|`SortedDictionary<TKey, TValue>`  | |  | | | | |   
-|`ReadOnlyDictionary<TKey, TValue>`  | |  | | | | |   
+|`Dictionary<TKey, TValue>`        | System.Array         | -               | No       | Yes                | Key         | Yes                            |    
+|`SortedList<TKey, TValue>`        | System.Array         | -               | Yes      | Yes                | Index,Key   | Yes                            |   
+|`SortedDictionary<TKey, TValue>`  | System.Array         | -               | Yes      | Yes                | Key         | Yes                            |   
+|`ReadOnlyDictionary<TKey, TValue>`| IDictionary<TKey, TValue> | -          | No       | Yes                | Key         | Yes                            |   
 **Множества** | | | | | | |
-|`HashSet<T>` | |  | | | | |   
-|`SortedSet<T>`  | |  | | | | |   
+|`HashSet<T>`                      | System.Array         | -               | No       | Yes                | Index       | No |   
+|`SortedSet<T>`                    | System.Array         | -               | Yes      | Yes                | Index       | No |   
 **Очередь, стек** | | | | | | |
-|`Queue<T>` | `System.Array` | - | No | | | No |   
-|`Stack<T>` | `System.Array` | - | No | | | No |   
+|`Queue<T>`                        | `System.Array`       | -               | No       | Yes                | Index       | No |   
+|`Stack<T>`                        | `System.Array`       | -               | No       | Yes                | Index       | No |   
 
 * `*` ... .
 * `**` ... .
