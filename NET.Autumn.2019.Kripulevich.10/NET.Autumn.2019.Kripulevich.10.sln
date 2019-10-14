@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorrectParentheses", "Corre
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorrectParenthesesTests", "CorrectParenthesesTests\CorrectParenthesesTests.csproj", "{F3FB1A56-E59E-4D77-8F59-F54315567DB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_UniqueWords", "3_UniqueWords\3_UniqueWords.csproj", "{59B9E0E6-F99D-48FF-BE9C-1930026C7EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_UniqueWordsTests", "3_UniqueWordsTests\3_UniqueWordsTests.csproj", "{E091CF0A-5E65-4FBD-882B-2FFFA68F8EA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{F3FB1A56-E59E-4D77-8F59-F54315567DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3FB1A56-E59E-4D77-8F59-F54315567DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3FB1A56-E59E-4D77-8F59-F54315567DB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B9E0E6-F99D-48FF-BE9C-1930026C7EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B9E0E6-F99D-48FF-BE9C-1930026C7EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B9E0E6-F99D-48FF-BE9C-1930026C7EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B9E0E6-F99D-48FF-BE9C-1930026C7EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E091CF0A-5E65-4FBD-882B-2FFFA68F8EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E091CF0A-5E65-4FBD-882B-2FFFA68F8EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E091CF0A-5E65-4FBD-882B-2FFFA68F8EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E091CF0A-5E65-4FBD-882B-2FFFA68F8EA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
