@@ -141,7 +141,7 @@
 
 
 |      Collection                  | Underlying structure | Lookup strategy | Ordering | Contiguous storage | Data access | Exposes Key & Value collection |
-| -------------------------------- | -------------------- | --------------- | -------- | ---------- |  ---------- | ------------ |
+| ---------------------------- | ---------------- | --------------- | -------- | ---------- |  ---------- | ------------ |
 **Списки**                         |                      |                 |          |                    |             |                                |  
 |`T[]`                             | `System.Array`       | -               | No       | Yes                | Index       | No                             |   
 |`List<T>`                         | `System.Array`       | BinarySearch    | No       | Yes                | Index       | No                             |   
