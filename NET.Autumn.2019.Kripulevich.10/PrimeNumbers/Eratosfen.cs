@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace PrimeNumbers
 {
     public static class PrimeNumberGenerator
     {
-        public static IEnumerable<int> GetPrimeNumbers(int MaxNumber)
+        public static IEnumerable<BigInteger> GetPrimeNumbers(BigInteger MaxNumber)
         {
             if (MaxNumber < 2)
             {
@@ -23,7 +24,7 @@ namespace PrimeNumbers
             }
         }
 
-        private static bool IsSimple(int number)
+        private static bool IsSimple(BigInteger number)
         {
             for (int i = 2; i <= (number / 2); i++)
             {
