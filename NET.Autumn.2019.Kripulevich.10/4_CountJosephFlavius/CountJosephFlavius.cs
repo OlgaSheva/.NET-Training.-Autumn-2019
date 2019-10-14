@@ -42,9 +42,7 @@ namespace _4_CountJosephFlavius
 
             while(list.First != list.Last)
             {
-                ++score;
-
-                if (score == step)
+                if (++score == step)
                 {
                     int value = current.Value;
                     current = current.Next;
