@@ -5,7 +5,7 @@ namespace PrimeNumbers
 {
     public static class PrimeNumberGenerator
     {
-        public static List<int> GetPrimeNumbers(int MaxNumber)
+        public static IEnumerable<int> GetPrimeNumbers(int MaxNumber)
         {
             if (MaxNumber < 2)
             {
@@ -18,11 +18,9 @@ namespace PrimeNumbers
             {
                 if (IsSimple(i))
                 {
-                    simple.Add(i);
+                    yield return i;
                 }
             }
-
-            return simple;
         }
 
         private static bool IsSimple(int number)
