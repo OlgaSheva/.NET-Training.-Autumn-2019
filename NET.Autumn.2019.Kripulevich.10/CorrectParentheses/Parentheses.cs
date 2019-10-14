@@ -3,11 +3,20 @@ using System.Collections.Generic;
 
 namespace CorrectParentheses
 {
+    /// <summary>
+    /// A class for determining the correct placement of brackets.
+    /// </summary>
     public static class Parentheses
     {
         private static readonly string openingBrackets = "({[<";
         private static readonly string closingBrackets = ")}]>";
 
+        /// <summary>
+        /// Corrects the specified string.
+        /// </summary>
+        /// <param name="string">The string.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">The {nameof(@string)} can't be null.</exception>
         public static bool Correct(string @string)
         {
             if (@string == null)

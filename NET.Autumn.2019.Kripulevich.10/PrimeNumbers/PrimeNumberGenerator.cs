@@ -4,8 +4,17 @@ using System.Numerics;
 
 namespace PrimeNumbers
 {
+    /// <summary>
+    /// Genegator of prime numbers.
+    /// </summary>
     public static class PrimeNumberGenerator
     {
+        /// <summary>
+        /// Gets the prime numbers.
+        /// </summary>
+        /// <param name="MaxNumber">The maximum number.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException">The {nameof(MaxNumber)} should be larger than 1.</exception>
         public static IEnumerable<BigInteger> GetPrimeNumbers(BigInteger MaxNumber)
         {
             if (MaxNumber < 2)

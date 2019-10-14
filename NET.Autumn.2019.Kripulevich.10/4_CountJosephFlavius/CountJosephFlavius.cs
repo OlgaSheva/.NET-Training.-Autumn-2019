@@ -3,8 +3,17 @@ using System.Collections.Generic;
 
 namespace _4_CountJosephFlavius
 {
+    /// <summary>
+    /// Count Joseph Flavius.
+    /// </summary>
     public static class CountJosephFlavius
     {
+        /// <summary>
+        /// Find the winner.
+        /// </summary>
+        /// <param name="count"></param>
+        /// <param name="step"></param>
+        /// <returns>The index of winner.</returns>
         public static int WhoWillSurvive(int count, int step)
         {
             if (count <= 0)
