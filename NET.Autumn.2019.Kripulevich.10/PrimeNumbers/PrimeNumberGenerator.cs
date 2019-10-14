@@ -13,9 +13,9 @@ namespace PrimeNumbers
                 throw new ArgumentException($"The {nameof(MaxNumber)} should be larger than 1.");
             }
 
-            var simple = new List<int>();
+            yield return 2;
 
-            for (int i = 2; i <= MaxNumber; i++)
+            for (int i = 3; i <= MaxNumber; i += 2)
             {
                 if (IsSimple(i))
                 {
@@ -26,7 +26,7 @@ namespace PrimeNumbers
 
         private static bool IsSimple(BigInteger number)
         {
-            for (int i = 2; i <= (number / 2); i++)
+            for (int i = 2; i <= (number / 2); i ++)
             {
                 if (number % i == 0)
                     return false;
