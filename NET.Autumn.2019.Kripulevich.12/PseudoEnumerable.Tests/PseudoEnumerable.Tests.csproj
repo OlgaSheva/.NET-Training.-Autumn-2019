@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="Comparers\LengthComparer.cs" />
     <Compile Include="EnumerableExtensionTests.cs" />
-    <Compile Include="Transformers\IntParseTransformer.cs" />
     <Compile Include="Predicates\EvenPredicate.cs" />
     <Compile Include="Predicates\LengthPredicate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
