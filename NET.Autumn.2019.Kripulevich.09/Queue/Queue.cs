@@ -9,7 +9,7 @@ namespace GenericQueue
     /// </summary>
     /// <typeparam name="T">The type.</typeparam>
     /// <seealso cref="System.Collections.Generic.IEnumerable{T}" />
-    public class Queue<T> : IEnumerable<T>
+    public class Queue<T> : IEnumerable<T>, IEnumerable
     {
         private T[] _array;
         private int _head;       // First valid element in the queue
