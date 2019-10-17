@@ -122,14 +122,14 @@
 |`Collection<T>`                   | O(1)           | -            | O(n)         | O(1)       | O(1)     | additional info + array reference + array        |  
 |`BindingList<T>`                  | O(1)           | -            | O(n)         | O(1)       | O(1)     | additional info + array reference + array        |  
 |`ObservableCollection<T>`         | O(1)           | -            | O(n)         | O(1)       | O(1)     | additional info + array reference + array        |
-|`KeyCollection<TKey, TItem>`      | O(1)           | TKey         | O(n)         | O(1)       | O(1)     |                                                  |
+|`KeyCollection<TKey, TItem>`      | O(1)           | O(n)         | O(n)         | O(1)       | O(1)     |                                                  |
 |`ReadOnlyCollection<T>`           | O(1)           | -            | O(n)         | O(1)       | O(n)     | additional info + array reference + array        |
 |`ReadOnlyObservableCollection<T>` | O(1)           | -            | O(n)         | O(1)       | O(n)     | additional info + array reference + array        |
 **Словари**                        |                |              |              |            |          |                                                  |  
-|`Dictionary<TKey, TValue>`        | O(1)           | TKey         | O(n)         | O(1)       | O(1)     |  |
-|`SortedList<TKey, TValue>`        | O(1)           | TKey         | O(log N)     | O(1)-O(n)  | O(n)     | two arrays |
-|`SortedDictionary<TKey, TValue>`  | -              | TKey         | O(log N)     | O(log N)   | O(log N) |  |
-|`ReadOnlyDictionary<TKey, TValue>`| O(1)           | TKey         | O(n)         | O(1)       | O(1)     |  |
+|`Dictionary<TKey, TValue>`        | O(1)           | O(n)         | O(n)         | O(1)       | O(1)     |  |
+|`SortedList<TKey, TValue>`        | O(1)           | O(log N)     | O(log N)     | O(1)-O(n)  | O(n)     | two arrays |
+|`SortedDictionary<TKey, TValue>`  | -              | O(log N)     | O(log N)     | O(log N)   | O(log N) |  |
+|`ReadOnlyDictionary<TKey, TValue>`| O(1)           | O(n)         | O(n)         | O(1)       | O(1)     |  |
 **Множества**                      | | | | | | |
 |`HashSet<T>`                      | O(1)           | -            | O(n)         | O(1)       | O(1)     |  |
 |`SortedSet<T>`                    | -              | -            | O(log N)     | O(log N)   | O(log N) |  |
@@ -167,22 +167,22 @@
 * `*` ... .
 * `**` ... .
 
-### Day 12. 14.10.2019 (Workshop) 
+### Day 12. 14.10.2019 (Workshop)
 
 | Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
 | -------- | -------- | --------| --------|  -------- |  -------- |   
-| 1 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#) 
-| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V5/GCDAlgorithms.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V5.Tests/GCDAlgorithmsTests.cs) 
+| 1 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#)
+| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V5/GCDAlgorithms.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V5.Tests/GCDAlgorithmsTests.cs)
 
 ### Day 13. 15.10.2019 (Workshop)  
 
 | # | Task | Solution Status | Solution Link |
-| -------- | -------- | --------| --------| 
-| 1 | Получить список всех клиентов, сумма всех заказов которых превосходит некоторую заданную величину. | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 
-| 2 | Для каждого клиента получить список поставщиков, находящихся в той же стране и том же городе. Задание выполнить, как используя операцию группировки, так и без нее. | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 
-| 3 | Получить список тех клиентов, заказы которых превосходят по сумме заданную величину. | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 
-| 4 | Получить список всех клиентов в отсортированном виде по году, месяцу певого заказа клиента, оборотам клиента (от максимального к минимальному) и имени клиента. |![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 
-| 5 | Получить список тех клиентов, у которых указан нецифровой почтовый код или не заполнен регион или в телефоне не указан код оператора (что равнозначно «нет круглых скобок в начале»). |![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 
+| -------- | -------- | --------| --------|
+| 1 | Получить список всех клиентов, сумма всех заказов которых превосходит некоторую заданную величину. | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |
+| 2 | Для каждого клиента получить список поставщиков, находящихся в той же стране и том же городе. Задание выполнить, как используя операцию группировки, так и без нее. | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |
+| 3 | Получить список тех клиентов, заказы которых превосходят по сумме заданную величину. | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |
+| 4 | Получить список всех клиентов в отсортированном виде по году, месяцу певого заказа клиента, оборотам клиента (от максимального к минимальному) и имени клиента. |![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |
+| 5 | Получить список тех клиентов, у которых указан нецифровой почтовый код или не заполнен регион или в телефоне не указан код оператора (что равнозначно «нет круглых скобок в начале»). |![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |
 | 6 | Сгруппировать все продукты по категориям, внутри – по наличию на складе, внутри последней группы - по стоимости. |![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 	
 | 7 | Сгруппировать все товары по группам «дешевые», «средняя цена», «дорогие», определив границы каждой группы произвольным образом. |![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | 	
 | 8 | Рассчитать среднюю сумму заказа по всем клиентам из данного города и среднее количество заказов, приходящееся на клиента из каждого города. |![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |    	
