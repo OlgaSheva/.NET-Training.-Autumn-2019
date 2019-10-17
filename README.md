@@ -171,8 +171,13 @@
 
 | Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
 | -------- | -------- | --------| --------|  -------- |  -------- |   
+<<<<<<< HEAD
 | 1 | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*NUnit Tests*](#)
 | 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V5/GCDAlgorithms.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V5.Tests/GCDAlgorithmsTests.cs)
+=======
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.12/PseudoEnumerable/EnumerableExtension.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.12/PseudoEnumerable.Tests/EnumerableExtensionTests.cs) 
+| 2 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V5/GCDAlgorithms.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.07/Algorithms.V5.Tests/GCDAlgorithmsTests.cs) 
+>>>>>>> 9d43878cd50e0d86179bf377688d9ac8ffd9f7f3
 
 ### Day 13. 15.10.2019 (Workshop)  
 
