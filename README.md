@@ -176,6 +176,10 @@
 
 ### Day 13. 15.10.2019 (Workshop)  
 
+| Task | Solution Status | Solution Link | NUnit Tests Status | NUnit Tests Link | Additional/Comments |
+| -------- | -------- | --------| --------|  -------- |  -------- |   
+| 1 | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*Solution*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.13/PsevdoEnumerable/Enumerable.cs) | ![Done](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-ok.png) | [*NUnit Tests*](https://github.com/OlgaSheva/.NET-Training.-Autumn-2019/blob/master/NET.Autumn.2019.Kripulevich.13/PsevdoEnumerableTests/EnumerableTests.cs) 
+
 | # | Task | Solution Status | Solution Link |
 | -------- | -------- | --------| --------|
 | 1 | Получить список всех клиентов, сумма всех заказов которых превосходит некоторую заданную величину. | ![Scheduled](https://github.com/AnzhelikaKravchuk/.NET-Training.-Spring-2019/blob/master/Pictures/icons-target.png) | [*Solution*](#) |
