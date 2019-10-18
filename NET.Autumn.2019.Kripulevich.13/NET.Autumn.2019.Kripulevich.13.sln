@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsevdoEnumerable", "PsevdoEnumerable\PsevdoEnumerable.csproj", "{003048BB-ED7E-4E86-89E3-E7C675DA7320}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsevdoEnumerableTests", "PsevdoEnumerableTests\PsevdoEnumerableTests.csproj", "{C5CCE9F1-AB0B-4BD0-A9DD-6C4C0049C61A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{003048BB-ED7E-4E86-89E3-E7C675DA7320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{003048BB-ED7E-4E86-89E3-E7C675DA7320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{003048BB-ED7E-4E86-89E3-E7C675DA7320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{003048BB-ED7E-4E86-89E3-E7C675DA7320}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5CCE9F1-AB0B-4BD0-A9DD-6C4C0049C61A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5CCE9F1-AB0B-4BD0-A9DD-6C4C0049C61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5CCE9F1-AB0B-4BD0-A9DD-6C4C0049C61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5CCE9F1-AB0B-4BD0-A9DD-6C4C0049C61A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE656986-E5D7-44DC-9062-061D5F113264}
+	EndGlobalSection
+EndGlobal
