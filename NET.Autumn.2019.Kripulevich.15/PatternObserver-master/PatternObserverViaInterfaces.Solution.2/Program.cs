@@ -34,8 +34,7 @@ namespace PatternObserverViaInterfaces.Solution._2
     {
         void Update(IObservable sender, int info);
     }
-
-    //интерфейс наблюдаемого класса     
+    
     /// <summary>
     /// The observable class interface.
     /// </summary>
