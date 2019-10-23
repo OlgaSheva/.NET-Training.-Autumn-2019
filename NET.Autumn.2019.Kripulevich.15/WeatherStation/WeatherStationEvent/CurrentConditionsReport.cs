@@ -30,17 +30,17 @@ namespace WeatherStationEvent
                 throw new ArgumentNullException($"The {nameof(info)} cannot be null.");
             }
 
-            if (info.NewTemperature < -70 || info.NewTemperature > 50
-                || info.NewHumidity < 0 || info.NewHumidity > 100
-                || info.NewPressure < 730 || info.NewPressure > 780)
+            if (info.WeatherParameters.Temperature < -70 || info.WeatherParameters.Temperature > 50
+                || info.WeatherParameters.Humidity < 0 || info.WeatherParameters.Humidity > 100
+                || info.WeatherParameters.Pressure < 730 || info.WeatherParameters.Pressure > 780)
             {
                 throw new ArgumentException(
                     "The following ranges are valid: temperature(-70 - 50), humidity(0 - 100), pressure(730 - 780).");
             }
 
-            Console.WriteLine($"Temperture: {info.NewTemperature}" +
-                    $"\nHumidity: {info.NewHumidity}" +
-                    $"\nPressure: {info.NewPressure}");
+            Console.WriteLine($"Temperture: {info.WeatherParameters.Temperature}" +
+                    $"\nHumidity: {info.WeatherParameters.Humidity}" +
+                    $"\nPressure: {info.WeatherParameters.Pressure}");
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace WeatherStationEvent
 {
     /// <summary>
@@ -7,40 +8,20 @@ namespace WeatherStationEvent
     class WeatherChangedEventArgs : EventArgs
     {
         /// <summary>
-        /// Creates new temperature.
+        /// Gets the weather parameters.
         /// </summary>
         /// <value>
-        /// The new temperature.
+        /// The weather parameters.
         /// </value>
-        public int NewTemperature { get; private set; }
-
-        /// <summary>
-        /// Creates new humidity.
-        /// </summary>
-        /// <value>
-        /// The new humidity.
-        /// </value>
-        public int NewHumidity { get; private set; }
-
-        /// <summary>
-        /// Creates new pressure.
-        /// </summary>
-        /// <value>
-        /// The new pressure.
-        /// </value>
-        public int NewPressure { get; private set; }
+        public WeatherParameters WeatherParameters { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WeatherChangedEventArgs"/> class.
         /// </summary>
-        /// <param name="temperature">The temperature.</param>
-        /// <param name="humidity">The humidity.</param>
-        /// <param name="pressure">The pressure.</param>
-        public WeatherChangedEventArgs(int temperature, int humidity, int pressure)
+        /// <param name="weatherParameters">The weather parameters.</param>
+        public WeatherChangedEventArgs(WeatherParameters weatherParameters)
         {
-            NewTemperature = temperature;
-            NewHumidity = humidity;
-            NewPressure = pressure;
+            WeatherParameters = weatherParameters;
         }
     }
 }

@@ -13,48 +13,30 @@ namespace WeatherStationEvent
         public event EventHandler<WeatherChangedEventArgs> WeatherChanged = delegate { };
 
         private Random random = new Random(Environment.TickCount);
-        private int temperature;
+        private WeatherParameters weatherParameters;
 
         /// <summary>
-        /// Gets the current temperature.
+        /// Gets the weather parameters.
         /// </summary>
         /// <value>
-        /// The current temperature.
+        /// The weather parameters.
         /// </value>
-        public int Temperature
+        public WeatherParameters WeatherParameters
         {
-            get => temperature;
+            get => weatherParameters;
             private set
             {
-                temperature = value;
-                OnWeatherChanged(new WeatherChangedEventArgs(temperature, Humidity, Pressure));
+                weatherParameters = value;
+                OnWeatherChanged(new WeatherChangedEventArgs(weatherParameters));
             }
         }
-
-        /// <summary>
-        /// Gets the humidity.
-        /// </summary>
-        /// <value>
-        /// The humidity.
-        /// </value>
-        public int Humidity { get; private set; }
-
-        /// <summary>
-        /// Gets the pressure.
-        /// </summary>
-        /// <value>
-        /// The pressure.
-        /// </value>
-        public int Pressure { get; private set; }
-
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="WeatherData"/> class.
         /// </summary>
         public WeatherData()
         {
-            Temperature = 15;
-            Humidity = 80;
-            Pressure = 760;
+            WeatherParameters = new WeatherParameters(15, 80, 760);
         }
 
         /// <summary>
@@ -62,15 +44,16 @@ namespace WeatherStationEvent
         /// </summary>
         public void EmulateWeatherChange()
         {
-            this.Humidity = random.Next(40, 100);
-            this.Pressure = random.Next(756, 766);
-            this.Temperature = random.Next(-30, 40);
+            WeatherParameters = new WeatherParameters(
+                random.Next(-30, 40),
+                random.Next(40, 100), 
+                random.Next(756, 766));
         }
 
         protected virtual void OnWeatherChanged(WeatherChangedEventArgs args)
         {
             var temp = WeatherChanged;
-            temp?.Invoke(this, new WeatherChangedEventArgs(Temperature, Humidity, Pressure));
+            temp?.Invoke(this, new WeatherChangedEventArgs(weatherParameters));
         }
     }
 }

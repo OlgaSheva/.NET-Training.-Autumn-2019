@@ -9,7 +9,7 @@ namespace WeatherStationEvent
             WeatherData weatherData = new WeatherData();
 
             CurrentConditionsReport current = new CurrentConditionsReport();
-            StatisticReport statistic = new StatisticReport(10, 80, 756);
+            StatisticReport statistic = new StatisticReport(new WeatherParameters(10, 80, 756));
 
             weatherData.WeatherChanged += current.Update;
             weatherData.WeatherChanged += statistic.Update;

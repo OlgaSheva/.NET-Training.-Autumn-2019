@@ -8,40 +8,20 @@ namespace WeatherStationEvent
     class StatisticReport
     {
         /// <summary>
-        /// Gets the temperature.
+        /// Gets the weather parameters.
         /// </summary>
         /// <value>
-        /// The temperature.
+        /// The weather parameters.
         /// </value>
-        public int Temperature { get; private set; }
-
-        /// <summary>
-        /// Gets the humidity.
-        /// </summary>
-        /// <value>
-        /// The humidity.
-        /// </value>
-        public int Humidity { get; private set; }
-
-        /// <summary>
-        /// Gets the pressure.
-        /// </summary>
-        /// <value>
-        /// The pressure.
-        /// </value>
-        public int Pressure { get; private set; }
+        public WeatherParameters WeatherParameters { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StatisticReport"/> class.
         /// </summary>
-        /// <param name="temperature">The temperature.</param>
-        /// <param name="humidity">The humidity.</param>
-        /// <param name="pressure">The pressure.</param>
-        public StatisticReport(int temperature, int humidity, int pressure)
+        /// <param name="parameters">The parameters.</param>
+        public StatisticReport(WeatherParameters parameters)
         {
-            Temperature = temperature;
-            Humidity = humidity;
-            Pressure = pressure;
+            WeatherParameters = parameters;
         }
 
         /// <summary>
@@ -67,21 +47,23 @@ namespace WeatherStationEvent
                 throw new ArgumentNullException($"The {nameof(info)} cannot be null.");
             }
 
-            if (info.NewTemperature < -70 || info.NewTemperature > 50 
-                || info.NewHumidity < 0 || info.NewHumidity > 100 
-                || info.NewPressure < 730 || info.NewPressure > 780)
+            if (info.WeatherParameters.Temperature < -70 || info.WeatherParameters.Temperature > 50
+                || info.WeatherParameters.Humidity < 0 || info.WeatherParameters.Humidity > 100
+                || info.WeatherParameters.Pressure < 730 || info.WeatherParameters.Pressure > 780)
             {
                 throw new ArgumentException(
                     "The following ranges are valid: temperature(-70 - 50), humidity(0 - 100), pressure(730 - 780).");
             }
 
-            Console.WriteLine($"The temperature has changed by {info.NewTemperature - Temperature} degrees." +
-                $"\nThe humidity has changed by {info.NewHumidity - Humidity} %." +
-                $"\nThe pressure has changed by {info.NewPressure - Pressure} mmHg.");
+            Console.WriteLine($"The temperature has changed by " +
+                $"{info.WeatherParameters.Temperature - this.WeatherParameters.Temperature} degrees." +
+                $"\nThe humidity has changed by {info.WeatherParameters.Humidity - this.WeatherParameters.Humidity} %." +
+                $"\nThe pressure has changed by {info.WeatherParameters.Pressure - this.WeatherParameters.Pressure} mmHg.");
 
-            Temperature = info.NewTemperature;
-            Humidity = info.NewHumidity;
-            Pressure = info.NewPressure;
+            this.WeatherParameters = new WeatherParameters(
+                info.WeatherParameters.Temperature,
+                info.WeatherParameters.Humidity,
+                info.WeatherParameters.Pressure);
         }
     }
 }
