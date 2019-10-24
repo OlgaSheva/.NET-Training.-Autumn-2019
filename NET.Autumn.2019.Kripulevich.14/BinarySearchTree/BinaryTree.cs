@@ -10,8 +10,8 @@ namespace BinarySearchTree
     public class BinaryTree<T> : IEnumerable<T> where T : IComparable<T>
     {
         public int Count { get; private set; }
+        public BinaryTreeNode<T> Root { get; private set; }
 
-        private BinaryTreeNode<T> root;
         private BinaryTreeNode<T> current;
         private IComparer<T> comparer;
 
@@ -86,8 +86,8 @@ namespace BinarySearchTree
         {
             if (current == null)
             {
-                root = new BinaryTreeNode<T>(data);
-                current = root;
+                Root = new BinaryTreeNode<T>(data);
+                current = Root;
             }
             else
             {
@@ -115,13 +115,13 @@ namespace BinarySearchTree
         /// <returns>Collection of elements of the <see cref="BinaryTree{T}"/></returns>
         public IEnumerator<T> InOrderTraversal()
         {
-            if (root == null)
+            if (Root == null)
             {
                 yield break;
             }
 
             Stack<BinaryTreeNode<T>> stack = new Stack<BinaryTreeNode<T>>();
-            BinaryTreeNode<T> current = root;
+            BinaryTreeNode<T> current = Root;
 
             bool goLeftNext = true;
 
@@ -160,13 +160,13 @@ namespace BinarySearchTree
         /// <returns>Collection of elements of the <see cref="BinaryTree{T}"/></returns>
         public IEnumerator<T> PreOrderTraversal()
         {
-            if (root == null)
+            if (Root == null)
             {
                 yield break;
             }
 
             Stack<BinaryTreeNode<T>> stack = new Stack<BinaryTreeNode<T>>();
-            BinaryTreeNode<T> current = root;
+            BinaryTreeNode<T> current = Root;
             
             stack.Push(current);
 
@@ -174,10 +174,7 @@ namespace BinarySearchTree
             {
                 current = stack.Pop();
 
-                foreach (var item in stack)
-                {
-                    yield return item.Value;
-                }
+                yield return current.Value;
 
                 if (current.Right != null)
                 {
@@ -197,13 +194,13 @@ namespace BinarySearchTree
         /// <returns>Collection of elements of the <see cref="BinaryTree{T}"/></returns>
         public IEnumerator<T> PostOrderTraversal()
         {
-            if (root == null)
+            if (Root == null)
             {
                 yield break;
             }
 
             Stack<BinaryTreeNode<T>> stack = new Stack<BinaryTreeNode<T>>();
-            BinaryTreeNode<T> current = root;
+            BinaryTreeNode<T> current = Root;
             bool goRightNext = true;
 
             stack.Push(current);
@@ -244,7 +241,7 @@ namespace BinarySearchTree
             BinaryTreeNode<T> currentParent = null;
 
             // Find the node to delete.
-            var currentNode = this.root;
+            var currentNode = this.Root;
             while (currentNode != null && nodeToDelete == null)
             {
                 if (currentNode.Value.CompareTo(value) == 0)
@@ -284,12 +281,17 @@ namespace BinarySearchTree
 
         public IEnumerator<T> GetEnumerator()
         {
-            return InOrderTraversal();
+            return this.InOrderTraversal();
+        }
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            return this.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return GetEnumerator();
+            return this.GetEnumerator();
         }
 
         #endregion
@@ -298,7 +300,7 @@ namespace BinarySearchTree
 
         private BinaryTreeNode<T> FindWithParent(T value, out BinaryTreeNode<T> parent)
         {
-            BinaryTreeNode<T> current = root;
+            BinaryTreeNode<T> current = Root;
             parent = null;
 
             while (current != null)
@@ -359,7 +361,7 @@ namespace BinarySearchTree
             if (nodeToDeleteParent == null)
             {
                 // Deleting the root.
-                this.root = null;
+                this.Root = null;
             }
             else if (IsLeftChild(nodeToDeleteParent, nodeToDelete))
             {
@@ -378,7 +380,7 @@ namespace BinarySearchTree
             if (nodeToDeleteParent == null)
             {
                 // Deleting the root.
-                this.root = childNode;
+                this.Root = childNode;
             }
             else if (IsLeftChild(nodeToDeleteParent, nodeToDelete))
             {
@@ -403,7 +405,7 @@ namespace BinarySearchTree
             if (nodeToDeleteParent == null)
             {
                 // Deleting the root.
-                this.root = replacementNode;
+                this.Root = replacementNode;
             }
             else if (IsLeftChild(nodeToDeleteParent, nodeToDelete))
             {

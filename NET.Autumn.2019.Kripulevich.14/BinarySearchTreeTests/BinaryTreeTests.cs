@@ -10,21 +10,21 @@ namespace BinarySearchTreeTests
         #region Constructors tests
 
         [Test]
-        public void ConstructorWithoutParametersTest()
+        public void ConstructorWithoutParameters()
         {
             BinaryTree<int> bst = new BinaryTree<int>();
             Assert.NotNull(bst);
         }
 
         [Test]
-        public void ConstructorWithIComparerAsParameterTest_IfArgumentIsNull_Throw_ArgumentNullException()
+        public void ConstructorWithIComparer_NullArgument_ArgumentNullException()
         {
             IComparer<int> comparer = null;
             Assert.Throws<ArgumentNullException>(() => new BinaryTree<int>(comparer));
         }
 
         [Test]
-        public void ConstructorWithIEnumerableAsParameterTest_IfIEnumerableIsNull_Throw_ArgumentNullException()
+        public void ConstructorWithIEnumerableAndIcomparer_NullIEnumerable_ArgumentNullException()
         {
             IEnumerable<int> source = null;
             IComparer<int> comparer = Comparer<int>.Default;
@@ -32,7 +32,7 @@ namespace BinarySearchTreeTests
         }
 
         [Test]
-        public void ConstructorWithIEnumerableAsParameterTest_SetCollectionAsParameter_CheckCount()
+        public void ConstructorWithIEnumerable_Collection_CheckCount()
         {
             IEnumerable<int> source = new int[] { 1, 2, 3 };
             BinaryTree<int> bst = new BinaryTree<int>(source);
@@ -41,7 +41,7 @@ namespace BinarySearchTreeTests
         }
 
         [Test]
-        public void ConstructorWithIEnumerableAndIComparerAsParameterTest_IfIComparerIsNull_Throw_ArgumentNullException()
+        public void ConstructorWithIEnumerableAndIComparer_NullIComparer_ArgumentNullException()
         {
             IEnumerable<int> source = new int[] { 1, 2, 3 };
             IComparer<int> comparer = null;
@@ -50,11 +50,11 @@ namespace BinarySearchTreeTests
 
         #endregion
 
-        #region Add test
+        #region Add tests
 
         [TestCase(new int[0], ExpectedResult = 0)]
         [TestCase(new int[] { 10, 5, 18, 2, 4, 1, 3 }, ExpectedResult = 7)]
-        public int AddTests_AddItems_CheckCount(int[] source)
+        public int Add_AddItems_CheckCount(int[] source)
         {
             BinaryTree<int> bst = new BinaryTree<int>();
 
@@ -70,9 +70,9 @@ namespace BinarySearchTreeTests
 
         #region Contains tests
 
-        [TestCase(new int[0], 5, ExpectedResult = false)]
+        [TestCase(new int[0], 1, ExpectedResult = false)]
         [TestCase(new int[] { 42 }, 42, ExpectedResult = true)]
-        [TestCase(new int[] { 10, 5, 18, 2, 4, 1, 3 }, 10, ExpectedResult = true)]
+        [TestCase(new int[] { 42, 12, 10, -40, 65 }, 10, ExpectedResult = true)]
         public bool ContainsTests(int[] source, int item)
         {
             BinaryTree<int> bst = new BinaryTree<int>(source);
@@ -85,22 +85,39 @@ namespace BinarySearchTreeTests
         #region IEnumerable InOrderWalkIterator tests
 
         [TestCase(new int[0], ExpectedResult = new int[0])]
-        [TestCase(new int[] { 10, 5, 18, 2, 4, 1, 3 }, ExpectedResult = new int[] { 1, 2, 3, 4, 5, 10, 18 })]
-        [TestCase(new int[] { 1, 5, 18, 3, 10, 2, 4 }, ExpectedResult = new int[] { 1, 2, 3, 4, 5, 10, 18 })]
-        public IEnumerable<int> IEnumerableImplementationTests_AddItems_Check_EnumeratorReturnsValuesInCorrectOrder(int[] source)
+        [TestCase(new int[] { 5, 2, 4, 1, 3 }, ExpectedResult = new int[] { 1, 2, 3, 4, 5 })]
+        [TestCase(new int[] { 1, 5, 3, 2, 4 }, ExpectedResult = new int[] { 1, 2, 3, 4, 5 })]
+        public IEnumerable<int> IEnumerableImplementation_AddItems_ValuesInCorrectOrder(int[] source)
         {
-            BinaryTree<int> bst = new BinaryTree<int>();
+            BinaryTree<int> tree = new BinaryTree<int>();
 
             foreach (var i in source)
             {
-                bst.AddNode(i);
+                tree.AddNode(i);
             }
 
-            return bst;
+            return tree;
         }
 
         #endregion
 
-        
+        #region PreOrderWalkIterator tests
+
+        [TestCase(new int[0], ExpectedResult = new int[0])]
+        [TestCase(new int[] { 5, 4, 9, 3, 8, 15, 1, 6, 10, 7 }, ExpectedResult = new int[] { 5, 4, 3, 1, 9, 8, 6, 7, 15, 10 })]
+        public IEnumerable<int> PreOrderWalkIterator_AddItems_ValuesInCorrectOrder(int[] source)
+        {
+            BinaryTree<int> tree = new BinaryTree<int>(source);
+            var result = new List<int>();
+            var e = tree.PreOrderTraversal();
+            while (e.MoveNext())
+            {
+                result.Add(e.Current);
+            }
+
+            return result.ToArray();
+        }
+
+        #endregion
     }
 }
