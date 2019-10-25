@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace BinarySearchTree
 {
     /// <summary>
-    /// The bunary tree.
+    /// The binary tree.
     /// </summary>
     public class BinaryTree<T> : IEnumerable<T> //where T : IComparable<T>, IComparable
     {

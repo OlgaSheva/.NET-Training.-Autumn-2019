@@ -51,20 +51,37 @@ namespace BinarySearchTreeTests
 
         #endregion
 
-        #region Add tests
+        #region Add and delete tests
 
         [TestCase(new int[0], ExpectedResult = 0)]
         [TestCase(new int[] { 10, 5, 18, 2, 4, 1, 3 }, ExpectedResult = 7)]
         public int Add_AddItems_CheckCount(int[] source)
         {
-            BinaryTree<int> bst = new BinaryTree<int>();
+            BinaryTree<int> tree = new BinaryTree<int>();
 
             foreach (var i in source)
             {
-                bst.AddNode(i);
+                tree.AddNode(i);
             }
 
-            return bst.Count;
+            return tree.Count;
+        }
+
+        [TestCase(new int[] { 10, 5, 18, 2, 4, 1, 3 }, ExpectedResult = 5)]
+        [TestCase(new int[] { 10, 5, 18, 2, 4, 1, 3, 19, -5, -1 }, ExpectedResult = 8)]
+        public int Delet_DeletItems_CheckCount(int[] source)
+        {
+            BinaryTree<int> tree = new BinaryTree<int>();
+
+            foreach (var i in source)
+            {
+                tree.AddNode(i);
+            }
+
+            tree.Delete(5);
+            tree.Delete(1);
+
+            return tree.Count;
         }
 
         #endregion
