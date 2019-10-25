@@ -5,7 +5,7 @@ namespace BinarySearchTree
     /// <summary>
     /// Binary tree node.
     /// </summary>
-    public class BinaryTreeNode<TNode> : IComparable<TNode> where TNode : IComparable<TNode>
+    public class BinaryTreeNode<TNode>
     {
         private readonly BinaryTreeNode<TNode> parent;
 
@@ -42,24 +42,6 @@ namespace BinarySearchTree
         {
             Value = value;
             this.parent = parent;
-        }
-
-        /// <summary>
-        /// Compares to.
-        /// </summary>
-        /// <param name="other">The other node.</param>
-        public int CompareTo(TNode other)
-        {
-            return Value.CompareTo(other);
-        }
-
-        /// <summary>
-        /// Compares the node.
-        /// </summary>
-        /// <param name="other">The other node.</param>
-        public int CompareNode(BinaryTreeNode<TNode> other)
-        {
-            return Value.CompareTo(other.Value);
         }
     }
 }

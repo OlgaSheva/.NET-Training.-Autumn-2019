@@ -7,7 +7,7 @@ namespace BinarySearchTree
     /// <summary>
     /// The bunary tree.
     /// </summary>
-    public class BinaryTree<T> : IEnumerable<T> where T : IComparable<T>
+    public class BinaryTree<T> : IEnumerable<T> //where T : IComparable<T>, IComparable
     {
         public int Count { get; private set; }
         public BinaryTreeNode<T> Root { get; private set; }
@@ -244,14 +244,14 @@ namespace BinarySearchTree
             var currentNode = this.Root;
             while (currentNode != null && nodeToDelete == null)
             {
-                if (currentNode.Value.CompareTo(value) == 0)
+                if (comparer.Compare(currentNode.Value, value) == 0)
                 {
                     nodeToDelete = currentNode;
                 }
                 else
                 {
                     currentParent = currentNode;
-                    currentNode = value.CompareTo(currentNode.Value) < 0 ? currentNode.Left : currentNode.Right;
+                    currentNode = comparer.Compare(value, currentNode.Value) < 0 ? currentNode.Left : currentNode.Right;
                 }
             }
 
@@ -305,7 +305,7 @@ namespace BinarySearchTree
 
             while (current != null)
             {
-                int result = current.CompareTo(value);
+                int result = comparer.Compare(current.Value, value);// current.CompareTo(value);
                 if (result > 0)
                 {
                     parent = current;
@@ -325,14 +325,14 @@ namespace BinarySearchTree
             return current;
         }
 
-        private static void AddChild(BinaryTreeNode<T> node, T value)
+        private void AddChild(BinaryTreeNode<T> node, T value)
         {
-            if (value.CompareTo(node.Value) == 0)
+            if (comparer.Compare(value, node.Value) == 0)
             {
                 throw new InvalidOperationException("Cannot insert node into tree. Value already exists.");
             }
 
-            if (value.CompareTo(node.Value) < 0)
+            if (comparer.Compare(value, node.Value) < 0)
             {
                 if (node.Left == null)
                 {
@@ -419,7 +419,7 @@ namespace BinarySearchTree
 
         // Returns minimum-valued node under the given node,
         // and then removes the reference to that node. Useful for node deletion.
-        private static BinaryTreeNode<T> MinimumChild(BinaryTreeNode<T> node)
+        private BinaryTreeNode<T> MinimumChild(BinaryTreeNode<T> node)
         {
             BinaryTreeNode<T> next = null;
             BinaryTreeNode<T> parent = null;
@@ -442,9 +442,9 @@ namespace BinarySearchTree
             return next;
         }
 
-        private static bool IsLeftChild(BinaryTreeNode<T> parent, BinaryTreeNode<T> child)
+        private bool IsLeftChild(BinaryTreeNode<T> parent, BinaryTreeNode<T> child)
         {
-            return parent.Left != null && (parent.Left.Value.CompareTo(child.Value) == 0);
+            return parent.Left != null && (comparer.Compare(parent.Left.Value, child.Value) == 0);
         }
 
         #endregion

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using BinarySearchTree;
 
@@ -9,6 +8,7 @@ namespace BinarySearchTreeCA
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Example 1:");
             var nodeData = new[] { 5, 4, 9, 3, 8, 15, 1, 6, 10, 7 };
             var tree = new BinaryTree<int>();
             foreach (var data in nodeData)
@@ -25,6 +25,35 @@ namespace BinarySearchTreeCA
 
             Console.WriteLine("\npreorder: ");
             var e = tree.PreOrderTraversal();
+            while (e.MoveNext())
+            {
+                Console.Write(e.Current + " ");
+            }
+
+            Console.WriteLine("\npostorder: ");
+            e = tree.PostOrderTraversal();
+            while (e.MoveNext())
+            {
+                Console.Write(e.Current + " ");
+            }
+
+            Console.WriteLine("\nExample 2:");
+            nodeData = new[] { 5, 4, 15, 3, 8, 30, -30, 0, 1, 2 };
+            tree = new BinaryTree<int>();
+            foreach (var data in nodeData)
+            {
+                tree.AddNode(data);
+            }
+            tree.Root.Print();
+
+            Console.WriteLine("inorder: ");
+            foreach (var item in tree)
+            {
+                Console.Write(item + " ");
+            }
+
+            Console.WriteLine("\npreorder: ");
+            e = tree.PreOrderTraversal();
             while (e.MoveNext())
             {
                 Console.Write(e.Current + " ");
