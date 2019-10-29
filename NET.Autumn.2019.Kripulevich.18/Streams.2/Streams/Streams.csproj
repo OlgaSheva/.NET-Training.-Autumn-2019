@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <LangVersion>7.3</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="EPPlus" Version="4.5.3.2" />
+      <PackageReference Include="System.IO.Packaging" Version="4.7.0-preview1.19504.10" />
+    </ItemGroup>
+
+</Project>
