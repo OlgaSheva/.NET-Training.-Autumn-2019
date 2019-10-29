@@ -18,12 +18,12 @@ namespace ConsoleClient
             Console.WriteLine($"InMemoryByteCopy() done. Total bytes: {InMemoryByByteCopy(source, destination)}");
             
             Console.WriteLine($"BlockCopy() done. Total bytes: {ByBlockCopy(source, destination)}");
-
-            //Console.WriteLine($"InMemoryBlockCopy. Total bytes: { InMemoryByBlockCopy(source, destination)}");
-
+            
             Console.WriteLine($"BufferedCopyCopy. Total bytes: { BufferedCopy(source, destination)}");
             
             Console.WriteLine($"LineCopy. Total lines: { ByLineCopy(source, destination)}");
+
+            Console.ReadKey();
         }
     }
 }
