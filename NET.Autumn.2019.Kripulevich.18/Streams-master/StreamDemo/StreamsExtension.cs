@@ -28,6 +28,7 @@ namespace StreamDemo
                 while ((b = fileStreamSource.ReadByte()) > 0)
                 {
                     fileStreamDest.WriteByte((byte)b);
+                    count++;
                 }
             }
             return count;
@@ -132,6 +133,7 @@ namespace StreamDemo
             int bufferSize = 1024;
             int length = 0;
             byte[] buffer = new byte[bufferSize];
+            int count = 0;
             using (var sourceFile = new FileStream(sourcePath, FileMode.Open))
             using (var destinationFile = new FileStream(destinationPath, FileMode.Create))
             using (var sourceBufferFile = new BufferedStream(sourceFile, bufferSize))
@@ -140,9 +142,10 @@ namespace StreamDemo
                 while ((length = sourceFile.Read(buffer, 0, bufferSize)) > 0)
                 {
                     destinationFile.Write(buffer, 0, length);
+                    count += length;
                 }
             }
-            return destinationPath.Length;
+            return count;
         }
 
         #endregion

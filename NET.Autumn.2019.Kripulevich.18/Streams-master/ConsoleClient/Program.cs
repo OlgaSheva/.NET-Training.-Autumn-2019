@@ -19,7 +19,7 @@ namespace ConsoleClient
             
             Console.WriteLine($"BlockCopy() done. Total bytes: {ByBlockCopy(source, destination)}");
             
-            Console.WriteLine($"BufferedCopyCopy. Total bytes: { BufferedCopy(source, destination)}");
+            Console.WriteLine($"BufferedCopy. Total bytes: { BufferedCopy(source, destination)}");
             
             Console.WriteLine($"LineCopy. Total lines: { ByLineCopy(source, destination)}");
 
