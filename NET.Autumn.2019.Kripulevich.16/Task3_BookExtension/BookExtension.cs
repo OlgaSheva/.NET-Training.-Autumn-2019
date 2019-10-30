@@ -30,35 +30,43 @@ namespace Task3_BookExtension
         }
 
         /// <summary>
-        /// Formats the specified format.
+        /// Converts the value of a specified object to an equivalent string representation using specified format and culture-specific formatting information.
         /// </summary>
-        /// <param name="format">The format.</param>
-        /// <param name="book">The book.</param>
-        /// <param name="formatProvider">The format provider.</param>
-        /// <returns></returns>
+        /// <param name="format">A format string containing formatting specifications.</param>
+        /// <param name="arg">An object to format.</param>
+        /// <param name="formatProvider">An object that supplies format information about the current instance.</param>
+        /// <returns>
+        /// The string representation of the value of <paramref name="arg">arg</paramref>, formatted as specified by <paramref name="format">format</paramref> and <paramref name="formatProvider">formatProvider</paramref>.
+        /// </returns>
         /// <exception cref="System.ArgumentNullException">
         /// format
         /// or
-        /// book
+        /// arg
         /// or
         /// formatProvider
         /// </exception>
+        /// <exception cref="System.ArgumentException">arg</exception>
         /// <exception cref="System.FormatException">The '{format}' format string is not supported.</exception>
-        public string Format(string format, Book book, IFormatProvider formatProvider)
+        public string Format(string format, object arg, IFormatProvider formatProvider)
         {
             if (format == null)
             {
                 throw new ArgumentNullException(nameof(format));
             }
-            if (book == null)
+            if (arg == null)
             {
-                throw new ArgumentNullException(nameof(book));
+                throw new ArgumentNullException(nameof(arg));
+            }
+            if (!(arg is Book))
+            {
+                throw new ArgumentException(nameof(arg));
             }
             if (formatProvider == null)
             {
                 throw new ArgumentNullException(nameof(formatProvider));
             }
 
+            Book book = (Book)arg;
             switch (format)
             {
                 case "J":
@@ -69,39 +77,6 @@ namespace Task3_BookExtension
                 default:
                     throw new FormatException($"The '{format}' format string is not supported.");
             }
-        }
-
-        /// <summary>
-        /// Converts the value of a specified object to an equivalent string representation using specified format and culture-specific formatting information.
-        /// </summary>
-        /// <param name="format">A format string containing formatting specifications.</param>
-        /// <param name="arg">An object to format.</param>
-        /// <param name="formatProvider">An object that supplies format information about the current instance.</param>
-        /// <returns>
-        /// The string representation of the value of <paramref name="arg">arg</paramref>, formatted as specified by <paramref name="format">format</paramref> and <paramref name="formatProvider">formatProvider</paramref>.
-        /// </returns>
-        /// <exception cref="System.ArgumentException">arg</exception>
-        /// <exception cref="System.ArgumentNullException">
-        /// format
-        /// or
-        /// formatProvider
-        /// </exception>
-        public string Format(string format, object arg, IFormatProvider formatProvider)
-        {
-            if (!(arg is Book))
-            {
-                throw new ArgumentException(nameof(arg));
-            }
-            if (format == null)
-            {
-                throw new ArgumentNullException(nameof(format));
-            }
-            if(formatProvider == null)
-            {
-                throw new ArgumentNullException(nameof(formatProvider));
-            }
-
-            return Format(format, (arg as Book), formatProvider);
         }
 
         /// <summary>
