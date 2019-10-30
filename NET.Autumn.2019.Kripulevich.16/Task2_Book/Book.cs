@@ -92,9 +92,9 @@ namespace Task2_Book
                     return $"Author: {this.Author}, title: {this.Title}, year: {Year}, " +
                         $"publishing house: {PublishingHous}, edition: {Edition}, pages: {Pages}, price: {Price}.";
                 case "B":
-                    return $"{this.Author}, {this.Title}, {Year}, {PublishingHous}.";
+                    return $"{this.Author}, {this.Title}, {this.Year}, {this.PublishingHous}.";
                 case "C":
-                    return $"{this.Author}, {this.Title}, {Year}.";
+                    return $"{this.Author}, {this.Title}, {this.Year}.";
                 case "D":
                     return $"{this.Author}, {this.Title}.";
                 case "E":
@@ -102,7 +102,7 @@ namespace Task2_Book
                 case "F":
                     return $"{this.Title}, {this.Year}.";
                 case "G":
-                    return $"{this.Author}, {this.Title}, {Year}, {PublishingHous}, {Edition}, {Pages}, {Price}.";
+                    return $"{this.Author}, {this.Title}, {this.Year}, {this.PublishingHous}, {this.Edition}, {this.Pages}, {this.Price}.";
                 default:
                     throw new FormatException($"The '{format}' format string is not supported.");
             }
