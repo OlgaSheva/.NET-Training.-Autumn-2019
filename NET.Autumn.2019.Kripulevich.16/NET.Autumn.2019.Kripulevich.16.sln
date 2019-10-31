@@ -7,13 +7,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task2_Book", "Task2_Book\Ta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task2_Book_Tests", "Task2_Book_Tests\Task2_Book_Tests.csproj", "{EC4B96FD-CD5D-48F8-A6C6-5A2B04156B96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task3_BookExtension", "Task3_BookExtension\Task3_BookExtension.csproj", "{ABC7222B-F8FA-4D0B-8B6A-E02788CB7E1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task3_BookExtension", "Task3_BookExtension\Task3_BookExtension.csproj", "{ABC7222B-F8FA-4D0B-8B6A-E02788CB7E1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task3_BookExtension_Tests", "Task3_BookExtension_Tests\Task3_BookExtension_Tests.csproj", "{08E0FDE7-EB0D-4A13-A18A-D39243CDD2E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task3_BookExtension_Tests", "Task3_BookExtension_Tests\Task3_BookExtension_Tests.csproj", "{08E0FDE7-EB0D-4A13-A18A-D39243CDD2E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4_DoubleExtension", "Task4_DoubleExtension\Task4_DoubleExtension.csproj", "{9F5E856C-25A3-46E7-8A51-95C2BFF40D1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4_DoubleExtension", "Task4_DoubleExtension\Task4_DoubleExtension.csproj", "{9F5E856C-25A3-46E7-8A51-95C2BFF40D1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4_DoubleExtension_Tests", "Task4_DoubleExtension_Tests\Task4_DoubleExtension_Tests.csproj", "{4977EC4C-4FCE-4712-B8D1-763257346D80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4_DoubleExtension_Tests", "Task4_DoubleExtension_Tests\Task4_DoubleExtension_Tests.csproj", "{4977EC4C-4FCE-4712-B8D1-763257346D80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1_StringExtension", "Task1_StringExtension\Task1_StringExtension.csproj", "{61BE4B40-6198-45BC-873E-AB14857033EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1_StringExtension.Tests", "Task1_StringExtension.Tests\Task1_StringExtension.Tests.csproj", "{8944D887-4E5B-4DD0-999F-22A4CAB4C5C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1_StringExtensionWithFiles", "Task1_StringExtensionWithFiles\Task1_StringExtensionWithFiles.csproj", "{00C2C35B-1354-48FB-BB92-C0B3F3348EA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,18 @@ Global
 		{4977EC4C-4FCE-4712-B8D1-763257346D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4977EC4C-4FCE-4712-B8D1-763257346D80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4977EC4C-4FCE-4712-B8D1-763257346D80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61BE4B40-6198-45BC-873E-AB14857033EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61BE4B40-6198-45BC-873E-AB14857033EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61BE4B40-6198-45BC-873E-AB14857033EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61BE4B40-6198-45BC-873E-AB14857033EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8944D887-4E5B-4DD0-999F-22A4CAB4C5C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8944D887-4E5B-4DD0-999F-22A4CAB4C5C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8944D887-4E5B-4DD0-999F-22A4CAB4C5C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8944D887-4E5B-4DD0-999F-22A4CAB4C5C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00C2C35B-1354-48FB-BB92-C0B3F3348EA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C2C35B-1354-48FB-BB92-C0B3F3348EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C2C35B-1354-48FB-BB92-C0B3F3348EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C2C35B-1354-48FB-BB92-C0B3F3348EA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
