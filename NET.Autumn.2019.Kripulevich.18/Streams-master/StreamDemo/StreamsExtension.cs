@@ -165,7 +165,12 @@ namespace StreamDemo
             {
                 while ((buffer = sourceReader.ReadLine()) != null)
                 {
-                    destinationWriter.WriteLine(buffer);
+                    if (count != 0)
+                    {
+                        destinationWriter.Write("\n");
+                    }
+
+                    destinationWriter.Write(buffer);
                     count++;
                 }
             }
