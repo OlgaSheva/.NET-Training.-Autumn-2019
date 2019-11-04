@@ -17,11 +17,10 @@ namespace StringExtensionWithFiles
             StringConverter sc = new StringConverter();
 
             Stopwatch sw = new Stopwatch();
-            for (int i = 1, power = 1; i <= 5; i++)
+            for (int i = 1, power = 1; i <= 5; i++, power *= 10)
             {
                 var contentLength = 10 * power;
-                fileGenerator.GenerateFiles(1, contentLength);
-                power *= 10;
+                fileGenerator.GenerateFiles(1, contentLength);                
                 string source = File.ReadAllText(path);
 
                 sw.Start();
