@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using System;
-using Task1_StringExtension;
 
 namespace Task1_StringExtension.Tests
 {
@@ -39,7 +38,7 @@ namespace Task1_StringExtension.Tests
          => _stringConverter.Convert(str, n);
 
         [Test]
-        public void Convert_NullReferenceInsteadOfStringValue_ArgumentNullException()
+        public void Convert_NullString_ArgumentNullException()
             => Assert.Throws<ArgumentNullException>(
                 () => _stringConverter.Convert(null, int.MaxValue));
 
@@ -59,7 +58,7 @@ namespace Task1_StringExtension.Tests
                 () => _stringConverter.Convert("  \t\n  \t \r", int.MaxValue));
 
         [Test]
-        public void Convert_NegativeIterationCounter_ArgumentOutOfRangeException()
+        public void Convert_NegativeCounter_ArgumentOutOfRangeException()
         => Assert.Throws<ArgumentException>(
             () => _stringConverter.Convert("Привет Епам!", -1));
     }

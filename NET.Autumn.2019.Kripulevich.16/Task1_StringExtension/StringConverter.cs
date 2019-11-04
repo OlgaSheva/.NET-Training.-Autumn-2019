@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Task1_StringExtension
 {
@@ -27,31 +28,47 @@ namespace Task1_StringExtension
                 return inputString;
             }
 
-            int length = inputString.Length;
-            char[] odd = new char[length / 2];
-            char[] even = new char[length / 2 + length % 2];
-            int oddj = 0;
-            int evenj = 0;
-
-            while(count-- > 0)
+            var sb = new StringBuilder(inputString);
+            int iterationCount = IteretionCountForIdenticalString(inputString);
+            iterationCount = count % iterationCount;
+            while(iterationCount-- > 0)
             {
-                oddj = 0;
-                evenj = 0;
-                for (int i = 1; i <= length; i++)
-                {
-                    if (i % 2 == 0)
-                    {
-                        odd[oddj++] = inputString[i - 1];
-                    }
-                    else
-                    {
-                        even[evenj++] = inputString[i - 1];
-                    }
-                }
-                inputString = new string(even) + new string(odd);
+                sb = OneIteration(sb);
             }
 
-            return inputString;
+            return sb.ToString();
+        }
+
+        private int IteretionCountForIdenticalString(string inputString)
+        {
+            int count = 0;
+            var sb = new StringBuilder(inputString);
+            do
+            {
+                sb = OneIteration(sb);
+                count++;
+            } while (!inputString.Equals(sb.ToString()));
+
+            return count;
+        }
+
+        private StringBuilder OneIteration(StringBuilder @string)
+        {
+            StringBuilder odd = new StringBuilder();
+            StringBuilder even = new StringBuilder();
+            for (int i = 1; i <= @string.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    odd.Append(@string[i - 1]);
+                }
+                else
+                {
+                    even.Append(@string[i - 1]);
+                }
+            }
+
+            return even.Append(odd);
         }
     }
 }
