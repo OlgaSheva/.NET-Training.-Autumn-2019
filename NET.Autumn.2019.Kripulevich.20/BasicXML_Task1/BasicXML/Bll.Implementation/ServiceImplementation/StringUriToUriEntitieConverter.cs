@@ -21,6 +21,11 @@ namespace Bll.Implementation.ServiceImplementation
 
         public IEnumerable<URIAdress> Convert(IEnumerable<string> source)
         {
+            if (source is null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
             foreach (var item in source)
             {
                 yield return Convert(item);

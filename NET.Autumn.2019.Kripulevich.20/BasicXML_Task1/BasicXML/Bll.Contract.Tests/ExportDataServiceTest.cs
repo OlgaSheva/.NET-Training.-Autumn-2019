@@ -1,8 +1,8 @@
-﻿using Moq;
-using Dal.Contract.Services;
+﻿using Bll.Contract.Services;
+using Moq;
 using NUnit.Framework;
 
-namespace Dal.Contract.Tests
+namespace Bll.Contract.Tests
 {
     public class ExportDataServiceTest
     {

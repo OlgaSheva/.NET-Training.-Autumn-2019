@@ -1,6 +1,6 @@
 ﻿using DependencyResolver;
-using Dal.Contract.Services;
 using Microsoft.Extensions.DependencyInjection;
+using Bll.Contract.Services;
 
 namespace ConsoleClient
 {

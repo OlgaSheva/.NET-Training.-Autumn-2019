@@ -1,4 +1,4 @@
-﻿namespace Dal.Contract.Services
+﻿namespace Bll.Contract.Services
 {
     /// <summary>
     /// Export data service interface.

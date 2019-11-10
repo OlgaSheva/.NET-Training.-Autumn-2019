@@ -5,12 +5,10 @@ using Bll.Contract.Entities;
 using Bll.Contract.Services;
 using Bll.Implementation.ServiceImplementation;
 using Dal.Contract.Storages;
-using Dal.Contract.Services;
 using Dal.Implementation.StringUriLoaders;
 using Dal.Implementation.XmlWriters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Dal.Implementation.ServiceImplementation;
 
 namespace DependencyResolver
 {

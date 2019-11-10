@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Bll.Contract.Services;
-using Dal.Contract.Services;
 using Dal.Contract.Storages;
 
-namespace Dal.Implementation.ServiceImplementation
+namespace Bll.Implementation.ServiceImplementation
 {
     public class ExportDataService<TSource, TResult> : IExportDataService
     {
@@ -13,7 +12,7 @@ namespace Dal.Implementation.ServiceImplementation
         private IConverter<IEnumerable<TSource>, IEnumerable<TResult>> converter;
 
         public ExportDataService(
-            IDataLoader<IEnumerable<TSource>> loader, 
+            IDataLoader<IEnumerable<TSource>> loader,
             IDataWriter<TResult> writer,
             IConverter<IEnumerable<TSource>, IEnumerable<TResult>> converter)
         {

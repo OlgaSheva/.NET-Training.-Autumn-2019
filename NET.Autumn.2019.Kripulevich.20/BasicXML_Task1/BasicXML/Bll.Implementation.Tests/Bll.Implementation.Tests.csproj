@@ -15,4 +15,10 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Bll.Contract\Bll.Contract.csproj" />
+    <ProjectReference Include="..\Bll.Implementation\Bll.Implementation.csproj" />
+    <ProjectReference Include="..\Dal.Contract\Dal.Contract.csproj" />
+  </ItemGroup>
+
 </Project>
