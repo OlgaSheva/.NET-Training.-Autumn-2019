@@ -38,7 +38,7 @@ namespace Dal.Implementation.XmlWriters
                 XElement uriAdress =
                     new XElement("uriAdress",
                         new XElement("host",
-                            new XAttribute("name", uri.HostName)));
+                            new XAttribute("name", uri.Host.Name)));
                 uriAdresses.Add(uriAdress);
 
                 if (uri.URNSegments.Count > 0)
@@ -50,7 +50,7 @@ namespace Dal.Implementation.XmlWriters
                     }
                     uriAdress.Add(urn);
 
-                    if (uri.Parameters.Count > 0)
+                    if (uri.Parameters?.Count > 0)
                     {
                         XElement parameters = new XElement("parameters");
                         foreach (var p in uri.Parameters)

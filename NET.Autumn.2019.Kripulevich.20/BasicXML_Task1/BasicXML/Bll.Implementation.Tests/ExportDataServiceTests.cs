@@ -15,7 +15,7 @@ namespace Bll.Implementation.Tests
         private IDataWriter<URIAdress> writer;
         private IConverter<IEnumerable<string>, IEnumerable<URIAdress>> converter;
         readonly IEnumerable<URIAdress> uriAdresses = new URIAdress[] { new URIAdress {
-        HostName = "github.com",
+        Host = new Host {Name = "github.com" },
         URNSegments = new List<string> { "AnzhelikaKravchuk", "2017 - 2018.MMF.BSU" },
         Parameters = new List<URNParameters>(), } };
         readonly IEnumerable<string> uriStrings = new string[] { "https://github.com/AnzhelikaKravchuk/2017-2018.MMF.BSU" };

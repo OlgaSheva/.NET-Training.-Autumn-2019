@@ -39,7 +39,7 @@ namespace Dal.Implementation.XmlWriters
                     writer.WriteStartElement("uriAdress");
 
                     writer.WriteStartElement("host");
-                    writer.WriteAttributeString("name", uri.HostName);
+                    writer.WriteAttributeString("name", uri.Host.Name);
                     writer.WriteEndElement();
 
                     if (uri.URNSegments.Count > 0)
@@ -51,7 +51,7 @@ namespace Dal.Implementation.XmlWriters
                         }
                         writer.WriteEndElement();
 
-                        if (uri.Parameters.Count > 0)
+                        if (uri.Parameters?.Count > 0)
                         {
                             writer.WriteStartElement("parameters");
                             foreach (var parameter in uri.Parameters)

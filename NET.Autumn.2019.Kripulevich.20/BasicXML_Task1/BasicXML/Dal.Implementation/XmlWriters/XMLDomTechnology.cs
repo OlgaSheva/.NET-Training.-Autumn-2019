@@ -39,7 +39,7 @@ namespace Dal.Implementation.XmlWriters
 
                 XmlElement host = doc.CreateElement("host");
                 XmlAttribute name = doc.CreateAttribute("name");
-                name.Value = uri.HostName;
+                name.Value = uri.Host.Name;
                 host.Attributes.Append(name);
                 uriAdress.AppendChild(host);
 
@@ -54,7 +54,7 @@ namespace Dal.Implementation.XmlWriters
                     }
 
                     uriAdress.AppendChild(urn);
-                    if (uri.Parameters.Count > 0)
+                    if (uri.Parameters?.Count > 0)
                     {
                         XmlElement parameters = doc.CreateElement("parameters");
                         foreach (var p in uri.Parameters)

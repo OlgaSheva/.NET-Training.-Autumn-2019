@@ -1,19 +1,22 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace Bll.Contract.Entities
 {
     /// <summary>
     /// Url adress model.
     /// </summary>
+    [XmlRoot("uriAdress")]
     public class URIAdress
     {
         /// <summary>
-        /// Gets or sets the name of the host.
+        /// Gets or sets the host.
         /// </summary>
         /// <value>
-        /// The name of the host.
+        /// The host.
         /// </value>
-        public string HostName { get; set; }
+        [XmlElement("host")]
+        public Host Host { get; set; }
 
         /// <summary>
         /// Gets or sets the segments.
@@ -21,6 +24,8 @@ namespace Bll.Contract.Entities
         /// <value>
         /// The segments.
         /// </value>
+        [XmlArray("urn")]
+        [XmlArrayItem(ElementName = "segment")]
         public List<string> URNSegments { get; set; }
 
         /// <summary>
@@ -29,6 +34,8 @@ namespace Bll.Contract.Entities
         /// <value>
         /// The parameters.
         /// </value>
+        [XmlArray("parameters")]
+        [XmlArrayItem(ElementName = "parameter")]
         public List<URNParameters> Parameters { get; set; }
     }
 }

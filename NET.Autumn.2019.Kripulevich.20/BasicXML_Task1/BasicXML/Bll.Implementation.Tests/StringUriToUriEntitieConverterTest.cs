@@ -17,14 +17,14 @@ namespace Bll.Implementation.Tests
             string uri = "https://github.com/AnzhelikaKravchuk?tab=repositories";
             var expected = new URIAdress
             {
-                HostName = "github.com",
+                Host = new Host { Name = "github.com" },
                 URNSegments = new List<string>() { "AnzhelikaKravchuk" },
                 Parameters = new List<URNParameters>() { new URNParameters() { Value = "tab", Key = "repositories", } },
             };
             var parser = new URIParser();
             var actual = parser.Parse(uri).ToURIAdressModel();
 
-            Assert.AreEqual(expected.HostName, actual.HostName);
+            Assert.AreEqual(expected.Host.Name, actual.Host.Name);
             Assert.AreEqual(expected.URNSegments, actual.URNSegments);
             Assert.AreEqual(expected.Parameters[0].Key, actual.Parameters[0].Key);
             Assert.AreEqual(expected.Parameters[0].Value, actual.Parameters[0].Value);

@@ -19,11 +19,9 @@ namespace Bll.Implementation.ServiceImplementation.UriExtensions
             string[] parameters = uri.Query != string.Empty ? uri.Query.Trim('?').Split('&') : null;
             var uriModel = new URIAdress
             {
-                HostName = uri.Host,
+                Host = new Host { Name = uri.Host },
                 URNSegments = uri.AbsolutePath.Split('/').Where(s => s.Length > 0).ToList(),
-                Parameters = parameters == null
-                ? new List<URNParameters>() 
-                : parameters.Select(s => s.Split('=')).Select(s => new URNParameters
+                Parameters = parameters?.Select(s => s.Split('=')).Select(s => new URNParameters
                 {
                     Value = s[0],
                     Key = s[1],

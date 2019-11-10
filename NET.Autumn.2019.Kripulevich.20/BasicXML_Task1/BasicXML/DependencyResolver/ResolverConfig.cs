@@ -29,7 +29,7 @@ namespace DependencyResolver
                 .AddTransient<IConverter<IEnumerable<string>, IEnumerable<URIAdress>>, StringUriToUriEntitieConverter>(
                     c => new StringUriToUriEntitieConverter(new NLogLogger(), new URIValidator(), new URIParser()))
                 .AddTransient<IDataLoader<IEnumerable<string>>, TxtLoader>(t => new TxtLoader(sourceFilePath))
-                .AddTransient<IDataWriter<URIAdress>, XDomTechnology>(x => new XDomTechnology(targetFilePath))
+                .AddTransient<IDataWriter<URIAdress>, XmlSerializeTechnology>(x => new XmlSerializeTechnology(targetFilePath))
                 .AddTransient<IExportDataService, ExportDataService<string, URIAdress>>()
                 .BuildServiceProvider();
         }

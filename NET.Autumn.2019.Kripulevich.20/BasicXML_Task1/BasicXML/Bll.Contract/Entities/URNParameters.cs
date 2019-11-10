@@ -1,8 +1,11 @@
-﻿namespace Bll.Contract.Entities
+﻿using System.Xml.Serialization;
+
+namespace Bll.Contract.Entities
 {
     /// <summary>
     /// Url parameters model.
     /// </summary>
+    [XmlRoot("parameter")]
     public class URNParameters
     {
         /// <summary>
@@ -11,6 +14,7 @@
         /// <value>
         /// The value.
         /// </value>
+        [XmlAttribute("value")]
         public string Value { get; set; }
 
         /// <summary>
@@ -19,6 +23,7 @@
         /// <value>
         /// The key.
         /// </value>
+        [XmlAttribute("key")]
         public string Key { get; set; }
     }
 }
