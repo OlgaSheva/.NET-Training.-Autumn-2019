@@ -40,7 +40,7 @@ namespace Bll.Implementation.ServiceImplementation
                 return null;
             }
 
-            return parser.Parse(source).ToURIAdressModel();
+            return (parser.Parse(source)).ToURIAdressModel();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Bll.Contract.Entities;
 using Bll.Contract.Services;
 using Bll.Implementation.ServiceImplementation;
@@ -60,38 +61,38 @@ namespace Bll.Implementation.Tests
             Assert.Throws<ArgumentNullException>(() =>
                 new StringUriToUriEntitieConverter(null, validator, parser));
 
+        [Test]
+        public void Convert_SourceIsNull_ThrowsArgumentNullException()
+        {
+            var converter = new StringUriToUriEntitieConverter(logger, validator, parser);
+
+            Assert.Throws<ArgumentNullException>(() => converter.Convert(null).ToList());
+        }
+
         //[Test]
-        //public void Convert_SourceIsNull_ThrowsArgumentNullException()
+        //public void Convert_ValidData_IgnoresByLogger()
         //{
+        //    validator = Mock.Of<IValidator<string>>(v => v.IsValid(It.IsAny<string>()) == true);
+
         //    var converter = new StringUriToUriEntitieConverter(logger, validator, parser);
 
-        //    Assert.Throws<ArgumentNullException>(() => converter.Convert(null));
+        //    converter.Convert(new string[] { "http://test.com/" }).ToList();
+
+        //    Mock.Get(logger).Verify(l => l.Error(It.IsAny<string>()), Times.Never);
         //}
 
-        [Test]
-        public void Convert_ValidData_IgnoresByLogger()
-        {
-            validator = Mock.Of<IValidator<string>>(v => v.IsValid(It.IsAny<string>()) == true);
+        //[Test]
+        //public void Convert_ValidData_ByParser()
+        //{
+        //    validator = Mock.Of<IValidator<string>>(v => v.IsValid(It.IsAny<string>()) == true);
 
-            var converter = new StringUriToUriEntitieConverter(logger, validator, parser);
+        //    var converter = new StringUriToUriEntitieConverter(logger, validator, parser);
 
-            converter.Convert(new string[] { "http://test.com/" });
+        //    converter.Convert(new string[] { "http://test.com/" }).ToList();
 
-            Mock.Get(logger).Verify(l => l.Error(It.IsAny<string>()), Times.Never);
-        }
-
-        [Test]
-        public void Convert_ValidData_ByParser()
-        {
-            validator = Mock.Of<IValidator<string>>(v => v.IsValid(It.IsAny<string>()) == true);
-
-            var converter = new StringUriToUriEntitieConverter(logger, validator, parser);
-
-            converter.Convert(new string[] { "http://test.com/" });
-
-            Mock.Get(logger).Verify(l => l.Error(It.IsAny<string>()), Times.Never);
-            //Mock.Get(parser).Verify(p => p.Parse(It.IsAny<string>()), Times.Once);
-        }
+        //    Mock.Get(logger).Verify(l => l.Error(It.IsAny<string>()), Times.Never);
+        //    Mock.Get(parser).Verify(p => p.Parse(It.IsAny<string>()), Times.Once);
+        //}
 
         [Test]
         public void Convert_InvalidData_IgnoresByParser()
@@ -100,22 +101,22 @@ namespace Bll.Implementation.Tests
 
             var converter = new StringUriToUriEntitieConverter(logger, validator, parser);
 
-            converter.Convert(new string[] { "http://test.com/" });
+            converter.Convert(new string[] { "http://test.com/" }).ToList();
 
             Mock.Get(parser).Verify(p => p.Parse(It.IsAny<string>()), Times.Never);
-            //Mock.Get(logger).Verify(l => l.Error(It.IsAny<string>()), Times.Once);
+            Mock.Get(logger).Verify(l => l.Error(It.IsAny<string>()), Times.Once);
         }
 
-        //[Test]
-        //public void Convert_InvalidData_ByLogger()
-        //{
-        //    validator = Mock.Of<IValidator<string>>(v => v.IsValid(It.IsAny<string>()) == false);
+        [Test]
+        public void Convert_InvalidData_ByLogger()
+        {
+            validator = Mock.Of<IValidator<string>>(v => v.IsValid(It.IsAny<string>()) == false);
 
-        //    var converter = new StringUriToUriEntitieConverter(logger, validator, parser);
+            var converter = new StringUriToUriEntitieConverter(logger, validator, parser);
 
-        //    converter.Convert(new string[] { "http://test.com/" });
+            converter.Convert(new string[] { "http://test.com/" }).ToList();
 
-        //    Mock.Get(logger).Verify(l => l.Error(It.IsAny<string>()), Times.Once);
-        //}
+            Mock.Get(logger).Verify(l => l.Error(It.IsAny<string>()), Times.Once);
+        }
     }
 }

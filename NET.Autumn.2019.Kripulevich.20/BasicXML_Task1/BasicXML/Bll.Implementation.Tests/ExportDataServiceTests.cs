@@ -15,9 +15,9 @@ namespace Bll.Implementation.Tests
         private IDataWriter<URIAdress> writer;
         private IConverter<IEnumerable<string>, IEnumerable<URIAdress>> converter;
         readonly IEnumerable<URIAdress> uriAdresses = new URIAdress[] { new URIAdress {
-        Host = new Host {Name = "github.com" },
-        URNSegments = new List<string> { "AnzhelikaKravchuk", "2017 - 2018.MMF.BSU" },
-        Parameters = new List<URNParameters>(), } };
+            Host = new Host {Name = "github.com" },
+            URNSegments = new List<string> { "AnzhelikaKravchuk", "2017 - 2018.MMF.BSU" },
+            Parameters = new List<URNParameters>(), } };
         readonly IEnumerable<string> uriStrings = new string[] { "https://github.com/AnzhelikaKravchuk/2017-2018.MMF.BSU" };
 
         [OneTimeSetUp]
@@ -44,7 +44,7 @@ namespace Bll.Implementation.Tests
                 new ExportDataService<string, URIAdress>(loader, writer, null));
 
         [Test]
-        public void ExportDataService_SourceIsNull_ThrowsArgumentNullException()
+        public void ExportDataService_Run()
         {
             var service = new ExportDataService<string, URIAdress>(loader, writer, converter);
             service.Run();
