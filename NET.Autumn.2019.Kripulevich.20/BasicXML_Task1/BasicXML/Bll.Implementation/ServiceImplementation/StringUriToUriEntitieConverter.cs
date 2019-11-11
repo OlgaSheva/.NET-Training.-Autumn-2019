@@ -37,6 +37,7 @@ namespace Bll.Implementation.ServiceImplementation
             if (!validator.IsValid(source))
             {
                 logger.Error($"'{source}' is not valid URI.");
+                return null;
             }
 
             return parser.Parse(source).ToURIAdressModel();
