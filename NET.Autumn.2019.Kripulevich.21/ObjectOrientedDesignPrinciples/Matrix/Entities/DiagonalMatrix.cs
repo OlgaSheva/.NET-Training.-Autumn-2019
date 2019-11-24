@@ -2,10 +2,25 @@
 
 namespace Matrix.Entities
 {
+    /// <summary>
+    /// Diagonl matrix.
+    /// </summary>
+    /// <typeparam name="T">The t.</typeparam>
+    /// <seealso cref="Matrix.Entities.AbstractSquareMatrix{T}" />
     public class DiagonalMatrix<T> : AbstractSquareMatrix<T>
     {
         private readonly T[] matrix;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DiagonalMatrix{T}"/> class.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <exception cref="ArgumentNullException">array</exception>
+        /// <exception cref="ArgumentException">
+        /// array
+        /// or
+        /// Not valid diagonal matrix. - array
+        /// </exception>
         public DiagonalMatrix(T[,] array) : base(array)
         {
             if (array == null)

@@ -2,10 +2,19 @@
 
 namespace Matrix.Entities
 {
+    /// <summary>
+    /// Square matrix.
+    /// </summary>
+    /// <typeparam name="T">The t.</typeparam>
+    /// <seealso cref="Matrix.Entities.AbstractSquareMatrix{T}" />
     public class SquareMatrix<T> : AbstractSquareMatrix<T>
     {
         private readonly T[] matrix;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SquareMatrix{T}"/> class.
+        /// </summary>
+        /// <param name="array">The array.</param>
         public SquareMatrix(T[,] array) : base(array)
         {
             base.Order = array.GetUpperBound(0) + 1;

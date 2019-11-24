@@ -5,6 +5,11 @@ using System.Linq.Expressions;
 
 namespace Matrix.Visitors
 {
+    /// <summary>
+    /// Add matrix visitor.
+    /// </summary>
+    /// <typeparam name="T">The t.</typeparam>
+    /// <seealso cref="Matrix.Visitors.MatrixVisitor{T}" />
     public class AddVisitor<T> : MatrixVisitor<T>
     {
         private readonly Dictionary<Type, int> matrixTypePriority = new Dictionary<Type, int>
@@ -14,6 +19,12 @@ namespace Matrix.Visitors
             [typeof(DiagonalMatrix<T>)] = 3,
         };
 
+        /// <summary>
+        /// Gets or sets the result.
+        /// </summary>
+        /// <value>
+        /// The result.
+        /// </value>
         public AbstractSquareMatrix<T> Result { get; set; }
 
         protected override void Visit(SquareMatrix<T> matrix)

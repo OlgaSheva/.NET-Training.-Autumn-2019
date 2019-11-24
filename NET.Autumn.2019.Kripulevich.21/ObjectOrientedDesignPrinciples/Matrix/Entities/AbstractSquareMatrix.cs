@@ -4,14 +4,38 @@ using System.Collections.Generic;
 
 namespace Matrix.Entities
 {
+    /// <summary>
+    /// Abstract square matrix.
+    /// </summary>
+    /// <typeparam name="T">The t.</typeparam>
+    /// <seealso cref="System.Collections.Generic.IEnumerable{T}" />
     public abstract class AbstractSquareMatrix<T> : IEnumerable<T>
     {
         private readonly T[,] matrix;
 
+        /// <summary>
+        /// Gets or sets the order.
+        /// </summary>
+        /// <value>
+        /// The order.
+        /// </value>
         public int Order { get; protected set; }
 
-        public event EventHandler<MatrixChangedEventArgs<T>> MatrixChanged = delegate { };        
+        /// <summary>
+        /// Occurs when [matrix changed].
+        /// </summary>
+        public event EventHandler<MatrixChangedEventArgs<T>> MatrixChanged = delegate { };
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AbstractSquareMatrix{T}"/> class.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <exception cref="ArgumentNullException">array</exception>
+        /// <exception cref="ArgumentException">
+        /// array
+        /// or
+        /// array
+        /// </exception>
         public AbstractSquareMatrix(T[,] array)
         {
             if (array == null)
@@ -33,6 +57,15 @@ namespace Matrix.Entities
             }
         }
 
+        /// <summary>
+        /// Gets or sets the <see cref="T"/> with the specified row.
+        /// </summary>
+        /// <value>
+        /// The <see cref="T"/>.
+        /// </value>
+        /// <param name="row">The row.</param>
+        /// <param name="column">The column.</param>
+        /// <returns></returns>
         public virtual T this[int row, int column]
         {
             get

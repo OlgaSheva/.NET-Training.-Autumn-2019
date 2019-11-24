@@ -2,10 +2,25 @@
 
 namespace Matrix.Entities
 {
+    /// <summary>
+    /// Symmetric mtrix.
+    /// </summary>
+    /// <typeparam name="T">The t.</typeparam>
+    /// <seealso cref="Matrix.Entities.AbstractSquareMatrix{T}" />
     public class SymmetricMatrix<T> : AbstractSquareMatrix<T>
     {
         private readonly T[] matrix;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SymmetricMatrix{T}"/> class.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <exception cref="ArgumentNullException">array</exception>
+        /// <exception cref="ArgumentException">
+        /// array
+        /// or
+        /// Not valid symmetric matrix. - array
+        /// </exception>
         public SymmetricMatrix(T[,] array) : base(array)
         {
             if (array == null)
