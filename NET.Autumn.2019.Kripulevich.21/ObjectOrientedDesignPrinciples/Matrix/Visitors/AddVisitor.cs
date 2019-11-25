@@ -30,42 +30,21 @@ namespace Matrix.Visitors
         protected override void Visit(SquareMatrix<T> matrix)
         {
             this.ValidateMatrix(matrix);
-            T[,] array = new T[matrix.Order, matrix.Order];
-            for (int i = 0; i < matrix.Order; i++)
-            {
-                for (int j = 0; j < matrix.Order; j++)
-                {
-                    array[i, j] = matrix[i, j];
-                }
-            }
-
+            T[,] array = matrix.ToArray();
             this.NormalizeResultType(matrix, () => new SquareMatrix<T>(array));
         }
 
         protected override void Visit(SymmetricMatrix<T> matrix)
         {
             this.ValidateMatrix(matrix);
-            T[,] array = new T[matrix.Order, matrix.Order];
-            for (int i = 0; i < matrix.Order; i++)
-            {
-                for (int j = 0; j < matrix.Order; j++)
-                {
-                    array[i, j] = matrix[i, j];
-                }
-            }
-
+            T[,] array = matrix.ToArray();
             this.NormalizeResultType(matrix, () => new SymmetricMatrix<T>(array));
         }
 
         protected override void Visit(DiagonalMatrix<T> matrix)
         {
             this.ValidateMatrix(matrix);
-            T[,] array = new T[matrix.Order, matrix.Order];
-            for (int i = 0; i < matrix.Order; i++)
-            {
-                array[i, i] = matrix[i, i];
-            }
-
+            T[,] array = matrix.ToArray();
             this.NormalizeResultType(matrix, () => new DiagonalMatrix<T>(array));
         }
 

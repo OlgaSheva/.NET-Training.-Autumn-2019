@@ -50,6 +50,20 @@ namespace Matrix.Entities
             }
         }
 
+        public override T[,] ToArray()
+        {
+            T[,] array = new T[Order, Order];
+            for (int i = 0; i < Order; i++)
+            {
+                for (int j = 0; j < Order; j++)
+                {
+                    array[i, j] = this[i, j];
+                }
+            }
+
+            return array;
+        }
+
         protected override T GetElement(int row, int column)
         {
             int index = (row > column) ? GetIndex(row, column) : GetIndex(column, row);

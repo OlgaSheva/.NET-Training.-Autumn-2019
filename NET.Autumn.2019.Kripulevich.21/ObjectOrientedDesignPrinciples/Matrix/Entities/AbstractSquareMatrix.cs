@@ -83,6 +83,8 @@ namespace Matrix.Entities
             }
         }
 
+        public abstract T[,] ToArray();
+
         protected abstract T GetElement(int row, int column);
         protected abstract void SetElement(int row, int column, T value);
 
